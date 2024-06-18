@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from "react";
+
 import './App.css';
+import './reset.css';
+
+import { RouterProvider, createBrowserRouter, createRoutesFromElements,Route } from 'react-router-dom'
+
+import Root from './components/Root/Root';
+import FirstPage from "./components/FirstPage/FirstPage";
+import Studio from "./components/Studio/Studio";
+import BigHall from "./components/Studio/BigHall/BigHall";
+import SmallHall from "./"
+
+const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={ <Root /> }>
+        <Route index element={ <FirstPage /> } />
+        <Route path="/studio" element={ <Studio /> } />
+        <Route path="/big_hall" element={ <BigHall /> } />
+    </Route>
+));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return(
+        <>
+            <RouterProvider router={router} />
+        </>
+    )
 }
 
 export default App;

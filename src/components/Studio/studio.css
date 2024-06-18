@@ -1,0 +1,26 @@
+.studios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.studio_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    border: 1px solid white;
+    /* padding: 10rem; */
+    width: 90%;
+    height: 20rem;
+}
+
+.small_hall {
+    background-image: url('../../media/JY7o2eyJC4w.jpg');
+    background-size: cover;
+}
+
+.big_hall {
+    background-image: url('../../media/FNYUuzAphFs.jpg');
+    background-size: cover;
+}

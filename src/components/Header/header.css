@@ -1,0 +1,12 @@
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
+    height: 3rem;
+}
+
+.navigation p {
+    margin-right: 1rem;
+}
