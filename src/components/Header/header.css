@@ -1,13 +1,19 @@
 .navigation {
     background-image: url('../../media/head.jpg');
+    background-position: center;
+    background-size: contain;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-wrap: wrap;
     border-bottom: 1px solid black;
-    height: 3rem;
+    height: 10rem;
 }
 
+
 .navigation p {
-    margin-right: 1rem;
+    padding: 1rem;
+    font-size: xx-large;
+    text-shadow: 1px 1px 1px #211313, -1px -1px 1px black;
+    color: #ffffff;
 }

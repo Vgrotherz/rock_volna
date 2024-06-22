@@ -3,7 +3,7 @@
     /* flex-direction: column; */
     align-items: center;
     justify-content: center;
-    height: 60rem;
+    height: 45rem;
 }
 
 .studio_block {
@@ -27,6 +27,10 @@
     background-size: cover;
 }
 
+.table_block {
+    margin-top: 1rem;
+}
+
 .iframe_container {
     position: relative;
     overflow: hidden;
@@ -47,8 +51,10 @@
 .csv_td {
     border: 1px solid black;
     text-align: center;
+    vertical-align: middle;
     color: rgb(89, 89, 209);
     height: 3.5rem;
+    width: 10rem;
     /* margin-bottom: 1rem; */
     /* padding: 1rem; */
 }

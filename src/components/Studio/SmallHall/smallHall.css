@@ -1,5 +1,8 @@
 .small_hall_block {
+    /* background-image: url('../../../media/hands.jpg'); */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 45rem;
 }
