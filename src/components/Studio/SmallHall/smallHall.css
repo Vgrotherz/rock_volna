@@ -1,0 +1,5 @@
+.small_hall_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,34 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { google } from 'googleapis';
-
-import credition from './client_secret_571555316259-660uaprfe4ag44l2vlgpieduiju7kriu.apps.googleusercontent.com.json';
-// console.log(credition);
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const FetchGoogleSheet = () => {
-  const [sheetData, setSheetData] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const auth = new google.auth.GoogleAuth({
-          keyFile: credition,
-          scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
-        });
-        
-        const sheets = google.sheets({ version: 'v4', auth });
-        const response = await sheets.spreadsheets.values.get({
-          spreadsheetId: '18QIkXcamVI423B0H0yyafz1zmjmFsWRu0mMEp4u6iF0', // то что находится между d/ и /edit в данном случае тут https://docs.google.com/spreadsheets/d/18QIkXcamVI423B0H0yyafz1zmjmFsWRu0mMEp4u6iF0/edit?gid=0#gid=0
-          range: 'Sheet1!A1:D18', // Specify the range of cells you want to retrieve
-        });
+      const sheetId = '1v9ygUCPBD91EkNX3pfYqFvbKl5yhhXhpF75zr7WfKps';
+      const apiKey = 'AIzaSyACS5PzmLoxQQSIXBazKwtrnl-EUzykZ-g';
+      const range = 'Sheet1!A1:E10'; // Простое имя листа и диапазон
 
-        const data = response.data.values;
-        if (data.length) {
-          setSheetData(data);
-        } else {
-          console.log('No data found.');
-        }
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+
+      console.log(`Fetching data from URL: ${url}`);
+
+      try {
+        const response = await axios.get(url);
+        console.log('Response data:', response.data);
+        setData(response.data.values);
       } catch (error) {
-        console.error('Error fetching data from Google Sheets:', error);
+        if (error.response) {
+          console.error('Error fetching data from Google Sheets:', error.response.data);
+          console.log('Error status:', error.response.status);
+          console.log('Error headers:', error.response.headers);
+        } else {
+          console.error('Error fetching data from Google Sheets:', error.message);
+        }
       }
     };
 
@@ -37,14 +34,21 @@ const FetchGoogleSheet = () => {
 
   return (
     <div>
-      <h2>Google Sheets Data</h2>
-      <ul>
-        {sheetData.map((row, index) => (
-          <li key={index}>
-            {row.join(' | ')} {/* Displaying each row as a string */}
-          </li>
-        ))}
-      </ul>
+      <h1>Google Sheets Data</h1>
+      {/* <table>
+        <thead>
+          <tr>
+            {data[0] && data[0].map((header, index) => <th key={index}>{header}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {data.slice(1).map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map((cell, cellIndex) => <td key={cellIndex}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table> */}
     </div>
   );
 };

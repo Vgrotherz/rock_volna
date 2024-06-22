@@ -1,4 +1,5 @@
 .navigation {
+    background-image: url('../../media/head.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
