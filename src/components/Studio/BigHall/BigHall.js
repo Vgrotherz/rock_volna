@@ -6,7 +6,7 @@ import FetchCSVBig from "../../utils/FetchCSVBig";
 const BigHall = () => {
     return(
         <>
-            <div className="small_hall_block">
+            <div className="hall_block">
                 <Link to='/small_hall'>
                     <h3>Расписание Малого зала (№1)</h3>
                 </Link>

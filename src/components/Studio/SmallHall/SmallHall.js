@@ -7,7 +7,7 @@ import './smallHall.css';
 const SmallHall = () => {
     return(
         <> 
-            <div className="small_hall_block">
+            <div className="hall_block">
                 <Link to='/big_hall'>
                     <h3>Расписание Большого зала (№2)</h3>
                 </Link>

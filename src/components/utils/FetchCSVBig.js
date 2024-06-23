@@ -40,12 +40,12 @@ function FetchCSVBig() {
   };
 
   return (
-    <div>
+    <div className='table_container'>
       {isLoading? (
         <Loading />
       ) : (
         <table className='table_block'>
-            <tbody>
+            <tbody className='tbody_font'>
             {csvData.map((row, rowIndex) => (
                 <tr key={rowIndex}>
                     {}
