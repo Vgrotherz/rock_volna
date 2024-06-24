@@ -28,7 +28,7 @@ function FetchCSVBig({isLoading, setIsLoading}) {
 
         setCsvData(dataBlock); // сохранение данных в состоянии
         setIsLoading(false);
-        console.log(parsedData.data)
+        console.log(dataBlock)
       } catch (error) {
         console.error('Error fetching CSV data: ', error);
       }
