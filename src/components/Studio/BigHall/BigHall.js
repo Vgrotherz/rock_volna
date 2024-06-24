@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import './bigHall.css'
 import FetchCSVBig from "../../utils/FetchCSVBig";
-import BookButton from "../BookButton/BookButton";
+import BookButton from "../BookButton/BookButton.js";
 
 const BigHall = () => {
     const [ isLoading, setIsLoading] = useState(false);
