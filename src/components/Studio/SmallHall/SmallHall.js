@@ -21,7 +21,7 @@ const SmallHall = () => {
                 </Link>
                 <h1>Расписание Малого зала (№1)</h1>
                <FetchCSVSmall isLoading={isLoading} setIsLoading={setIsLoading}/>
-               <div className={!showPopup? null : 'contact_form' }>
+               <div className={!showPopup? null : 'contact_container' }>
                     {isLoading? (
                         null
                     ) : (
