@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
+import './contact.css';
 
-function Contact() {
+function Contact({ handleClickButton }) {
   const [formData, setFormData] = useState({
     bandName: '',
     email: '',
     phoneNumber: '',
-    hall: '',
+    // hall: '',
     message: ''
   });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleRadioChange = (e) => {
+    // Установите значение hall в зависимости от выбранного значения радиокнопки
+    setFormData({ ...formData, hall: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -24,7 +30,7 @@ function Contact() {
     data.append('hall', formData.hall);
     data.append('message', formData.message);
   
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbzQzEo1sUIuFJxaf1sHMTEYPqwNUWIUi_2Ka_np4GNYTo5a8XjouA3YNI-1E9WURAfb/exec";
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbykAhdWMx2qqy3vlBe2QJOtMcBtQPttjMH2mvp_xFJjgW-1p-Cj3Bsfm-BA5emOwhWH/exec";
     
     try {
       const response = await fetch(Sheet_Url, {
@@ -55,11 +61,11 @@ function Contact() {
   };
 
   return (
-    <div >
-      <header>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="fullName">Название группы:</label>
+    <div>
+      <header className='header_form'>
+        <form onSubmit={handleSubmit} className='contact_form'>
+          <div className='input_div'>
+            <label htmlFor="bandName">Название группы:</label>
             <input
               type="text"
               id="bandName"
@@ -69,8 +75,8 @@ function Contact() {
               required
             />
           </div>
-          <div>
-            <label htmlFor="email">ссылка на профиль вк/тг:</label>
+          <div className='input_div'>
+            <label htmlFor="email">Ссылка на профиль вк/тг:</label>
             <input
               type="text"
               id="email"
@@ -80,7 +86,7 @@ function Contact() {
               required
             />
           </div>
-          <div>
+          <div className='input_div'>
             <label htmlFor="phoneNumber">Телефон для связи:</label>
             <input
               type="tel"
@@ -91,26 +97,28 @@ function Contact() {
               required
             />
           </div>
-          <div>
-            <legend>Номер зала</legend>
-            <label htmlFor="hall">1</label>
+          <div className='input_div'>
+            <legend>Номер зала:</legend>
+            <label htmlFor="hall1">1</label>
             <input
               type="radio"
-              id="hall"
+              id="hall1"
               name="hall"
-              value={formData.hall}
-              onChange={handleChange}
+              value="1"
+              checked={formData.hall === "1"}
+              onChange={handleRadioChange}
             />
-            <label htmlFor="hall">2</label>
+            <label htmlFor="hall2">2</label>
             <input
               type="radio"
-              id="hall"
+              id="hall2"
               name="hall"
-              value={formData.hall}
-              onChange={handleChange}
+              value="2"
+              checked={formData.hall === "2"}
+              onChange={handleRadioChange}
             />
           </div>
-          <div>
+          <div className='input_div'>
             <label htmlFor="message">Доп информация:</label>
             <input
               type="text"
@@ -120,7 +128,7 @@ function Contact() {
               onChange={handleChange}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className='button-30' type="submit">Отправить</button>
         </form>
       </header>
     </div>

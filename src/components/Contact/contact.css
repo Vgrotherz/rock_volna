@@ -1,0 +1,13 @@
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_form {
+    width: min-content;
+}
+
+.input_div {
+    margin-bottom: 1rem;
+}

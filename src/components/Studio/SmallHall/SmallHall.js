@@ -7,20 +7,28 @@ import './smallHall.css';
 
 const SmallHall = () => {
     const [ isLoading, setIsLoading] = useState(false);
+    const [ showPopup, setShowPopup ] = useState(false);
+ 
+    const handleClickButton = () => {
+      setShowPopup(!showPopup);
+    }
 
     return(
         <> 
             <div className="hall_block">
                 <Link to='/big_hall'>
-                    <h3>Расписание Большого зала (№2)</h3>
+                    <h3>Посмотреть расписание Большого зала (№2)</h3>
                 </Link>
                 <h1>Расписание Малого зала (№1)</h1>
                <FetchCSVSmall isLoading={isLoading} setIsLoading={setIsLoading}/>
-               <div>
+               <div className={!showPopup? null : 'contact_form' }>
                     {isLoading? (
                         null
                     ) : (
-                        <BookButton />
+                        <BookButton 
+                            handleClickButton={handleClickButton}
+                            showPopup={showPopup}
+                        />
                     )}
                </div>
             </div>       

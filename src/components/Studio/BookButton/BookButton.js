@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import Contact from "../../Contact/Contact";
 
-const BookButton = () => {
-    const [ showPopup, setShowPopup ] = useState(false);
- 
-    const handleClickButton = () => {
-      setShowPopup(!showPopup);
-    }
+import './bookButton.css';
+
+const BookButton = ({handleClickButton, showPopup}) => {
+    
     return(
         <>
-            <div>
+            <div >
                 { !showPopup? (
-                  <button onClick={handleClickButton}>Записаться на репетицию</button>
+                  <button className='button-30' onClick={handleClickButton}>Записаться на репетицию</button>
                 ) : (
-                  <Contact />
+                  <>
+                    <div class="outer">
+                      <div class="inner">
+                        <label class='label_class' onClick={handleClickButton}>назад</label>
+                      </div>
+                    </div>
+                    <Contact handleClickButton={handleClickButton} />
+                  </>
+                  
                 )}
                 
             </div>
