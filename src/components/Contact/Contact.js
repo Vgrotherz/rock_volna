@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './contact.css';
 
+// import Loading from '../utils/Loading';
+import ContactLoader from '../utils/ContactLoader';
+
 function Contact({ handleClickButton }) {
   const [formData, setFormData] = useState({
     bandName: '',
@@ -9,6 +12,7 @@ function Contact({ handleClickButton }) {
     // hall: '',
     message: ''
   });
+  const [ loader, setLoader ] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,6 +37,7 @@ function Contact({ handleClickButton }) {
     const Sheet_Url = "https://script.google.com/macros/s/AKfycbykAhdWMx2qqy3vlBe2QJOtMcBtQPttjMH2mvp_xFJjgW-1p-Cj3Bsfm-BA5emOwhWH/exec";
     
     try {
+      setLoader(true);
       const response = await fetch(Sheet_Url, {
         method: 'POST',
         body: data,
@@ -51,7 +56,11 @@ function Contact({ handleClickButton }) {
             hall: '',
             message: '',
           });
+          alert('Запись принята, ожидайте обратной связи от администратора')
+          handleClickButton();
+          setFormData(false);
       } else {
+        setFormData(false);
         console.error('Error:', result.error);
       }
       
@@ -62,7 +71,8 @@ function Contact({ handleClickButton }) {
 
   return (
     <div>
-      <header className='header_form'>
+      { !loader? (
+        <header className='header_form'>
         <form onSubmit={handleSubmit} className='contact_form'>
           <div className='input_div'>
             <label htmlFor="bandName">Название группы:</label>
@@ -131,6 +141,12 @@ function Contact({ handleClickButton }) {
           <button className='button-30' type="submit">Отправить</button>
         </form>
       </header>
+      ) : (
+        <>
+          <ContactLoader />
+        </>
+      )}
+      
     </div>
   );
 }
