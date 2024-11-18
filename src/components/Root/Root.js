@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './root.css';
 
 // import Main from '../Main/Main';
@@ -8,13 +8,15 @@ import { Outlet } from 'react-router-dom';
 
 
 function Root() {
+  const [activeTab, setActiveTab] = useState(0);
+  
   return (
     <>
-      <Header /> 
-        <main className='body'>
+      <Header activeTab={activeTab} setActiveTab={setActiveTab}/>
+        <main>
           <Outlet />
         </main>
-      <Footer />
+      <Footer setActiveTab={setActiveTab} />
     </>
   )
 }

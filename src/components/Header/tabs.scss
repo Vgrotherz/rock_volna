@@ -1,0 +1,133 @@
+// refactored
+
+.container {
+    // margin-top: 30px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+  }
+  
+  .tabs {
+    .nav-tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin: 15px 0 0;
+      list-style: none;
+      padding: 0;
+  
+      .tab {
+        width: 70%;
+        text-align: center;
+        padding: 15px 0;
+        background-color: #eee;
+        box-shadow: 0 0 0 1px #ddd;
+        position: relative;
+        cursor: pointer;
+        transition: top 0.2s, background-color 0.2s;
+  
+        &:hover {
+          background-color: #f9f9f9;
+          box-shadow: 0 0 0 1px #ddd;
+        }
+  
+        &.active {
+          width: 150%;
+          top: 0;
+          background: #fff;
+          box-shadow: 1px 1px 0 1px #fff, 0 0px 0 1px #ddd, -1px 1px 0 0px #ddd inset;
+          padding-bottom: 30px;
+  
+          .whiteBlock {
+            display: block;
+          }
+  
+          .fa {
+            color: #cfb87c;
+          }
+  
+          .arrow-down {
+            display: block;
+          }
+        }
+  
+        a {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 1.65em;
+          font-weight: 300;
+          color: #333;
+          text-decoration: none;
+          transition: color 0.2s;
+  
+          &:focus {
+            outline: none;
+          }
+        }
+  
+        .fa {
+          font-size: 40px;
+          width: 100%;
+          padding: 15px 0 5px;
+          color: #666;
+        }
+  
+        .hidden-xs {
+          white-space: nowrap;
+        }
+  
+        .arrow-down {
+          display: none;
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 22px solid #ddd;
+          position: absolute;
+          top: -1px;
+          left: calc(50% - 20px);
+  
+          .arrow-down-inner {
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 12px solid #fff;
+            position: absolute;
+            top: -22px;
+            left: -18px;
+          }
+        }
+  
+        .whiteBlock {
+          display: none;
+          height: 2px;
+          bottom: -2px;
+          background-color: #fff;
+          width: 99%;
+          position: absolute;
+          z-index: 1;
+        }
+      }
+    }
+  
+    .tab-content {
+      border-color: transparent;
+      box-shadow: 0 -2px 0 -1px #fff, 0 0 0 1px #ddd;
+      padding: 30px 15px 15px;
+      position: relative;
+      background-color: #fff;
+  
+      .tab-pane {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+  
+        &.active {
+          display: block;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
