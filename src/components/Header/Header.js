@@ -10,7 +10,7 @@ const Header = ({activeTab, setActiveTab}) => {
       <div className="container">
           <section id="fancyTabWidget" className="tabs">
               <ul className="nav-tabs" role="tablist">
-                  <li
+                  <Link to='/'
                       className={`tab fancyTab ${activeTab === 0 ? 'active' : ''}`}
                       onClick={() => setActiveTab(0)}
                       role="tab"
@@ -26,8 +26,8 @@ const Header = ({activeTab, setActiveTab}) => {
                           <span className="hidden-xs">Cтудия</span>
                       </Link>
                       <div className="whiteBlock"></div>
-                  </li>
-                  <li
+                  </Link>
+                  <Link to='/services'
                       className={`tab fancyTab ${activeTab === 1 ? 'active' : ''}`}
                       onClick={() => setActiveTab(1)}
                       role="tab"
@@ -43,8 +43,8 @@ const Header = ({activeTab, setActiveTab}) => {
                           <span className="hidden-xs">Услуги</span>
                       </Link>
                       <div className="whiteBlock"></div>
-                  </li>
-                  <li
+                  </Link>
+                  <Link to='/video'
                       className={`tab fancyTab ${activeTab === 2 ? 'active' : ''}`}
                       onClick={() => setActiveTab(2)}
                       role="tab"
@@ -60,8 +60,8 @@ const Header = ({activeTab, setActiveTab}) => {
                           <span className="hidden-xs">Видео</span>
                       </Link>
                       <div className="whiteBlock"></div>
-                  </li>
-                  <li
+                  </Link>
+                  <Link to='/about'
                       className={`tab fancyTab ${activeTab === 3 ? 'active' : ''}`}
                       onClick={() => setActiveTab(3)}
                       role="tab"
@@ -77,9 +77,9 @@ const Header = ({activeTab, setActiveTab}) => {
                           <span className="hidden-xs">О нас</span>
                       </Link>
                       <div className="whiteBlock"></div>
-                  </li>
+                  </Link>
               </ul>
-              <div className="tab-content" aria-live="polite">
+              {/* <div className="tab-content" aria-live="polite">
                   <div
                       className={`tab-pane fade ${activeTab === 0 ? 'active in' : ''}`}
                       id="tabBody0"
@@ -120,7 +120,7 @@ const Header = ({activeTab, setActiveTab}) => {
                   >
                       <p>о нас</p>
                   </div>
-              </div>
+              </div> */}
           </section>
       </div>
   );

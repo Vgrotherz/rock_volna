@@ -15,6 +15,9 @@
     /* padding: 10rem; */
     width: 50%;
     height: 30rem;
+    img{
+        width: 20%;
+    }
 }
 
 .hall_block {
@@ -27,13 +30,22 @@
 }
 
 .small_hall {
-    background-image: url('../../media/JY7o2eyJC4w.jpg');
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .pic_text{
+        position: absolute;
+        padding: 10rem;
+    }
 }
 
 .big_hall {
-    background-image: url('../../media/FNYUuzAphFs.jpg');
-    background-size: cover;
+    /* background-image: url('../../media/FNYUuzAphFs.jpg');
+    background-size: cover; */
+}
+
+.big_hall, .small_hall {
+    border: 1px solid black;
 }
 
 .table_block {
