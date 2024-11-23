@@ -1,31 +1,28 @@
 import React from "react"; 
 import { Link} from "react-router-dom";
-import BigGallery from "./Gallery/BigGallery";
+import { BigGallery } from "./Gallery/BigGallery";
+import { SmallGallery } from "./Gallery/BigGallery";
 
 import './studio.scss';
 
 const Studio = () => {
     return(
-        <div className="small_hall">  
-            {/* <Gallery /> */}
-            {/* <div className="studios"> 
-                <div className="studio_block small_hall">
-                    {photoGallSmall.map((photo) => (
-                        <img src={photo.url} alt={photo.title} />
-                    ))}
-                    <Gallery />
-                    <Link to='/small_hall' className="pic_text">Зал 1</Link>
-                </div>
-                <Link to='/big_hall' className="studio_block big_hall">
-                    {photoGallBig.map((photo) => (
-                        <img src={photo.url} alt={photo.title}/>
-                    ))}
-                    <h3 className="pic_text">Зал 2</h3>
-                </Link>
-            </div> */}
-            <BigGallery />
-            <Link to='/small_hall' className="pic_text">Зал 1</Link>
-        </div>
+        <>
+            <div className="big_hall">  
+                <BigGallery />
+                <Link to='/big_hall' className="pic_text">Зал 1</Link>
+            </div>
+            <Link to='/big_hall' className="studio_btn">
+                <button>расписание</button>
+            </Link>
+            <div className="small_hall">
+                <SmallGallery />
+                <Link to='/small_hall' className="pic_text">Зал 2</Link>
+            </div>
+            <Link to='/small_hall' className="studio_btn">
+                <button>расписание</button>
+            </Link>
+        </>
     )
 }
 

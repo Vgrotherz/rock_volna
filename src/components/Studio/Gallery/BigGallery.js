@@ -9,9 +9,16 @@ const photoGallBig = [
   { original: require('../../../media/big/w2tVS-SPGIA.jpg') }
 ];
 
+const photoGallSmall = [
+    { original: require('../../../media/small/JY7o2eyJC4w.jpg') },
+    { original: require('../../../media/small/Op1PgNmkguY.jpg') },
+    { original: require('../../../media/small/UY1xVHxd1NE.jpg') },
+    { original: require('../../../media/small/VujyU8pJ1QY.jpg') },
+    { original: require('../../../media/small/hayHHMNUFss.jpg') }
+]
 
 
-const BigGallery = () => {
+export const BigGallery = () => {
     return(
         <>
             <ImageGallery items={photoGallBig} />
@@ -19,4 +26,10 @@ const BigGallery = () => {
     )
 }
 
-export default BigGallery;
+export const SmallGallery = () => {
+    return(
+        <>
+            <ImageGallery items={photoGallSmall} />
+        </>
+    )
+}

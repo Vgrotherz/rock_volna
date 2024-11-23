@@ -12,7 +12,6 @@
     align-items: center;
     margin: 2rem;
     border: 1px solid white;
-    /* padding: 10rem; */
     width: 50%;
     height: 30rem;
     img{
@@ -25,27 +24,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* height: 45rem; */
     overflow: auto;
 }
 
-.small_hall {
+.small_hall, .big_hall {
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem 0;
     .pic_text{
         position: absolute;
-        padding: 10rem;
     }
 }
 
-.big_hall {
-    /* background-image: url('../../media/FNYUuzAphFs.jpg');
-    background-size: cover; */
-}
-
-.big_hall, .small_hall {
-    border: 1px solid black;
+.studio_btn {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
 }
 
 .table_block {
@@ -59,8 +55,6 @@
     color: rgb(89, 89, 209);
     height: 3.5rem;
     width: 10rem;
-    /* margin-bottom: 1rem; */
-    /* padding: 1rem; */
 }
 
 .contact_container {

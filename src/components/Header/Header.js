@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import './tabs.scss';
 
 const Header = ({activeTab, setActiveTab}) => {
-//   const [activeTab, setActiveTab] = useState(0);
 
   return (
       <div className="container">
           <section id="fancyTabWidget" className="tabs">
               <ul className="nav-tabs" role="tablist">
                   <Link to='/'
-                      className={`tab fancyTab ${activeTab === 0 ? 'active' : ''}`}
+                      className={`tab fancyTab ${activeTab === 0 ? 'active' : ''} ${activeTab === 1 ? 'border_right' : ''}`}
                       onClick={() => setActiveTab(0)}
                       role="tab"
                       aria-controls="tabBody0"
@@ -23,12 +22,12 @@ const Header = ({activeTab, setActiveTab}) => {
                       </div>
                       <Link to='/'>
                           <span className="fa fa-desktop"></span>
-                          <span className="hidden-xs">Cтудия</span>
+                          <span className={`hidden-xs ${activeTab === 0 ? 'active' : ''}`}>Cтудия</span>
                       </Link>
-                      <div className="whiteBlock"></div>
+                      {/* <div className="whiteBlock"></div> */}
                   </Link>
                   <Link to='/services'
-                      className={`tab fancyTab ${activeTab === 1 ? 'active' : ''}`}
+                      className={`tab fancyTab ${(activeTab === 1 ? 'active' : '')} ${activeTab === 0 ? 'border_left' : ''} ${activeTab === 2 ? 'border_right' : ''}`}
                       onClick={() => setActiveTab(1)}
                       role="tab"
                       aria-controls="tabBody1"
@@ -42,10 +41,10 @@ const Header = ({activeTab, setActiveTab}) => {
                           <span className="fa fa-firefox"></span>
                           <span className="hidden-xs">Услуги</span>
                       </Link>
-                      <div className="whiteBlock"></div>
+                      {/* <div className="whiteBlock"></div> */}
                   </Link>
                   <Link to='/video'
-                      className={`tab fancyTab ${activeTab === 2 ? 'active' : ''}`}
+                      className={`tab fancyTab ${activeTab === 2 ? 'active' : ''} ${activeTab === 1 ? 'border_left' : ''} ${activeTab === 3 ? 'border_right' : ''}`}
                       onClick={() => setActiveTab(2)}
                       role="tab"
                       aria-controls="tabBody2"
@@ -59,10 +58,10 @@ const Header = ({activeTab, setActiveTab}) => {
                           <span className="fa fa-folder"></span>
                           <span className="hidden-xs">Видео</span>
                       </Link>
-                      <div className="whiteBlock"></div>
+                      {/* <div className="whiteBlock"></div> */}
                   </Link>
                   <Link to='/about'
-                      className={`tab fancyTab ${activeTab === 3 ? 'active' : ''}`}
+                      className={`tab fancyTab ${activeTab === 3 ? 'active' : ''} ${activeTab === 2 ? 'border_left' : ''} `}
                       onClick={() => setActiveTab(3)}
                       role="tab"
                       aria-controls="tabBody3"
@@ -76,51 +75,9 @@ const Header = ({activeTab, setActiveTab}) => {
                           <span className="fa fa-folder"></span>
                           <span className="hidden-xs">О нас</span>
                       </Link>
-                      <div className="whiteBlock"></div>
+                      {/* <div className="whiteBlock"></div> */}
                   </Link>
               </ul>
-              {/* <div className="tab-content" aria-live="polite">
-                  <div
-                      className={`tab-pane fade ${activeTab === 0 ? 'active in' : ''}`}
-                      id="tabBody0"
-                      role="tabpanel"
-                      aria-labelledby="tab0"
-                      aria-hidden={activeTab !== 0}
-                      tabIndex="0"
-                  >
-                      <p>фото</p>
-                  </div>
-                  <div
-                      className={`tab-pane fade ${activeTab === 1 ? 'active in' : ''}`}
-                      id="tabBody1"
-                      role="tabpanel"
-                      aria-labelledby="tab1"
-                      aria-hidden={activeTab !== 1}
-                      tabIndex="0"
-                  >
-                      <p>Саня работает</p>
-                  </div>
-                  <div
-                      className={`tab-pane fade ${activeTab === 2 ? 'active in' : ''}`}
-                      id="tabBody2"
-                      role="tabpanel"
-                      aria-labelledby="tab2"
-                      aria-hidden={activeTab !== 2}
-                      tabIndex="0"
-                  >
-                      <p>видево</p>
-                  </div>
-                  <div
-                      className={`tab-pane fade ${activeTab === 3 ? 'active in' : ''}`}
-                      id="tabBody3"
-                      role="tabpanel"
-                      aria-labelledby="tab3"
-                      aria-hidden={activeTab !== 3}
-                      tabIndex="0"
-                  >
-                      <p>о нас</p>
-                  </div>
-              </div> */}
           </section>
       </div>
   );
