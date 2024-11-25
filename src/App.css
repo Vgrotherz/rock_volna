@@ -1,5 +1,11 @@
 body {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     background-image: url('./media/45_enhanced.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+
 }
+

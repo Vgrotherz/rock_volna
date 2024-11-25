@@ -13,11 +13,13 @@ import SmallHall from "./components/Studio/SmallHall/SmallHall";
 import About from "./components/About/About";
 import Video from "./components/Video/Video";
 import Services from "./components/Services/Services";
+import Shedule from "./components/Shedule/Shedule";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root /> }>
         <Route index element={ <Studio /> } />
         {/* <Route path="/studio" element={ <Studio /> } /> */}
+        <Route path="/shedule" element={ <Shedule /> } />
         <Route path="/big_hall" element={ <BigHall /> } />
         <Route path="/small_hall" element={ <SmallHall /> } />
         <Route path="/about" element={ <About /> } />

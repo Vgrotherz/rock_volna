@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
 
-function FetchCSVSmall({isLoading, setIsLoading}) {
+function FetchCSVSmall({isLoading2, setIsLoading2}) {
   const [csvData, setCsvData] = useState([]);
   // const [ isLoading, setIsLoading] = useState(false);
 
@@ -13,7 +13,7 @@ function FetchCSVSmall({isLoading, setIsLoading}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading(true);
+        setIsLoading2(true);
         const response = await axios.get(`${csvUrl}`);
         const parsedData = parse(response.data, { header: false }); // парсинг CSV с заголовками
         const data = parsedData.data;
@@ -25,7 +25,7 @@ function FetchCSVSmall({isLoading, setIsLoading}) {
         const dataBlock = selectedRows.map(row => row.slice(0, 6));
 
         setCsvData(dataBlock); // сохранение данных в состоянии
-        setIsLoading(false);
+        setIsLoading2(false);
         console.log('small hall data', dataBlock)
       } catch (error) {
         console.error('Error fetching CSV data: ', error);
@@ -48,7 +48,7 @@ function FetchCSVSmall({isLoading, setIsLoading}) {
 
   return (
     <div className='table_container'>
-      {isLoading? (
+      {isLoading2? (
         <Loading />
       ) : (
         <table className='table_block'>

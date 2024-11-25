@@ -1,7 +1,8 @@
 import React from "react"; 
 import { Link} from "react-router-dom";
-import { BigGallery } from "./Gallery/BigGallery";
-import { SmallGallery } from "./Gallery/BigGallery";
+import { BigGallery } from "./Gallery/Gallery";
+import { SmallGallery } from "./Gallery/Gallery";
+import SheduleBtn from "../utils/SheduleBtn";
 
 import './studio.scss';
 
@@ -13,14 +14,14 @@ const Studio = () => {
                 <Link to='/big_hall' className="pic_text">Зал 1</Link>
             </div>
             <Link to='/big_hall' className="studio_btn">
-                <button>расписание</button>
+                <SheduleBtn />
             </Link>
             <div className="small_hall">
                 <SmallGallery />
                 <Link to='/small_hall' className="pic_text">Зал 2</Link>
             </div>
             <Link to='/small_hall' className="studio_btn">
-                <button>расписание</button>
+                <SheduleBtn />
             </Link>
         </>
     )
