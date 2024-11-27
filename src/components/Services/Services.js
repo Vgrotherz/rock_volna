@@ -1,7 +1,7 @@
 import React from "react";
 import alexOnBike from '../../media/AlexUslugi.jpg';
 
-import './services.scss'
+import './services.scss';
 
 
 
