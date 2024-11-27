@@ -41,21 +41,23 @@
         }
   
         &.active {
-          width: 150%;
+          width: 100%;
           top: 0;
           background: #fff;
           background: inherit;
           box-shadow: 0px -1px 0 0px #ddd;
           padding-bottom: 30px;
           .hidden-xs{
+            text-shadow: 0px 2px 1px #000000;
             color: white;
+            font-size: unset;
           }
           .whiteBlock {
             display: block;
           }
   
           .fa {
-            color: #cfb87c;
+            color: #ff700a;;
           }
   
           .arrow-down {
@@ -85,6 +87,7 @@
   
         .hidden-xs {
           white-space: nowrap;
+          font-size: initial;
         }
   
         .arrow-down {
@@ -93,7 +96,7 @@
           height: 0;
           border-left: 20px solid transparent;
           border-right: 20px solid transparent;
-          border-top: 22px solid #ddd;
+          border-top: 22px solid #cf000f;
           position: absolute;
           top: -1px;
           left: calc(50% - 20px);
@@ -103,7 +106,7 @@
             height: 0;
             border-left: 18px solid transparent;
             border-right: 18px solid transparent;
-            border-top: 12px solid #fff;
+            border-top: 12px solid #010102;;
             position: absolute;
             top: -22px;
             left: -18px;

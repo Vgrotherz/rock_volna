@@ -10,6 +10,8 @@
 
 # production
 
+#backUpForEmmergency
+/src/backUp
 
 # misc
 .DS_Store

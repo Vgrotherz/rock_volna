@@ -7,14 +7,14 @@ const BookButton = ({handleClickButton, showPopup}) => {
     
     return(
         <>
-            <div >
+            <div className="flex_center">
                 { !showPopup? (
                   <button className='button-30' onClick={handleClickButton}>Записаться на репетицию</button>
                 ) : (
                   <>
-                    <div class="outer">
-                      <div class="inner">
-                        <label class='label_class' onClick={handleClickButton}>назад</label>
+                    <div className="outer">
+                      <div className="inner">
+                        <label className='label_class' onClick={handleClickButton}>назад</label>
                       </div>
                     </div>
                     <Contact handleClickButton={handleClickButton} />

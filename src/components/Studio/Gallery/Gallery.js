@@ -17,11 +17,17 @@ const photoGallSmall = [
     { original: require('../../../media/small/hayHHMNUFss.jpg') }
 ]
 
+const galleryProps = {
+    // autoPlay: true,
+    showBullets: true,
+    showPlayButton: false
+}
+
 
 export const BigGallery = () => {
     return(
         <>
-            <ImageGallery items={photoGallBig} />
+            <ImageGallery items={photoGallBig} {...galleryProps} />
         </>
     )
 }
@@ -29,7 +35,7 @@ export const BigGallery = () => {
 export const SmallGallery = () => {
     return(
         <>
-            <ImageGallery items={photoGallSmall} />
+            <ImageGallery items={photoGallSmall} {...galleryProps} />
         </>
     )
 }

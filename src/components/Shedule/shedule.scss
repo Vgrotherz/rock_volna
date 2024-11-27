@@ -1,3 +1,39 @@
 .tbody_font {
     background: aliceblue;
+    background: #f0f8ffe6;
 }
+
+.hall_block{
+    .blurBackName{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f0f8ff9c;
+        height: 4rem;
+        backdrop-filter: hue-rotate(127deg);
+        h3{
+            color: black;
+        }
+    }
+    .contact_container{
+        z-index: 100;
+        color: black;
+    }
+}
+
+// для блока экрана во время записи
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 10; /* Ensures it stays above other elements */
+}
+
+.no-scroll {
+    overflow: hidden; /* Prevent scrolling when popup is open */
+}
+

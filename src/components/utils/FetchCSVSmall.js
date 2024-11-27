@@ -47,7 +47,7 @@ function FetchCSVSmall({isLoading2, setIsLoading2}) {
   };
 
   return (
-    <div className='table_container'>
+    <div className='table_container referenceWidth'>
       {isLoading2? (
         <Loading />
       ) : (
