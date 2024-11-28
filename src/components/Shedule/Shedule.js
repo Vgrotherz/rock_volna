@@ -12,24 +12,29 @@ const Shedule = () => {
     const [ isLoading2, setIsLoading2 ] = useState(false);
     const [showPopupSmall, setShowPopupSmall] = useState(false); 
     const [showPopupBig, setShowPopupBig] = useState(false); 
-
+    const [ disableScroll, setDisableScroll ] = useState(false);
+ 
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
         setShowPopupBig(false); // Ensure Big Hall Popup is closed
+        setDisableScroll(!disableScroll);
     };
 
     const handleClickButtonBig = () => {
         setShowPopupBig(!showPopupBig); // Toggle Big Hall Popup
         setShowPopupSmall(false); // Ensure Small Hall Popup is closed
+        setDisableScroll(!disableScroll);
     };
 
     const slideToBig = (e) => {
+        if (disableScroll) return;
         e.preventDefault();
         // behevior auto - мгновенно вверх
         window.scrollTo({ top: 1000, behavior: 'smooth' });
     }
 
     const slideToSmall = (e) => {
+        if (disableScroll) return;
         e.preventDefault();
         // behevior auto - мгновенно вверх
         window.scrollTo({ top: 0, behavior: 'smooth' });
