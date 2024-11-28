@@ -3,8 +3,6 @@ import alexOnBike from '../../media/AlexUslugi.jpg';
 
 import './services.scss';
 
-
-
 const Services = () => {
     return(
         <>

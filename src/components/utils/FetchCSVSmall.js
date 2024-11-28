@@ -26,7 +26,7 @@ function FetchCSVSmall({isLoading2, setIsLoading2}) {
 
         setCsvData(dataBlock); // сохранение данных в состоянии
         setIsLoading2(false);
-        console.log('small hall data', dataBlock)
+        // console.log('small hall data', dataBlock)
       } catch (error) {
         console.error('Error fetching CSV data: ', error);
       }

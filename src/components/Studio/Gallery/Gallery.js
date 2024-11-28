@@ -20,7 +20,8 @@ const photoGallSmall = [
 const galleryProps = {
     // autoPlay: true,
     showBullets: true,
-    showPlayButton: false
+    showPlayButton: false,
+    showFullscreenButton: false
 }
 
 
