@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './tabs.scss';
 
 const Header = ({ activeTab, setActiveTab }) => {
+    const [ slideUp, setSlideUp ] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setSlideUp(true);
+        }, 2500)
+        return () => clearTimeout(timer);
+    }, [])
+
+    const handleOnClickSlideDown = () => {
+        setSlideUp(false);
+        setTimeout(() => {
+            setSlideUp(true);
+        }, 2500);
+    }
+
     const tabs = [
         { path: "/", icon: "fa-desktop", label: "Студия" },
         { path: "/services", icon: "fa-firefox", label: "Услуги" },
@@ -11,9 +27,12 @@ const Header = ({ activeTab, setActiveTab }) => {
     ];
 
     return (
-        <div className="container">
+        <div
+            className={slideUp? 'container slide_up' : 'container'}
+            onClick={handleOnClickSlideDown}
+        >
             <section id="fancyTabWidget" className="tabs">
-                <ul className="nav-tabs" role="tablist">
+                <ul className="nav-tabs" role="tablist" >
                     {tabs.map((tab, index) => (
                         <Link
                             key={index}
@@ -27,7 +46,7 @@ const Header = ({ activeTab, setActiveTab }) => {
                             aria-selected={activeTab === index}
                             tabIndex="0"
                         >
-                            <div className="arrow-down">
+                            <div className={!slideUp? 'arrow-down arrow_slide_up' : 'arrow-down arrow_slide_down'} >
                                 <div className="arrow-down-inner"></div>
                             </div>
                             <Link to={tab.path}>

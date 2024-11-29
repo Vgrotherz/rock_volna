@@ -9,7 +9,7 @@ const Services = () => {
             <div className="services_block"> 
                 <h2>Это Александр на все руки мастер, звукареж и ваще</h2>
                 <div className="services_images">
-                    <img src={alexOnBike}></img>
+                    <img src={alexOnBike} alt="Alex on bike"></img>
                 </div>
                 <p>может всякое</p>
                 <p>Перечень всякого: </p>

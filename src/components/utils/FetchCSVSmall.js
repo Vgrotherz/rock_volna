@@ -33,7 +33,7 @@ function FetchCSVSmall({isLoading2, setIsLoading2}) {
     };
 
     fetchData();
-  }, []);
+  }, [setIsLoading2]);
 
   const cleanCell = (cell) => {
     // Убираем лишние пробелы и заменяем \n на <br />

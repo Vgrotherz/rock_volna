@@ -35,7 +35,7 @@ function FetchCSVBig({isLoading, setIsLoading}) {
     };
 
     fetchData();
-  }, []);
+  }, [setIsLoading]);
 
   const cleanCell = (cell) => {
     // Убираем лишние пробелы и заменяем \n на <br />
