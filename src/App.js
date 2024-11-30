@@ -6,7 +6,6 @@ import './reset.css';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements,Route } from 'react-router-dom'
 
 import Root from './components/Root/Root';
-import FirstPage from "./components/FirstPage/FirstPage";
 import Studio from "./components/Studio/Studio";
 import BigHall from "./components/Studio/BigHall/BigHall";
 import SmallHall from "./components/Studio/SmallHall/SmallHall";

@@ -6,15 +6,18 @@ const Header = ({ activeTab, setActiveTab }) => {
     const [ slideUp, setSlideUp ] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        window.slideTimer = setTimeout(() => {
             setSlideUp(true);
-        }, 2500)
-        return () => clearTimeout(timer);
+        }, 2500);
+
+        return () => clearTimeout(window.slideTimer);;
     }, [])
 
     const handleOnClickSlideDown = () => {
         setSlideUp(false);
-        setTimeout(() => {
+
+        clearTimeout(window.slideTimer); // очистка перед новым таймером
+        window.slideTimer = setTimeout(() => {
             setSlideUp(true);
         }, 2500);
     }

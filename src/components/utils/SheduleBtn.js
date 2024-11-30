@@ -6,7 +6,7 @@ import './sheduleBtn.scss';
 const SheduleBtn = () => {
     return (
         <>
-            <Link to='/shedule' class="animated-button1">
+            <Link to='/shedule' className="animated-button1">
                 <span></span>
                 <span></span>
                 <span></span>
