@@ -10,7 +10,7 @@ const Header = ({ activeTab, setActiveTab }) => {
             setSlideUp(true);
         }, 2500);
 
-        return () => clearTimeout(window.slideTimer);;
+        return () => clearTimeout(window.slideTimer);
     }, [])
 
     const handleOnClickSlideDown = () => {

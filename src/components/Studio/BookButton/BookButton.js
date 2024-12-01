@@ -3,7 +3,7 @@ import Contact from "../../Contact/Contact";
 
 import './bookButton.css';
 
-const BookButton = ({handleClickButton, showPopup}) => {
+const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTimeBig}) => {
     
     return(
         <>
@@ -17,7 +17,7 @@ const BookButton = ({handleClickButton, showPopup}) => {
                         <label className='label_class' onClick={handleClickButton}>назад</label>
                       </div>
                     </div>
-                    <Contact handleClickButton={handleClickButton} />
+                    <Contact handleClickButton={handleClickButton} selectedTimeSmall={selectedTimeSmall} selectedTimeBig={selectedTimeBig}/>
                   </>
                   
                 )}

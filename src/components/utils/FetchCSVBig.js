@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
 
-function FetchCSVBig({isLoading, setIsLoading}) {
+function FetchCSVBig({isLoading, setIsLoading, onCellClickBig}) {
   const [csvData, setCsvData] = useState([]);
   // const [ isLoading, setIsLoading] = useState(false);
 
@@ -48,6 +48,15 @@ function FetchCSVBig({isLoading, setIsLoading}) {
     ));
   };
 
+  const handleCellClickBig = (day, time, cell) => {
+    if (!cell.trim()) {
+      // Trigger the callback with formatted time (e.g., "пн с 12-14")
+      onCellClickBig(`${day} с ${time}`)
+    }
+  };
+
+
+
   return (
     <div className='table_container'>
       {isLoading? (
@@ -55,18 +64,31 @@ function FetchCSVBig({isLoading, setIsLoading}) {
       ) : (
         <table className='table_block'>
             <tbody className='tbody_font'>
-            {csvData.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                    {}
-                {row.map((cell, cellIndex) => (
-                    <td key={cellIndex} className='csv_td'>{cleanCell(cell)}</td>
-                ))}
-                </tr>
-            ))}
+              {csvData.map((row, rowIndex) => {
+                // Extract day from the first cell of each row
+                const day = row[0];
+                return (
+                  <tr key={rowIndex}>
+                    {row.map((cell, cellIndex) => {
+                      const isFirstCell = cellIndex === 0;
+                      const time = !isFirstCell ? csvData[0][cellIndex] : ''; // Get time from the first row
+                      return (
+                          <td key={cellIndex}
+                          className={`csv_td ${!cell.trim() && !isFirstCell ? 'clickable' : ''}`} // Highlight clickable cells
+                          onClick={() =>
+                            !cell.trim() && !isFirstCell && handleCellClickBig(day, time, cell)
+                          }
+                        >
+                          {cleanCell(cell)}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
             </tbody>
         </table>
-      ) }
-      
+      )} 
     </div>
   );
 }

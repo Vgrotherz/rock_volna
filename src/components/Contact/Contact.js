@@ -4,12 +4,13 @@ import './contact.css';
 // import Loading from '../utils/Loading';
 import ContactLoader from '../utils/ContactLoader';
 
-function Contact({ handleClickButton }) {
+function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig }) {
   const [formData, setFormData] = useState({
     bandName: '',
     email: '',
     phoneNumber: '',
     // hall: '',
+    time: selectedTimeSmall || selectedTimeBig ||  '',
     message: ''
   });
   const [ loader, setLoader ] = useState(false);
@@ -32,6 +33,7 @@ function Contact({ handleClickButton }) {
     data.append('email', formData.email);
     data.append('phoneNumber', formData.phoneNumber);
     data.append('hall', formData.hall);
+    data.append('time', formData.time);
     data.append('message', formData.message);
   
     const Sheet_Url = "https://script.google.com/macros/s/AKfycbykAhdWMx2qqy3vlBe2QJOtMcBtQPttjMH2mvp_xFJjgW-1p-Cj3Bsfm-BA5emOwhWH/exec";
@@ -54,6 +56,7 @@ function Contact({ handleClickButton }) {
             email: '',
             phoneNumber: '',
             hall: '',
+            time: '',
             message: '',
           });
           alert('Запись принята, ожидайте обратной связи от администратора')
@@ -127,6 +130,17 @@ function Contact({ handleClickButton }) {
               checked={formData.hall === "2"}
               onChange={handleRadioChange}
             />
+          </div>
+          <div className='input_div'>
+          <label htmlFor="time">Желаемое время и день:</label>
+            <input
+              type="text"
+              id="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+            />
+
           </div>
           <div className='input_div'>
             <label htmlFor="message">Доп информация:</label>
