@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
 
-function FetchCSVSmall({isLoading2, setIsLoading2, onCellClickSmall}) {
+function FetchCSVSmall({isLoading2, setIsLoading2, onCellClickSmall, slideToSmall}) {
   const [csvData, setCsvData] = useState([]);
   // const [ isLoading, setIsLoading] = useState(false);
 
@@ -59,7 +59,7 @@ function FetchCSVSmall({isLoading2, setIsLoading2, onCellClickSmall}) {
         <Loading />
       ) : (
         <table className='table_block'>
-          <tbody className='tbody_font'>
+          <tbody className='tbody_font' onClick={slideToSmall}>
             {csvData.map((row, rowIndex) => {
               // Extract day from the first cell of each row
               const day = row[0];

@@ -15,6 +15,7 @@ const Shedule = () => {
     const [ disableScroll, setDisableScroll ] = useState(false);
     const [ selectedTimeSmall, setSelectedTimeSmall ] = useState("");
     const [ selectedTimeBig, setSelectedTimeBig ] = useState("");
+    const [ selectedHall, setSelectedHall ] = useState('');
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
@@ -78,7 +79,7 @@ const Shedule = () => {
                 <div className="blurBackName">
                     <h3>Расписание Малого зала (№1)</h3>
                 </div>
-                <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall}/>
+                <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
                 <div className={!showPopupSmall? null : 'contact_container'}>
                     {isLoading? (
                         null
