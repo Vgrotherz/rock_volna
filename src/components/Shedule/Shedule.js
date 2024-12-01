@@ -15,7 +15,7 @@ const Shedule = () => {
     const [ disableScroll, setDisableScroll ] = useState(false);
     const [ selectedTimeSmall, setSelectedTimeSmall ] = useState("");
     const [ selectedTimeBig, setSelectedTimeBig ] = useState("");
-    const [ selectedHall, setSelectedHall ] = useState('');
+    const [ selectedHallSmall, setSelectedHallSmall ] = useState("");
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
@@ -25,6 +25,7 @@ const Shedule = () => {
         if(selectedTimeSmall !== "") {
             setSelectedTimeSmall("");
         }
+        
     };
 
     const handleClickButtonBig = () => {
@@ -35,6 +36,9 @@ const Shedule = () => {
         if(selectedTimeBig !== "") {
             setSelectedTimeBig("");
         }
+        // if(selectedHallSmall !== ""){
+        //     setSelectedHallSmall("");
+        // }
     };
 
     const slideToBig = (e) => {
@@ -51,8 +55,9 @@ const Shedule = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    const handleCellClickSmall = (time) => {
+    const handleCellClickSmall = (time, hall) => {
         setSelectedTimeSmall(time); // Update selected time
+        setSelectedHallSmall("1");
         setShowPopupSmall(true); // Open popup for booking
       };
 
@@ -85,9 +90,11 @@ const Shedule = () => {
                         null
                     ) : (
                         <BookButton 
+                            slideToSmall={slideToSmall}
                             handleClickButton={handleClickButtonSmall}
                             showPopup={showPopupSmall}
                             selectedTimeSmall={selectedTimeSmall}
+                            selectedHallSmall={selectedHallSmall}
                         />
                     )}
                </div>

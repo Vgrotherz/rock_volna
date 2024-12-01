@@ -4,7 +4,7 @@ import './contact.css';
 // import Loading from '../utils/Loading';
 import ContactLoader from '../utils/ContactLoader';
 
-function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig }) {
+function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall }) {
   const [formData, setFormData] = useState({
     bandName: '',
     email: '',
@@ -21,7 +21,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig }) {
 
   const handleRadioChange = (e) => {
     // Установите значение hall в зависимости от выбранного значения радиокнопки
-    setFormData({ ...formData, hall: e.target.value });
+    setFormData({ ...formData, hall: selectedHallSmall || e.target.value });
   };
 
   const handleSubmit = async (e) => {
