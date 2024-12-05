@@ -8,7 +8,7 @@ const Header = ({ activeTab, setActiveTab }) => {
     useEffect(() => {
         window.slideTimer = setTimeout(() => {
             setSlideUp(true);
-        }, 2500);
+        }, 4500);
 
         return () => clearTimeout(window.slideTimer);
     }, [])
@@ -19,7 +19,7 @@ const Header = ({ activeTab, setActiveTab }) => {
         clearTimeout(window.slideTimer); // очистка перед новым таймером
         window.slideTimer = setTimeout(() => {
             setSlideUp(true);
-        }, 2500);
+        }, 4500);
     }
 
     const tabs = [

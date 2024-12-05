@@ -4,12 +4,12 @@ import './contact.css';
 // import Loading from '../utils/Loading';
 import ContactLoader from '../utils/ContactLoader';
 
-function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall }) {
+function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall, selectedHallBig}) {
   const [formData, setFormData] = useState({
     bandName: '',
     email: '',
     phoneNumber: '',
-    // hall: '',
+    hall: selectedHallSmall || selectedHallBig ||  '',
     time: selectedTimeSmall || selectedTimeBig ||  '',
     message: ''
   });
@@ -20,8 +20,8 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
   };
 
   const handleRadioChange = (e) => {
-    // Установите значение hall в зависимости от выбранного значения радиокнопки
-    setFormData({ ...formData, hall: selectedHallSmall || e.target.value });
+    // Установка значения hall в зависимости от выбранного значения радиокнопки
+    setFormData({ ...formData, hall: e.target.value });
   };
 
   const handleSubmit = async (e) => {

@@ -16,16 +16,21 @@ const Shedule = () => {
     const [ selectedTimeSmall, setSelectedTimeSmall ] = useState("");
     const [ selectedTimeBig, setSelectedTimeBig ] = useState("");
     const [ selectedHallSmall, setSelectedHallSmall ] = useState("");
+    const [ selectedHallBig, setSelectedHallBig ] = useState("");
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
         setShowPopupBig(false); // Ensure Big Hall Popup is closed
         setDisableScroll(!disableScroll);
-        // очистка стейта времени, если там что то уже есть при нажатии на кнопку записи. а не на клетку таблицы
-        if(selectedTimeSmall !== "") {
+        // очистка стейта времени и зала, если там что то уже есть при нажатии на кнопку записи. а не на клетку таблицы
+        if(selectedTimeSmall || selectedTimeBig !== "") {
             setSelectedTimeSmall("");
+            setSelectedTimeBig("")
         }
-        
+        if(selectedHallSmall || selectedHallBig !== "") {
+            setSelectedHallSmall("");
+            setSelectedHallBig("")
+        }
     };
 
     const handleClickButtonBig = () => {
@@ -36,33 +41,37 @@ const Shedule = () => {
         if(selectedTimeBig !== "") {
             setSelectedTimeBig("");
         }
-        // if(selectedHallSmall !== ""){
-        //     setSelectedHallSmall("");
-        // }
+        if(selectedTimeSmall || selectedTimeBig !== "") {
+            setSelectedTimeSmall("");
+            setSelectedTimeBig("")
+        }
+        if(selectedHallSmall || selectedHallBig !== "") {
+            setSelectedHallSmall("");
+            setSelectedHallBig("")
+        }
     };
 
     const slideToBig = (e) => {
         if (disableScroll) return;
         e.preventDefault();
-        // behevior auto - мгновенно вверх
         window.scrollTo({ top: 1000, behavior: 'smooth' });
     }
 
     const slideToSmall = (e) => {
         if (disableScroll) return;
         e.preventDefault();
-        // behevior auto - мгновенно вверх
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    const handleCellClickSmall = (time, hall) => {
+    const handleCellClickSmall = (time) => {
         setSelectedTimeSmall(time); // Update selected time
-        setSelectedHallSmall("1");
+        setSelectedHallSmall('1') // авто зал 1 
         setShowPopupSmall(true); // Open popup for booking
       };
 
     const handleCellClickBig = (time) => {
         setSelectedTimeBig(time);
+        setSelectedHallBig('2'); // авто зал 2
         setShowPopupBig(true);
     };
 
@@ -80,7 +89,7 @@ const Shedule = () => {
     return(
         <>
             {(showPopupSmall || showPopupBig) && <div className="overlay"></div>}
-            <div className={isLoading? 'hall_block' : "hall_block active"} >
+            <div className={isLoading? 'hall_block small_hall_container' : "hall_block active"} >
                 <div className="blurBackName">
                     <h3>Расписание Малого зала (№1)</h3>
                 </div>
@@ -99,7 +108,7 @@ const Shedule = () => {
                     )}
                </div>
             </div>
-            <div className={isLoading?  'hall_block' : "hall_block active"}>
+            <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
                 <div className="blurBackName">
                     <h3 onClick={slideToBig}>Расписание Большого зала (№2)</h3>
                 </div>
@@ -112,6 +121,7 @@ const Shedule = () => {
                             handleClickButton={handleClickButtonBig}
                             showPopup={showPopupBig}
                             selectedTimeBig={selectedTimeBig}
+                            selectedHallBig={selectedHallBig}
                         />
                     )}
                </div>
