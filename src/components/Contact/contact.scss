@@ -1,0 +1,40 @@
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_form {
+    width: min-content;
+}
+
+.input_div {
+    margin-bottom: 1rem;
+    input{
+        height: 21px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px #999;
+    }
+    textarea{
+        height: 36px;
+        width: 97%;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px #999;
+    }
+    .radio_btns{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        height: 1.3rem;
+        align-items: center;
+        .radio_circle{
+            box-shadow: none;
+            height: initial;
+            margin: 0 6px 3px 7px;
+        }
+    }
+    
+    
+}

@@ -3,7 +3,7 @@ import Contact from "../../Contact/Contact";
 
 import './bookButton.css';
 
-const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTimeBig, slideToSmall, selectedHallSmall, selectedHallBig}) => {
+const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTimeBig, slideToSmall, selectedHallSmall, selectedHallBig, handleClosePopup }) => {
 
     const handleSlideAndClickSmall = (e) => {
       if (slideToSmall) {
@@ -21,7 +21,7 @@ const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTi
                   <button className='button-30' onClick={handleSlideAndClickSmall}>Записаться на репетицию</button>
                 ) : (
                   <>
-                    <div className="outer">
+                    <div className="outer" onClick={handleClosePopup}>
                       <div className="inner">
                         <label className='label_class' onClick={handleClickButton}>назад</label>
                       </div>

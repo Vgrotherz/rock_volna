@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './contact.css';
+import './contact.scss';
 
 // import Loading from '../utils/Loading';
 import ContactLoader from '../utils/ContactLoader';
@@ -102,34 +102,37 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
           <div className='input_div'>
             <label htmlFor="phoneNumber">Телефон для связи:</label>
             <input
-              type="tel"
+              type="number"
               id="phoneNumber"
               name="phoneNumber"
               value={formData.phoneNumber}
               onChange={handleChange}
+              maxlength="11" size="11"
               required
             />
           </div>
           <div className='input_div'>
             <legend>Номер зала:</legend>
-            <label htmlFor="hall1">1</label>
-            <input
-              type="radio"
-              id="hall1"
-              name="hall"
-              value="1"
-              checked={formData.hall === "1"}
-              onChange={handleRadioChange}
-            />
-            <label htmlFor="hall2">2</label>
-            <input
-              type="radio"
-              id="hall2"
-              name="hall"
-              value="2"
-              checked={formData.hall === "2"}
-              onChange={handleRadioChange}
-            />
+            <div className='radio_btns'>
+              <label htmlFor="hall1">1</label>
+              <input className='radio_circle'
+                type="radio"
+                id="hall1"
+                name="hall"
+                value="1"
+                checked={formData.hall === "1"}
+                onChange={handleRadioChange}
+              />
+              <label htmlFor="hall2">2</label>
+              <input className='radio_circle'
+                type="radio"
+                id="hall2"
+                name="hall"
+                value="2"
+                checked={formData.hall === "2"}
+                onChange={handleRadioChange}
+              />
+            </div>
           </div>
           <div className='input_div'>
           <label htmlFor="time">Желаемое время и день:</label>
@@ -144,7 +147,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
           </div>
           <div className='input_div'>
             <label htmlFor="message">Доп информация:</label>
-            <input
+            <textarea
               type="text"
               id="message"
               name="message"

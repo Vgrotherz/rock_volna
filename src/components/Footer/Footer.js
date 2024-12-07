@@ -1,7 +1,7 @@
 import React from 'react';
 import BackBtn from '../utils/BackBtn';
 
-import './footer.css';
+import './footer.scss';
 
 const Footer = ({ setActiveTab }) => {
     return(

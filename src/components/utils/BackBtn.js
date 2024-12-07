@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
 
+import './backBtn.scss';
+
 const BackBtn = ({ setActiveTab }) => {
     const navigate = useNavigate()
 
@@ -14,7 +16,7 @@ const BackBtn = ({ setActiveTab }) => {
 
     return(
         <>
-            <button onClick={goHome}>На главную</button>
+            <button onClick={goHome} className="back_btn">На главную</button>
         </>
     )
 }

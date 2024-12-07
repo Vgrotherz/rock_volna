@@ -84,6 +84,9 @@ const Shedule = () => {
         }
     }, [showPopupSmall, showPopupBig]);
 
+    const handleClosePopup = () => {
+        setDisableScroll(false);
+    }
 
 
     return(
@@ -104,6 +107,7 @@ const Shedule = () => {
                             showPopup={showPopupSmall}
                             selectedTimeSmall={selectedTimeSmall}
                             selectedHallSmall={selectedHallSmall}
+                            handleClosePopup={handleClosePopup}
                         />
                     )}
                </div>
@@ -122,6 +126,7 @@ const Shedule = () => {
                             showPopup={showPopupBig}
                             selectedTimeBig={selectedTimeBig}
                             selectedHallBig={selectedHallBig}
+                            handleClosePopup={handleClosePopup}
                         />
                     )}
                </div>
