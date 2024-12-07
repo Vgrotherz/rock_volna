@@ -23,12 +23,12 @@ const Header = ({ activeTab, setActiveTab }) => {
     }
 
     const tabs = [
-        { path: "/", icon: "fa-desktop", label: "Студия" },
-        { path: "/services", icon: "fa-firefox", label: "Услуги" },
-        { path: "/video", icon: "fa-folder", label: "Видео" },
-        { path: "/about", icon: "fa-folder", label: "О нас" }
+        { path: "/", icon: "fa-solid fa-microphone", label: "Студия" },
+        { path: "/services", icon: "fa-solid fa-people-arrows", label: "Услуги" },
+        { path: "/video", icon: "fa-solid fa-video", label: "Видео" },
+        { path: "/about", icon: "fa-solid fa-users", label: "О нас" }
     ];
-
+    
     return (
         <div
             className={slideUp? 'container slide_up' : 'container'}
