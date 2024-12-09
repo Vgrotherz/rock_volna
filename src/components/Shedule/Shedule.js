@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FetchCSVBig from "../utils/FetchCSVBig";
 import FetchCSVSmall from "../utils/FetchCSVSmall";
 import BookButton from "../Studio/BookButton/BookButton";
+import Cancel from "./Cancel";
 
 import './shedule.scss';
 
@@ -88,6 +89,9 @@ const Shedule = () => {
         setDisableScroll(false);
     }
 
+    // const handleCancel = () => {
+
+    // }
 
     return(
         <>
@@ -118,7 +122,7 @@ const Shedule = () => {
                 </div>
                 <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
                 <div className={!showPopupBig? null : 'contact_container' }>
-                    {isLoading? (
+                    {isLoading2? (
                         null
                     ) : (
                         <BookButton 
@@ -132,7 +136,11 @@ const Shedule = () => {
                </div>
             </div>
             <div>
-                
+                {isLoading && isLoading2? (
+                    null
+                ) : (
+                    <Cancel />
+                )}
             </div>
         </>
     )

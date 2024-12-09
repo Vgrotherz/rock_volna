@@ -17,8 +17,9 @@ const BackBtn = ({ setActiveTab }) => {
     return(
         <>
             <button onClick={goHome} className="back_btn">На главную</button>
-        </>
+            
+        </> 
     )
 }
-
+// color: #ff1867;
 export default BackBtn;
