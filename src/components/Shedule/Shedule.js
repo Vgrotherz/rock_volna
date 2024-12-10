@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import FetchCSVBig from "../utils/FetchCSVBig";
 import FetchCSVSmall from "../utils/FetchCSVSmall";
 import BookButton from "../Studio/BookButton/BookButton";
-import Cancel from "./Cancel";
+import CancelButton from "../CancelButton/CancelButton";
 
 import './shedule.scss';
-
 
 
 const Shedule = () => {
@@ -18,7 +17,7 @@ const Shedule = () => {
     const [ selectedTimeBig, setSelectedTimeBig ] = useState("");
     const [ selectedHallSmall, setSelectedHallSmall ] = useState("");
     const [ selectedHallBig, setSelectedHallBig ] = useState("");
-    const [ cancelPopUp, setCancelPopUp ] = useState(false); 
+    const [ cancelPopUp, setCancelPopUp ] = useState(false) 
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
@@ -90,13 +89,14 @@ const Shedule = () => {
         setDisableScroll(false);
     }
 
-    // const handleCancel = () => {
-
-    // }
+    const handleCancelPopUp = () => {
+        setCancelPopUp(!cancelPopUp)
+        setDisableScroll(!disableScroll);
+    }
 
     return(
         <>
-            {(showPopupSmall || showPopupBig) && <div className="overlay"></div>}
+            {(showPopupSmall || showPopupBig || cancelPopUp ) && <div className="overlay"></div>}
             <div className={isLoading? 'hall_block small_hall_container' : "hall_block active"} >
                 <div className="blurBackName">
                     <h3>Расписание Малого зала (№1)</h3>
@@ -136,12 +136,19 @@ const Shedule = () => {
                     )}
                </div>
             </div>
-            <div>
-                {isLoading && isLoading2? (
-                    null
-                ) : (
-                    <Cancel />
-                )}
+            <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
+                <div className={!cancelPopUp? null : 'contact_container cancel_cont' }>
+                    {isLoading && isLoading2? (
+                        null
+                    ) : (
+                        <CancelButton
+                            handleCancelPopUp={handleCancelPopUp}
+                            cancelPopUp={cancelPopUp}
+                            handleClosePopup={handleClosePopup}
+                            handleClickButton={handleCancelPopUp}
+                        />
+                    )}
+               </div>
             </div>
         </>
     )

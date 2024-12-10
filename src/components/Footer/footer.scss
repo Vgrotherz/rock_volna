@@ -1,9 +1,13 @@
 .footer {
+    border-top: 1px solid #f0f8ff9c;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 2rem;
+    h3{
+        margin-top: 1rem;
+    }
     .footer_icons{
         display: flex;
         align-items: center;

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './contact.scss';
 
 // import Loading from '../utils/Loading';
-import ContactLoader from '../utils/ContactLoader';
+// import ContactLoader from '../utils/ContactLoader';
+import ContactLoader from '../../../utils/ContactLoader';
 
 function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall, selectedHallBig}) {
   const [formData, setFormData] = useState({
