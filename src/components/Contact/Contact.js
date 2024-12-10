@@ -35,9 +35,9 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
     data.append('hall', formData.hall);
     data.append('time', formData.time);
     data.append('message', formData.message);
-  
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbykAhdWMx2qqy3vlBe2QJOtMcBtQPttjMH2mvp_xFJjgW-1p-Cj3Bsfm-BA5emOwhWH/exec";
     
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbzxAuGLgMCXAdx3sEm7so4LzSbIOLah13aY3JijgDjaUZegr2m47OziR6b2NwgvWOq0/exec";
+
     try {
       setLoader(true);
       const response = await fetch(Sheet_Url, {
@@ -96,7 +96,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
+              // required
             />
           </div>
           <div className='input_div'>

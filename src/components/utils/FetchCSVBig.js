@@ -20,7 +20,7 @@ function FetchCSVBig({isLoading, setIsLoading, onCellClickBig}) {
         const data = parsedData.data;
 
         // Выбираем строки с 2 по 9 (индексы с 1 по 8)
-        const selectedRows = data.slice(13, 21);
+        const selectedRows = data.slice(14, 22);
 
         // Выбираем столбцы с A по F (индексы с 0 по 5) для каждой строки
         const dataBlock = selectedRows.map(row => row.slice(0, 6));

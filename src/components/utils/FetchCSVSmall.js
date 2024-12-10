@@ -18,8 +18,8 @@ function FetchCSVSmall({isLoading2, setIsLoading2, onCellClickSmall, slideToSmal
         const parsedData = parse(response.data, { header: false }); // парсинг CSV с заголовками
         const data = parsedData.data;
 
-        // Выбираем строки с 2 по 9 (индексы с 1 по 8)
-        const selectedRows = data.slice(1, 9);
+        // Выбираем строки с 3 по 10 (индексы с 2 по 9)
+        const selectedRows = data.slice(2, 10);
 
         // Выбираем столбцы с A по F (индексы с 0 по 5) для каждой строки
         const dataBlock = selectedRows.map(row => row.slice(0, 6));

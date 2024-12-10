@@ -18,6 +18,7 @@ const Shedule = () => {
     const [ selectedTimeBig, setSelectedTimeBig ] = useState("");
     const [ selectedHallSmall, setSelectedHallSmall ] = useState("");
     const [ selectedHallBig, setSelectedHallBig ] = useState("");
+    const [ cancelPopUp, setCancelPopUp ] = useState(false); 
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup

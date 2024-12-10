@@ -53,6 +53,7 @@
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
+    animation: gallery_move 5s infinite; // 93 строка
     .pic_text{
         position: absolute;
     }
@@ -87,6 +88,10 @@
     width: 70%;
     height: 50%;
     border-radius: 3rem;
+}
+
+@keyframes gallery_move {
+    50% {box-shadow: 1px 1px 20px 1px #a0d7e1;}
 }
 
 @media only screen and (max-width:1023px) {
