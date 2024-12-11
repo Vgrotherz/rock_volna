@@ -1,6 +1,7 @@
 import React from "react";
 import Cancel from "./Cancel";
 
+import './cancelButton.scss';
 
 const CancelButton = ({ cancelPopUp, handleCancelPopUp, handleClosePopup, handleClickButton }) => {
     return(
