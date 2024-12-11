@@ -2,6 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 17rem;
+    .terms_check{
+        margin-left: 20px;
+        display: flex;
+        font-size: small;
+        justify-content: center;
+        &.cancel_check{
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+        span{
+            color: blue;
+            cursor: pointer;
+        }
+    }
 }
 
 .header_form {
@@ -9,16 +24,21 @@
 }
 
 .input_div {
+    display: flex;
     margin-bottom: 1rem;
+    align-items: center;
+    flex-direction: column;
     input{
         height: 21px;
         border-radius: 3px;
         border: 1px solid #ccc;
         box-shadow: 1px 1px 1px #999;
+        width: 12.3rem;
+        margin-top: 3px;
     }
     textarea{
         height: 36px;
-        width: 97%;
+        width: 12.3rem;
         border-radius: 3px;
         border: 1px solid #ccc;
         box-shadow: 1px 1px 1px #999;
@@ -33,6 +53,7 @@
             box-shadow: none;
             height: initial;
             margin: 0 6px 3px 7px;
+            width: auto;
         }
     }
     

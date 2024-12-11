@@ -24,7 +24,7 @@ const CancelButton = ({ cancelPopUp, handleCancelPopUp, handleClosePopup, handle
                             </div>
                             <Cancel handleClickButton={handleClickButton} />
                         </>
-                    ) }
+                    )}
             </div>
         </>
     )

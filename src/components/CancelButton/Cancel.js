@@ -5,9 +5,9 @@ import ContactLoader from '../utils/ContactLoader';
 function Cancel({ handleClickButton }) {
   const [formData, setFormData] = useState({
     cancelBandName: '',
-    cancelEmail: '',
+    // cancelEmail: '',
     cancelPhoneNumber: '',
-    cancelHall: '',
+    // cancelHall: '',
     cancelTime: '',
     cancelMessage: ''
   });
@@ -17,10 +17,10 @@ function Cancel({ handleClickButton }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleRadioChange = (e) => {
-    // Установка значения hall в зависимости от выбранного значения радиокнопки
-    setFormData({ ...formData, hall: e.target.value });
-  };
+  // const handleRadioChange = (e) => {
+  //   // Установка значения hall в зависимости от выбранного значения радиокнопки
+  //   setFormData({ ...formData, hall: e.target.value });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,9 +28,9 @@ function Cancel({ handleClickButton }) {
   
     const data = new FormData();
     data.append('bandName', formData.cancelBandName);
-    data.append('email', formData.cancelEmail);
+    // data.append('email', formData.cancelEmail);
     data.append('phoneNumber', formData.cancelPhoneNumber);
-    data.append('hall', formData.cancelHall);
+    // data.append('hall', formData.cancelHall);
     data.append('time', formData.cancelTime);
     data.append('message', formData.cancelMessage);
     
@@ -51,13 +51,13 @@ function Cancel({ handleClickButton }) {
         setFormData({
             ...formData,
             cancelBandName: '',
-            cancelEmail: '',
+            // cancelEmail: '',
             cancelPhoneNumber: '',
-            cancelHall: '',
+            // cancelHall: '',
             cancelTime: '',
             cancelMessage: '',
           });
-          alert('Запись об отмене принята, ожидайте обратной связи от администратора')
+          alert('Заявка на отмену принята, ожидайте обратной связи от администратора')
           handleClickButton();
           setFormData(false);
       } else {
@@ -86,7 +86,7 @@ function Cancel({ handleClickButton }) {
               required
             />
           </div>
-          <div className='input_div'>
+          {/* <div className='input_div'>
             <label htmlFor="email">Ссылка на профиль вк/тг:</label>
             <input
               type="text"
@@ -96,7 +96,7 @@ function Cancel({ handleClickButton }) {
               onChange={handleChange}
               // required
             />
-          </div>
+          </div> */}
           <div className='input_div'>
             <label htmlFor="cancelPhoneNumber">Телефон для связи:</label>
             <input
@@ -109,7 +109,7 @@ function Cancel({ handleClickButton }) {
               required
             />
           </div>
-          <div className='input_div'>
+          {/* <div className='input_div'>
             <legend>Занятый зал:</legend>
             <div className='radio_btns'>
               <label htmlFor="hall1">1</label>
@@ -131,7 +131,7 @@ function Cancel({ handleClickButton }) {
                 onChange={handleRadioChange}
               />
             </div>
-          </div>
+          </div> */}
           <div className='input_div'>
           <label htmlFor="time">Занятое время и день:</label>
             <input
@@ -152,6 +152,16 @@ function Cancel({ handleClickButton }) {
               value={formData.message}
               onChange={handleChange}
             />
+          </div>
+          <div className='terms_check cancel_check'>
+            <input
+              type="checkbox"
+              id="agreedCancelTerms"
+              name="terms"
+               
+              required
+            />
+            <label for="agreedCancelTerms">Я подтверждаю, что в случае, если отмена была позднее чем за сутки, то я обязусь оплатить ранее зянятое мною время в полном объёме. В противном случае группа попадает в чёрный список </label>
           </div>
           <button className='button-30' type="submit">Отправить</button>
         </form>

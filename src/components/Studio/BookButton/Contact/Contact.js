@@ -5,10 +5,10 @@ import './contact.scss';
 // import ContactLoader from '../utils/ContactLoader';
 import ContactLoader from '../../../utils/ContactLoader';
 
-function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall, selectedHallBig}) {
+function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall, selectedHallBig, handleRulesClick}) {
   const [formData, setFormData] = useState({
     bandName: '',
-    email: '',
+    profile: '',
     phoneNumber: '',
     hall: selectedHallSmall || selectedHallBig ||  '',
     time: selectedTimeSmall || selectedTimeBig ||  '',
@@ -31,7 +31,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
   
     const data = new FormData();
     data.append('bandName', formData.bandName);
-    data.append('email', formData.email);
+    data.append('profile', formData.profile);
     data.append('phoneNumber', formData.phoneNumber);
     data.append('hall', formData.hall);
     data.append('time', formData.time);
@@ -54,7 +54,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
         setFormData({
             ...formData,
             bandName: '',
-            email: '',
+            profile: '',
             phoneNumber: '',
             hall: '',
             time: '',
@@ -90,12 +90,12 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
             />
           </div>
           <div className='input_div'>
-            <label htmlFor="email">Ссылка на профиль вк/тг:</label>
+            <label htmlFor="profile">Ссылка на профиль вк/тг:</label>
             <input
               type="text"
-              id="email"
-              name="email"
-              value={formData.email}
+              id="profile"
+              name="profile"
+              value={formData.profile}
               onChange={handleChange}
               // required
             />
@@ -155,6 +155,16 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
               value={formData.message}
               onChange={handleChange}
             />
+          </div>
+          <div className='terms_check'>
+            <input
+              type="checkbox"
+              id="agreedTerms"
+              name="terms"
+               
+              required
+            />
+            <label for="agreedTerms">Я ознакомился и согласен с <span onClick={handleRulesClick}>правилами</span> посещения репитиционной базы Волна</label>
           </div>
           <button className='button-30' type="submit">Отправить</button>
         </form>

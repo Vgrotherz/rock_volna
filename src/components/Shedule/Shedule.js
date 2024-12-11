@@ -17,7 +17,8 @@ const Shedule = () => {
     const [ selectedTimeBig, setSelectedTimeBig ] = useState("");
     const [ selectedHallSmall, setSelectedHallSmall ] = useState("");
     const [ selectedHallBig, setSelectedHallBig ] = useState("");
-    const [ cancelPopUp, setCancelPopUp ] = useState(false) 
+    const [ cancelPopUp, setCancelPopUp ] = useState(false);
+    const [ rulesPopUp, setRulesPopUp ] = useState(false);
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
@@ -94,6 +95,11 @@ const Shedule = () => {
         setDisableScroll(!disableScroll);
     }
 
+    const handleRulesClick = () => {
+        setRulesPopUp(!rulesPopUp);
+        // setDisableScroll(!disableScroll);
+    }
+
     return(
         <>
             {(showPopupSmall || showPopupBig || cancelPopUp ) && <div className="overlay"></div>}
@@ -113,6 +119,8 @@ const Shedule = () => {
                             selectedTimeSmall={selectedTimeSmall}
                             selectedHallSmall={selectedHallSmall}
                             handleClosePopup={handleClosePopup}
+                            handleRulesClick={handleRulesClick}
+                            rulesPopUp={rulesPopUp}
                         />
                     )}
                </div>
@@ -132,6 +140,8 @@ const Shedule = () => {
                             selectedTimeBig={selectedTimeBig}
                             selectedHallBig={selectedHallBig}
                             handleClosePopup={handleClosePopup}
+                            handleRulesClick={handleRulesClick}
+                            rulesPopUp={rulesPopUp}
                         />
                     )}
                </div>

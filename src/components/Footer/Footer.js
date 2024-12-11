@@ -12,15 +12,19 @@ const Footer = ({ setActiveTab }) => {
     }
 
     // опен tg
-    const telegramClick = (e) => {
+    const handleTelegramClick = (e) => {
         
     }
 
     // опен звонок
     const handleCall = () => {
-        const phoneNumber = '666'
+        const phoneNumber = '+79082216377'
         window.location.href = `tel:${phoneNumber}`;
     };
+
+    const handleLetterClick = () => {
+
+    }
 
     return(
         <>
@@ -28,8 +32,9 @@ const Footer = ({ setActiveTab }) => {
                 <h3>Реп точка Волна</h3>
                 <div className='footer_icons'>
                     <i className="fa-brands fa-vk" onClick={vkClick}></i>
-                    <i className="fa-brands fa-telegram"></i>
+                    <i className="fa-brands fa-telegram" onClick={handleTelegramClick}></i>
                     <i className="fa-solid fa-phone" onClick={handleCall}></i>
+                    <i className="fa-solid fa-envelope" onClick={handleLetterClick}></i>
                 </div>
                 <BackBtn setActiveTab={setActiveTab} />
             </div>
