@@ -13,7 +13,8 @@ const Footer = ({ setActiveTab }) => {
 
     // опен tg
     const handleTelegramClick = (e) => {
-        
+        e.preventDefault();
+        window.open("https://t.me/VolnaRepTochka", "_blank");
     }
 
     // опен звонок

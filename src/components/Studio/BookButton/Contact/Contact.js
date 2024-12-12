@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './contact.scss';
 
-// import Loading from '../utils/Loading';
-// import ContactLoader from '../utils/ContactLoader';
 import ContactLoader from '../../../utils/ContactLoader';
 
 function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall, selectedHallBig, handleRulesClick}) {
@@ -27,6 +25,13 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // выбор для того какое поле заполнить
+    if (!formData.phoneNumber && !formData.profile) {
+      alert("Пожалуйста, заполните хотя бы одно из полей: 'Телефон для связи' или 'Ссылка на профиль вк/тг'.");
+      return;
+    }
+
     console.log('Form submitted:', formData);
   
     const data = new FormData();
@@ -36,8 +41,9 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
     data.append('hall', formData.hall);
     data.append('time', formData.time);
     data.append('message', formData.message);
+    data.append('source', 'component1'); // Здесь добавляем параметр source, например для компонента 1 (в гугл скрипте принятие от 3х)
     
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbzxAuGLgMCXAdx3sEm7so4LzSbIOLah13aY3JijgDjaUZegr2m47OziR6b2NwgvWOq0/exec";
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbykMdM2aPhy-9W_mFDE7v3ZDyKRgoYy1eSn9sloaPIBFm1zsRCAXMpMxiyDmIH3Oaeh/exec";
 
     try {
       setLoader(true);
@@ -78,7 +84,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
       { !loader? (
         <header className='header_form'>
         <form onSubmit={handleSubmit} className='contact_form'>
-          <div className='input_div'>
+          <div className='input_div band_name_input'>
             <label htmlFor="bandName">Название группы:</label>
             <input
               type="text"
@@ -89,30 +95,33 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
               required
             />
           </div>
-          <div className='input_div'>
-            <label htmlFor="profile">Ссылка на профиль вк/тг:</label>
-            <input
-              type="text"
-              id="profile"
-              name="profile"
-              value={formData.profile}
-              onChange={handleChange}
-              // required
-            />
+            <div className='phone_choose'>
+              <div className='input_div'>
+                <label htmlFor="profile">Ссылка на профиль вк/tg:</label>
+                <input
+                  type="text"
+                  id="profile"
+                  name="profile"
+                  value={formData.profile}
+                  onChange={handleChange}
+                  // required
+                />
+              </div>
+              <p className='or'>или</p>
+              <div className='input_div phone_input'>
+                <label htmlFor="phoneNumber">Телефон для связи:</label>
+                <input
+                  type="number"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  maxlength="11" size="11"
+                  // required
+                />
+              </div>
           </div>
-          <div className='input_div'>
-            <label htmlFor="phoneNumber">Телефон для связи:</label>
-            <input
-              type="number"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              maxlength="11" size="11"
-              required
-            />
-          </div>
-          <div className='input_div'>
+          <div className='input_div hall_input'>
             <legend>Номер зала:</legend>
             <div className='radio_btns'>
               <label htmlFor="hall1">1</label>
@@ -154,6 +163,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
               name="message"
               value={formData.message}
               onChange={handleChange}
+              placeholder='взять в аренду железо/кардан или иная информация'
             />
           </div>
           <div className='terms_check'>

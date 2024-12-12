@@ -3,6 +3,11 @@
     flex-direction: column;
     align-items: center;
     width: 17rem;
+    p{
+        margin-top: -10px;
+        margin-bottom: 5px;
+        font-size: small;
+    }
     .terms_check{
         margin-left: 20px;
         display: flex;
@@ -16,6 +21,30 @@
             color: blue;
             cursor: pointer;
         }
+        .agreedCancelterms {
+            margin-left: 10px;
+            margin-right: 25px;
+            span{
+                color: rgb(72, 32, 252);
+            }
+        }
+    }
+    .band_name_input{
+        margin-bottom: 7px;
+    }
+    .phone_choose{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-top: 2px solid #00000082;
+        border-bottom: 2px solid #00000082;
+        .phone_input {
+            margin-bottom: 0;
+        }
+    }
+    .hall_input {
+        margin-top: 7px;
     }
 }
 

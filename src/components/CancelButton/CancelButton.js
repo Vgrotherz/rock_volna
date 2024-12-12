@@ -1,9 +1,11 @@
 import React from "react";
 import Cancel from "./Cancel";
+import BlackRules from "./BlackRules";
 
 import './cancelButton.scss';
 
-const CancelButton = ({ cancelPopUp, handleCancelPopUp, handleClosePopup, handleClickButton }) => {
+
+const CancelButton = ({ cancelPopUp, handleCancelPopUp, handleClosePopup, handleClickButton, handleBlackRulesClick, blackListRules }) => {
     return(
         <>
         
@@ -16,13 +18,19 @@ const CancelButton = ({ cancelPopUp, handleCancelPopUp, handleClosePopup, handle
                             </button>
                         </div>
                         ) : (
-                        <>
+                        <> {!blackListRules? (
                             <div className="outer" onClick={handleClosePopup}>
                                 <div className="inner">
                                     <label className='label_class' onClick={handleClickButton}>назад</label>
                                 </div>
                             </div>
-                            <Cancel handleClickButton={handleClickButton} />
+                        ) : (null)}
+                            {!blackListRules? (
+                                 <Cancel handleClickButton={handleClickButton} handleBlackRulesClick={handleBlackRulesClick} />
+                            ) : (
+                                <BlackRules handleBlackRulesClick={handleBlackRulesClick} />
+                            )}
+                           
                         </>
                     )}
             </div>

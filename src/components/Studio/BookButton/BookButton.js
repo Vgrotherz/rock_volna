@@ -23,13 +23,13 @@ const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTi
                   <button className='button-30' onClick={handleSlideAndClickSmall}>Записаться на репетицию</button>
                 ) : (
                   <>
-                    <div className="outer" onClick={handleClosePopup}>
-                      <div className="inner" onClick={handleClickButton}>
-                        <label className='label_class'>назад</label>
-                      </div>
-                    </div>
-                    
-                    {/* <Contact handleClickButton={handleClickButton} selectedTimeSmall={selectedTimeSmall} selectedTimeBig={selectedTimeBig} selectedHallSmall={selectedHallSmall} selectedHallBig={selectedHallBig} handleRulesClick={handleRulesClick}/> */}
+                    {!rulesPopUp? (
+                        <div className="outer" onClick={handleClosePopup}>
+                          <div className="inner" onClick={handleClickButton}>
+                            <label className='label_class'>назад</label>
+                          </div>
+                        </div>
+                    ) : (null)}
                     {!rulesPopUp? (
                       <Contact handleClickButton={handleClickButton} selectedTimeSmall={selectedTimeSmall} selectedTimeBig={selectedTimeBig} selectedHallSmall={selectedHallSmall} selectedHallBig={selectedHallBig} handleRulesClick={handleRulesClick}/>
                     ) : (

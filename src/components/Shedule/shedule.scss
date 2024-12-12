@@ -11,15 +11,31 @@
 
 .hall_block{
     .blurBackName{
+        color: black;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #f0f8ff9c;
+        background: rgba(240, 248, 255, 0.6117647059);
         height: 4rem;
         backdrop-filter: hue-rotate(127deg);
+        flex-direction: column;
         h3{
             color: black;
+        }
+        .loading{
+            margin-top: 5px;
+        }
+        .small_price{
+            display: flex;
+        }
+        .lds-ellipsis{
+            height: 0;
+            div{
+                top: 0;
+                width: 10px;
+                height: 10px;
+            }
         }
     }
     .contact_container{
@@ -29,7 +45,7 @@
 }
 
 .cancel_cont {
-    top: 46rem;
+    top: 44rem;
 }
 
 // для блока экрана во время записи
@@ -47,3 +63,6 @@
     overflow: hidden; /* Prevent scrolling when popup is open */
 }
 
+// .black_list_rules_container {
+//     width: 100%;
+// }

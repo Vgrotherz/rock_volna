@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './root.css';
 
-// import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';

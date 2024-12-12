@@ -3,13 +3,15 @@ import FetchCSVBig from "../utils/FetchCSVBig";
 import FetchCSVSmall from "../utils/FetchCSVSmall";
 import BookButton from "../Studio/BookButton/BookButton";
 import CancelButton from "../CancelButton/CancelButton";
+import FetchPriceSmall from "../utils/FetchPriceSmall";
+import FetchPriceBig from "../utils/FetchPriceBig";
 
 import './shedule.scss';
-
 
 const Shedule = () => {
     const [ isLoading, setIsLoading] = useState(false);
     const [ isLoading2, setIsLoading2 ] = useState(false);
+    // const [ isLoading3, setIsLoading3 ] = useState(false);
     const [ showPopupSmall, setShowPopupSmall ] = useState(false); 
     const [ showPopupBig, setShowPopupBig ] = useState(false); 
     const [ disableScroll, setDisableScroll ] = useState(false);
@@ -19,6 +21,7 @@ const Shedule = () => {
     const [ selectedHallBig, setSelectedHallBig ] = useState("");
     const [ cancelPopUp, setCancelPopUp ] = useState(false);
     const [ rulesPopUp, setRulesPopUp ] = useState(false);
+    const [ blackListRules, setBlaclListRules ] = useState(false);
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
@@ -56,7 +59,7 @@ const Shedule = () => {
     const slideToBig = (e) => {
         if (disableScroll) return;
         e.preventDefault();
-        window.scrollTo({ top: 1000, behavior: 'smooth' });
+        window.scrollTo({ top: 600, behavior: 'smooth' });
     }
 
     const slideToSmall = (e) => {
@@ -100,12 +103,20 @@ const Shedule = () => {
         // setDisableScroll(!disableScroll);
     }
 
+    const handleBlackRulesClick = () => {
+        setBlaclListRules(!blackListRules);
+      }
+
     return(
         <>
             {(showPopupSmall || showPopupBig || cancelPopUp ) && <div className="overlay"></div>}
             <div className={isLoading? 'hall_block small_hall_container' : "hall_block active"} >
                 <div className="blurBackName">
                     <h3>Расписание Малого зала (№1)</h3>
+                    <div className="small_price">
+                        <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
+                        <FetchPriceSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
+                    </div>
                 </div>
                 <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
                 <div className={!showPopupSmall? null : 'contact_container'}>
@@ -128,6 +139,10 @@ const Shedule = () => {
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
                 <div className="blurBackName">
                     <h3 onClick={slideToBig}>Расписание Большого зала (№2)</h3>
+                    <div className="small_price">
+                        <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
+                        <FetchPriceBig isLoading={isLoading} setIsLoading={setIsLoading}/>
+                    </div>
                 </div>
                 <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
                 <div className={!showPopupBig? null : 'contact_container' }>
@@ -147,7 +162,7 @@ const Shedule = () => {
                </div>
             </div>
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
-                <div className={!cancelPopUp? null : 'contact_container cancel_cont' }>
+                <div className={!cancelPopUp? null : 'contact_container cancel_cont black_list_rules_container' }>
                     {isLoading && isLoading2? (
                         null
                     ) : (
@@ -156,6 +171,8 @@ const Shedule = () => {
                             cancelPopUp={cancelPopUp}
                             handleClosePopup={handleClosePopup}
                             handleClickButton={handleCancelPopUp}
+                            handleBlackRulesClick={handleBlackRulesClick}
+                            blackListRules={blackListRules}
                         />
                     )}
                </div>
