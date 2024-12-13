@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BackBtn from '../utils/BackBtn';
 import ConnectMessageButton from './ConnectMessageButton';
 
@@ -29,12 +29,25 @@ const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
         setConnectMessage(!connectMessage)
     }
 
+    useEffect(() => {
+        if (connectMessage) {
+            document.body.classList.add('no-scroll'); // Добавляем класс для блокировки
+        } else {
+            document.body.classList.remove('no-scroll'); // Убираем класс при закрытии overlay
+        }
+
+        // Очистка эффекта при размонтировании компонента
+        return () => {
+            document.body.classList.remove('no-scroll');
+        };
+    }, [connectMessage]);
+
     return(
         <>  
             {connectMessage && <div className="overlay"></div>}
             <div className='footer'>
                 {!connectMessage? (null) : (
-                    <ConnectMessageButton />
+                    <ConnectMessageButton handleLetterClick={handleLetterClick}/>
                 )}
                 <h3>Реп точка Волна</h3>
                 <div className='footer_icons'>

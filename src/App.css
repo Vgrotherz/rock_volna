@@ -2,7 +2,12 @@ body {
     font-family: "Comfortaa", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-image: url('./media/Wallpaper.jpeg');
+    background-color: black; 
+    background-image: url('./media/photo_2024-12-13_17-41-27.jpg'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-image: url('./media/Wallpaper.jpeg'); */
     /* background-size: 120% 160%; */
     /* background-repeat: no-repeat; */
     color: azure;

@@ -23,10 +23,10 @@ const Header = ({ activeTab, setActiveTab }) => {
     }
 
     const tabs = [
-        { path: "/", icon: "fa-solid fa-microphone", label: "Студия" },
-        { path: "/services", icon: "fa-solid fa-people-arrows", label: "Услуги" },
-        { path: "/video", icon: "fa-solid fa-video", label: "Видео" },
-        { path: "/about", icon: "fa-solid fa-users", label: "О нас" }
+        { path: "/", icon: "fa-solid fa-microphone", label: "Реп. база" },
+        { path: "/services", icon: "fa-solid fa-people-arrows", label: "Аренда" },
+        { path: "/video", icon: "fa-solid fa-video", label: "Медиа" },
+        { path: "/about", icon: "fa-solid fa-users", label: "Мы" }
     ];
     
     return (
@@ -56,6 +56,10 @@ const Header = ({ activeTab, setActiveTab }) => {
                                 <span className={`fa ${tab.icon}`}></span>
                                 <span className={`hidden-xs ${activeTab === index ? 'active' : ''}`}>
                                     {tab.label}
+                                    {/* если слов больше чем одно - разделяет каждое на свою строку */}
+                                    {/* {tab.label.split(' ').map((word, i) => (
+                                        <span key={i} style={{ display: 'block' }}>{word}</span>
+                                    ))} */}
                                 </span>
                             </Link>
                         </Link>

@@ -5,6 +5,7 @@ import ContactLoader from '../utils/ContactLoader';
 function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
   const [formData, setFormData] = useState({
     connectName: '',
+    connectPhone: '',
     connectMessage: ''
   });
   const [ loader, setLoader ] = useState(false);
@@ -20,8 +21,7 @@ function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
   
     const data = new FormData();
     data.append('connectName', formData.connectName);
-    data.append('cancelPhoneNumber', formData.cancelPhoneNumber);
-    data.append('cancelTime', formData.cancelTime);
+    data.append('connectPhone', formData.connectPhone);
     data.append('connectMessage', formData.connectMessage);
     data.append('source', 'component2'); // Здесь добавляем параметр source, например для компонента 2
     
@@ -41,12 +41,11 @@ function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
       if (result.result === 'success') {
         setFormData({
             ...formData,
-            cancelBandName: '',
-            cancelPhoneNumber: '',
-            cancelTime: '',
-            cancelMessage: '',
+            connectName: '',
+            connectPhone: '',
+            connectMessage: '',
           });
-          alert('Заявка на отмену принята, ожидайте обратной связи от администратора')
+          alert('ваше сообщение принято, ожидайте обратной связи от администратора')
           handleClickButton();
           setFormData(false);
       } else {
@@ -66,50 +65,39 @@ function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
         <header className='header_form'>
         <form onSubmit={handleCancelSubmit} className='contact_form'>
           <div className='input_div'>
-            <label htmlFor="cancelBandName">Название группы:</label>
+            <label htmlFor="cancelBandName">Ваше имя:</label>
             <input
               type="text"
-              id="cancelBandName"
-              name="cancelBandName"
-              value={formData.cancelBandName}
+              id="connectName"
+              name="connectName"
+              value={formData.connectName}
               onChange={handleChange}
               required
             />
           </div>
           <div className='input_div'>
-            <label htmlFor="cancelPhoneNumber">Телефон для связи:</label>
+            <label htmlFor="connectPhone">Телефон для связи:</label>
             <input
               type="number"
-              id="cancelPhoneNumber"
-              name="cancelPhoneNumber"
-              value={formData.cancelPhoneNumber}
+              id="connectPhone"
+              name="connectPhone"
+              value={formData.connectPhone}
               onChange={handleChange}
               maxlength="11" size="11"
               required
             />
           </div>
           <div className='input_div'>
-          <label htmlFor="cancelTime">Занятое время и день:</label>
-            <input
-              type="text"
-              id="cancelTime"
-              name="cancelTime"
-              value={formData.cancelTime}
-              onChange={handleChange}
-            />
-
-          </div>
-          <div className='input_div'>
-            <label htmlFor="cancelMessage">Доп информация:</label>
+            <label htmlFor="connectMessage">Ваше сообщение:</label>
             <textarea
               type="text"
-              id="cancelMessage"
-              name="cancelMessage"
-              value={formData.cancelMessage}
+              id="connectMessage"
+              name="connectMessage"
+              value={formData.connectMessage}
               onChange={handleChange}
             />
           </div>
-          <div className='terms_check cancel_check'>
+          {/* <div className='terms_check cancel_check'>
             <input
               type="checkbox"
               id="agreedCancelTerms"
@@ -121,7 +109,7 @@ function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
               <br></br>
               В противном случае группа попадает в <span onClick={handleBlackRulesClick}>чёрный список</span> 
             </label>
-          </div>
+          </div> */}
           <button className='button-30' type="submit">Отправить</button>
         </form>
       </header>
