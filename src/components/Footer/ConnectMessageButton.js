@@ -6,13 +6,13 @@ const ConnectMessageButton = ({ handleLetterClick }) => {
     return(
         <>
         
-            <div className="contact_container message_container">
+            <div className="message_container contact_container ">
                 <div className="outer" onClick={handleLetterClick}>
                     <div className="inner">
                         <label className='label_class' >назад</label>
                     </div>
                 </div>
-                <ConnectMessage />
+                <ConnectMessage handleLetterClick={handleLetterClick} />
 
             </div>
         </>

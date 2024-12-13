@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'papaparse'; // или другая библиотека для парсинга CSV
 import Loading from './Loading';
+import LoadShedule from '../Shedule/LoadShedule';
 
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
 
@@ -56,7 +57,8 @@ function FetchCSVSmall({isLoading2, setIsLoading2, onCellClickSmall, slideToSmal
   return (
     <div className='table_container referenceWidth'>
       {isLoading2 ? (
-        <Loading />
+        <LoadShedule />
+        // <Loading />
       ) : (
         <table className='table_block'>
           <tbody className='tbody_font' onClick={slideToSmall}>

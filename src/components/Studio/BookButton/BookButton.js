@@ -3,7 +3,7 @@ import React from "react";
 import Contact from "./Contact/Contact";
 import Rules from "../Rules/Rules";
 
-import './bookButton.css';
+import './bookButton.scss';
 
 const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTimeBig, slideToSmall, selectedHallSmall, selectedHallBig, handleClosePopup, handleRulesClick, rulesPopUp}) => {
 

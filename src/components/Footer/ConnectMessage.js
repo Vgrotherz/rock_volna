@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import ContactLoader from '../utils/ContactLoader';
 
-function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
+function ConnectMessage({ handleClickButton, handleLetterClick }) {
   const [formData, setFormData] = useState({
     connectName: '',
     connectPhone: '',
@@ -15,7 +15,7 @@ function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleCancelSubmit = async (e) => {
+  const handleConnectSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
   
@@ -46,7 +46,7 @@ function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
             connectMessage: '',
           });
           alert('ваше сообщение принято, ожидайте обратной связи от администратора')
-          handleClickButton();
+          handleLetterClick();
           setFormData(false);
       } else {
         setFormData(false);
@@ -63,7 +63,7 @@ function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
     <div>
       { !loader? (
         <header className='header_form'>
-        <form onSubmit={handleCancelSubmit} className='contact_form'>
+        <form onSubmit={handleConnectSubmit} className='contact_form'>
           <div className='input_div'>
             <label htmlFor="cancelBandName">Ваше имя:</label>
             <input

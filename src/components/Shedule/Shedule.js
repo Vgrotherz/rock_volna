@@ -22,6 +22,7 @@ const Shedule = () => {
     const [ cancelPopUp, setCancelPopUp ] = useState(false);
     const [ rulesPopUp, setRulesPopUp ] = useState(false);
     const [ blackListRules, setBlaclListRules ] = useState(false);
+    const [ currentDate, setCurrentDate ] = useState("");
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
@@ -82,12 +83,15 @@ const Shedule = () => {
 
     // Add/remove body no-scroll class when a popup is open
     useEffect(() => {
-        if (showPopupSmall || showPopupBig) {
+        const today = new Date();
+        const formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+        setCurrentDate(formattedDate);
+        if (showPopupSmall || showPopupBig || cancelPopUp) {
             document.body.classList.add("no-scroll");
         } else {
             document.body.classList.remove("no-scroll");
         }
-    }, [showPopupSmall, showPopupBig]);
+    }, [showPopupSmall, showPopupBig, cancelPopUp]);
 
     const handleClosePopup = () => {
         setDisableScroll(false);
@@ -114,9 +118,12 @@ const Shedule = () => {
                 <div className="blurBackName">
                     <h3>Расписание Малого зала (№1)</h3>
                     <div className="small_price">
-                        <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
+                        <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>     
                         <FetchPriceSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
                     </div>
+                </div>
+                <div className="time_date">
+                    <p>Актуальное расписание на - {currentDate}</p>
                 </div>
                 <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
                 <div className={!showPopupSmall? null : 'contact_container'}>
@@ -143,6 +150,9 @@ const Shedule = () => {
                         <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
                         <FetchPriceBig isLoading={isLoading} setIsLoading={setIsLoading}/>
                     </div>
+                </div>
+                <div className="time_date">
+                    <p>Актуальное расписание на - {currentDate}</p>
                 </div>
                 <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
                 <div className={!showPopupBig? null : 'contact_container' }>

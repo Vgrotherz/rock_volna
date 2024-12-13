@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'papaparse'; // или другая библиотека для парсинга CSV
 import Loading from './Loading';
+import LoadShedule from '../Shedule/LoadShedule';
 
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
 
@@ -11,6 +12,7 @@ function FetchCSVBig({isLoading, setIsLoading, onCellClickBig}) {
 
 
   useEffect(() => {
+
     const fetchData = async () => {
       try {
         setIsLoading(true);
@@ -25,7 +27,7 @@ function FetchCSVBig({isLoading, setIsLoading, onCellClickBig}) {
         // Выбираем столбцы с A по F (индексы с 0 по 5) для каждой строки
         const dataBlock = selectedRows.map(row => row.slice(0, 6));
         
-
+        
         setCsvData(dataBlock); // сохранение данных в состоянии
         setIsLoading(false);
         // console.log('big hall data', dataBlock)
@@ -60,7 +62,7 @@ function FetchCSVBig({isLoading, setIsLoading, onCellClickBig}) {
   return (
     <div className='table_container'>
       {isLoading? (
-        <Loading />
+        <LoadShedule />
       ) : (
         <table className='table_block'>
             <tbody className='tbody_font'>
