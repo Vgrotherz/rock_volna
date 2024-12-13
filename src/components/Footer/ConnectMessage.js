@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 
 import ContactLoader from '../utils/ContactLoader';
 
-function Cancel({ handleClickButton, handleBlackRulesClick }) {
+function ConnectMessage({ handleClickButton, handleBlackRulesClick }) {
   const [formData, setFormData] = useState({
-    cancelBandName: '',
-    cancelPhoneNumber: '',
-    cancelTime: '',
-    cancelMessage: ''
+    connectName: '',
+    connectMessage: ''
   });
   const [ loader, setLoader ] = useState(false);
   
@@ -21,11 +19,11 @@ function Cancel({ handleClickButton, handleBlackRulesClick }) {
     console.log('Form submitted:', formData);
   
     const data = new FormData();
-    data.append('cancelBandName', formData.cancelBandName);
+    data.append('connectName', formData.connectName);
     data.append('cancelPhoneNumber', formData.cancelPhoneNumber);
     data.append('cancelTime', formData.cancelTime);
-    data.append('cancelMessage', formData.cancelMessage);
-    data.append('source', 'component3'); // Здесь добавляем параметр source, например для компонента 3
+    data.append('connectMessage', formData.connectMessage);
+    data.append('source', 'component2'); // Здесь добавляем параметр source, например для компонента 2
     
     const Sheet_Url = "https://script.google.com/macros/s/AKfycbxQcEBIrYsOgAffX4M7Z0o4z3HTTbDxPdKmlJ6UuwA6XEWab-Ze5IISGKX_jP3ECOYF/exec";
 
@@ -137,4 +135,4 @@ function Cancel({ handleClickButton, handleBlackRulesClick }) {
   );
 }
 
-export default Cancel;
+export default ConnectMessage;

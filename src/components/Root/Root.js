@@ -7,7 +7,9 @@ import { Outlet } from 'react-router-dom';
 
 
 function Root() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [ activeTab, setActiveTab] = useState(0);
+  const [ connectMessage , setConnectMessage ] = useState(false);
+  
   
   return (
     <>
@@ -15,7 +17,7 @@ function Root() {
         <main>
           <Outlet />
         </main>
-      <Footer setActiveTab={setActiveTab} />
+      <Footer setActiveTab={setActiveTab} connectMessage={connectMessage} setConnectMessage={setConnectMessage} />
     </>
   )
 }

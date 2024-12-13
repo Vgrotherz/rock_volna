@@ -1,9 +1,11 @@
 import React from 'react';
 import BackBtn from '../utils/BackBtn';
+import ConnectMessageButton from './ConnectMessageButton';
 
 import './footer.scss';
 
-const Footer = ({ setActiveTab }) => {
+const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
+    // const [ connectMessage , setConnectMessage ] = useState(false);
 
     // опен вк
     const vkClick = (e) => {
@@ -24,12 +26,16 @@ const Footer = ({ setActiveTab }) => {
     };
 
     const handleLetterClick = () => {
-
+        setConnectMessage(!connectMessage)
     }
 
     return(
-        <>
+        <>  
+            {connectMessage && <div className="overlay"></div>}
             <div className='footer'>
+                {!connectMessage? (null) : (
+                    <ConnectMessageButton />
+                )}
                 <h3>Реп точка Волна</h3>
                 <div className='footer_icons'>
                     <i className="fa-brands fa-vk" onClick={vkClick}></i>
