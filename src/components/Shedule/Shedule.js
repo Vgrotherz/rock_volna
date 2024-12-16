@@ -123,12 +123,22 @@ const Shedule = () => {
                     </div>
                 </div>
                 <div className="time_date">
-                    <p>Актуальное расписание на - {currentDate}</p>
+                    <p>Актуальное расписание на -{'\u00A0'}
+                        {currentDate? (<>{currentDate}</>) : (null) }</p>
                 </div>
                 <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
                 <div className={!showPopupSmall? null : 'contact_container'}>
                     {isLoading? (
-                        null
+                        <BookButton 
+                            slideToSmall={slideToSmall}
+                            handleClickButton={handleClickButtonSmall}
+                            showPopup={showPopupSmall}
+                            selectedTimeSmall={selectedTimeSmall}
+                            selectedHallSmall={selectedHallSmall}
+                            handleClosePopup={handleClosePopup}
+                            handleRulesClick={handleRulesClick}
+                            rulesPopUp={rulesPopUp}
+                        />
                     ) : (
                         <BookButton 
                             slideToSmall={slideToSmall}
@@ -156,9 +166,7 @@ const Shedule = () => {
                 </div>
                 <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
                 <div className={!showPopupBig? null : 'contact_container' }>
-                    {isLoading2? (
-                        null
-                    ) : (
+                    {/* {isLoading2? ( */}
                         <BookButton 
                             handleClickButton={handleClickButtonBig}
                             showPopup={showPopupBig}
@@ -168,7 +176,17 @@ const Shedule = () => {
                             handleRulesClick={handleRulesClick}
                             rulesPopUp={rulesPopUp}
                         />
-                    )}
+                    {/* ) : ( */}
+                        {/* <BookButton 
+                            handleClickButton={handleClickButtonBig}
+                            showPopup={showPopupBig}
+                            selectedTimeBig={selectedTimeBig}
+                            selectedHallBig={selectedHallBig}
+                            handleClosePopup={handleClosePopup}
+                            handleRulesClick={handleRulesClick}
+                            rulesPopUp={rulesPopUp}
+                        /> */}
+                    {/* )} */}
                </div>
             </div>
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>

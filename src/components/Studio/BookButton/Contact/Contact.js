@@ -6,7 +6,7 @@ import ContactLoader from '../../../utils/ContactLoader';
 function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, selectedHallSmall, selectedHallBig, handleRulesClick}) {
   const [formData, setFormData] = useState({
     bandName: '',
-    profile: '',
+    date: '',
     phoneNumber: '',
     hall: selectedHallSmall || selectedHallBig ||  '',
     time: selectedTimeSmall || selectedTimeBig ||  '',
@@ -27,16 +27,16 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
     e.preventDefault();
 
     // выбор для того какое поле заполнить
-    if (!formData.phoneNumber && !formData.profile) {
-      alert("Пожалуйста, заполните хотя бы одно из полей: 'Телефон для связи' или 'Ссылка на профиль вк/тг'.");
-      return;
-    }
+    // if (!formData.phoneNumber && !formData.profile) {
+    //   alert("Пожалуйста, заполните хотя бы одно из полей: 'Телефон для связи' или 'Ссылка на профиль вк/тг'.");
+    //   return;
+    // }
 
     console.log('Form submitted:', formData);
   
     const data = new FormData();
     data.append('bandName', formData.bandName);
-    data.append('profile', formData.profile);
+    data.append('date', formData.date);
     data.append('phoneNumber', formData.phoneNumber);
     data.append('hall', formData.hall);
     data.append('time', formData.time);
@@ -60,7 +60,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
         setFormData({
             ...formData,
             bandName: '',
-            profile: '',
+            date: '',
             phoneNumber: '',
             hall: '',
             time: '',
@@ -95,19 +95,8 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
               required
             />
           </div>
-            <div className='phone_choose'>
-              <div className='input_div'>
-                <label htmlFor="profile">Ссылка на профиль вк/tg:</label>
-                <input
-                  type="text"
-                  id="profile"
-                  name="profile"
-                  value={formData.profile}
-                  onChange={handleChange}
-                  // required
-                />
-              </div>
-              <p className='or'>или</p>
+            {/* <div className='phone_choose'> */}
+              {/* <p className='or'>или</p> */}
               <div className='input_div phone_input'>
                 <label htmlFor="phoneNumber">Телефон для связи:</label>
                 <input
@@ -117,10 +106,21 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   maxlength="11" size="11"
-                  // required
+                  required
                 />
               </div>
-          </div>
+              <div className='input_div'>
+                <label htmlFor="date">Желаемая дата:</label>
+                <input
+                  type="text"
+                  id="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+          {/* </div> */}
           <div className='input_div hall_input'>
             <legend>Номер зала:</legend>
             <div className='radio_btns'>

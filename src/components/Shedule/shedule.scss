@@ -16,8 +16,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: rgba(240, 248, 255, 0.6117647059);
+    background: rgb(220 227 234);
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .hall_block{
@@ -27,7 +28,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgba(240, 248, 255, 0.6117647059);
+        background: rgb(220 227 234);
         height: 4rem;
         backdrop-filter: hue-rotate(127deg);
         flex-direction: column;

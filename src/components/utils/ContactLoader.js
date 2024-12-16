@@ -4,7 +4,7 @@ import './contactLoader.css';
 const ContactLoader = () => {
     return (
         <>
-            <div className="loader"></div>
+            <div className="contact_loader"></div>
         </>
     )
 }

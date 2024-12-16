@@ -41,7 +41,7 @@
     &.active{
         display: grid;
         justify-items: center;
-        justify-content: center;
+        // justify-content: center;
         align-items: center;
     }
     
@@ -66,7 +66,12 @@
 }
 
 .table_block {
-    margin-top: 1rem;
+    width: 100%;
+}
+
+.table_container {
+    display: flex;
+    align-items: center;
 }
 
 .csv_td {
@@ -75,10 +80,13 @@
     vertical-align: middle;
     color: rgb(56 56 171);
     height: 3rem;
-    width: 10rem;
+    width: 4rem;
     font-size: calc(1vw + 0.5vh + 0.5vmin);
 }
 
+.td_one_loading {
+    // width: 7rem;
+}
 .contact_container {
     display: flex;
     justify-content: center;
