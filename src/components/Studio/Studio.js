@@ -7,22 +7,35 @@ import SheduleBtn from "../utils/SheduleBtn";
 import './studio.scss';
 
 const Studio = () => {
+
     return(
         <div className="studios_block">
-            <div className="big_hall">  
-                <BigGallery />
-                <Link to='/shedule' className="pic_text">Зал 1</Link>
-            </div>
-            <Link to='/big_hall' className="studio_btn">
-                <SheduleBtn />
-            </Link>
             <div className="small_hall">
                 <SmallGallery />
-                <Link to='/shedule' className="pic_text">Зал 2</Link>
+                <Link 
+                    to="/shedule" 
+                    state={{ scrollToSmall: true }} 
+                    className="pic_text"
+                    >
+                    Зал 1</Link>
             </div>
-            <Link to='/small_hall' className="studio_btn">
-                <SheduleBtn />
-            </Link>
+            <div state={{ scrollToSmall: true }}  className="studio_btn">
+                <SheduleBtn scrollTarget="small" />
+            </div>
+            <div className="big_hall">  
+                <BigGallery />
+                <Link 
+                    to="/shedule" 
+                    state={{ scrollToBig: true }} 
+                    className="pic_text"
+                    >
+                    Зал 2
+                </Link>
+            </div>
+            <div to='/big_hall' className="studio_btn">
+                <SheduleBtn scrollTarget="big" />
+            </div>
+            
         </div>
     )
 }

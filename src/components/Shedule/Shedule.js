@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import FetchCSVBig from "../utils/FetchCSVBig";
 import FetchCSVSmall from "../utils/FetchCSVSmall";
 import BookButton from "../Studio/BookButton/BookButton";
@@ -23,6 +25,9 @@ const Shedule = () => {
     const [ rulesPopUp, setRulesPopUp ] = useState(false);
     const [ blackListRules, setBlaclListRules ] = useState(false);
     const [ currentDate, setCurrentDate ] = useState("");
+
+    const location = useLocation();
+    const navigate = useNavigate();
  
     const handleClickButtonSmall = () => {
         setShowPopupSmall(!showPopupSmall); // Toggle Small Hall Popup
@@ -63,6 +68,14 @@ const Shedule = () => {
         window.scrollTo({ top: 600, behavior: 'smooth' });
     }
 
+    const slideToBigLink = () => {
+        window.scrollTo({ top: 600, behavior: "auto" });
+      };
+
+    const slideToSmallLink = () => {
+        window.scrollTo({ top: 0, behavior: "auto" });
+    }
+
     const slideToSmall = (e) => {
         if (disableScroll) return;
         e.preventDefault();
@@ -83,6 +96,17 @@ const Shedule = () => {
 
     // Add/remove body no-scroll class when a popup is open
     useEffect(() => {
+        if (location.state?.scrollToBig) {
+            // выполнится только после полной отрисовки
+            slideToBigLink();
+            navigate(location.pathname, { replace: true });
+        }
+        if (location.state?.scrollToSmall) {
+            slideToSmallLink();
+
+            // Очистка состояния, чтобы избежать повторного выполнения
+            navigate(location.pathname, { replace: true });
+        }
         const today = new Date();
         const formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
         setCurrentDate(formattedDate);
@@ -91,7 +115,7 @@ const Shedule = () => {
         } else {
             document.body.classList.remove("no-scroll");
         }
-    }, [showPopupSmall, showPopupBig, cancelPopUp]);
+    }, [showPopupSmall, showPopupBig, cancelPopUp, location.state, navigate ]);
 
     const handleClosePopup = () => {
         setDisableScroll(false);

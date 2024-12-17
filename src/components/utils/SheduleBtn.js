@@ -3,10 +3,19 @@ import { Link } from "react-router-dom";
 
 import './sheduleBtn.scss';
 
-const SheduleBtn = () => {
+const SheduleBtn = ({ scrollTarget }) => {
+    const linkState = 
+        scrollTarget === "small" 
+        ? { scrollToSmall: true } 
+        : scrollTarget === "big"
+        ? { scrollToBig: true } 
+        : null;
+
     return (
         <>
-            <Link to='/shedule' className="animated-button1">
+            <Link to="/shedule" 
+            state={linkState}
+            className="animated-button1">
                 <span></span>
                 <span></span>
                 <span></span>

@@ -1,20 +1,26 @@
-import ImageGallery from "react-image-gallery";
+import ImageGallery from 'react-image-gallery'
 import './gallery.scss'
 
 const photoGallBig = [
-  { original: require('../../../media/big/2M903RVFieA.jpg') },
-  { original: require('../../../media/big/2tQ4iXq21Bg.jpg') },
-  { original: require('../../../media/big/FNYUuzAphFs.jpg') },
-  { original: require('../../../media/big/_4frS4v9ucU.jpg') },
-  { original: require('../../../media/big/w2tVS-SPGIA.jpg') }
+  { original: require('../../../media/big/1.jpg') },
+  { original: require('../../../media/big/2.JPG') },
+  { original: require('../../../media/big/3.JPG') },
+  { original: require('../../../media/big/4.JPG') },
+  { original: require('../../../media/big/5.JPG') },
+  { original: require('../../../media/big/6.JPG') },
+  { original: require('../../../media/big/7.JPG') },
+  { original: require('../../../media/big/8.JPG') },
 ];
 
 const photoGallSmall = [
-    { original: require('../../../media/small/JY7o2eyJC4w.jpg') },
-    { original: require('../../../media/small/Op1PgNmkguY.jpg') },
-    { original: require('../../../media/small/UY1xVHxd1NE.jpg') },
-    { original: require('../../../media/small/VujyU8pJ1QY.jpg') },
-    { original: require('../../../media/small/hayHHMNUFss.jpg') }
+   { original: require('../../../media/small/1.jpeg') },
+   { original: require('../../../media/small/2.jpeg') },
+   { original: require('../../../media/small/3.jpeg') },
+   { original: require('../../../media/small/4.jpeg') },
+   { original: require('../../../media/small/5.jpeg') },
+   { original: require('../../../media/small/6.jpeg') },
+   { original: require('../../../media/small/7.jpeg') },
+   { original: require('../../../media/small/8.jpeg') },
 ]
 
 const galleryProps = {
