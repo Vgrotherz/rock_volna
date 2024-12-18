@@ -3,13 +3,13 @@ import './gallery.scss'
 
 const photoGallBig = [
   { original: require('../../../media/big/1.jpg') },
-  { original: require('../../../media/big/2.jpg') },
-  { original: require('../../../media/big/3.jpg') },
-  { original: require('../../../media/big/4.jpg') },
-  { original: require('../../../media/big/5.jpg') },
-  { original: require('../../../media/big/6.jpg') },
-  { original: require('../../../media/big/7.jpg') },
-  { original: require('../../../media/big/8.jpg') },
+  { original: require('../../../media/big/2.JPG') },
+  { original: require('../../../media/big/3.JPG') },
+  { original: require('../../../media/big/4.JPG') },
+  { original: require('../../../media/big/5.JPG') },
+  { original: require('../../../media/big/6.JPG') },
+  { original: require('../../../media/big/7.JPG') },
+  { original: require('../../../media/big/8.JPG') },
 ];
 
 const photoGallSmall = [

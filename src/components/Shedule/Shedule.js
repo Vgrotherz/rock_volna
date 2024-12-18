@@ -13,7 +13,6 @@ import './shedule.scss';
 const Shedule = () => {
     const [ isLoading, setIsLoading] = useState(false);
     const [ isLoading2, setIsLoading2 ] = useState(false);
-    // const [ isLoading3, setIsLoading3 ] = useState(false);
     const [ showPopupSmall, setShowPopupSmall ] = useState(false); 
     const [ showPopupBig, setShowPopupBig ] = useState(false); 
     const [ disableScroll, setDisableScroll ] = useState(false);
@@ -152,7 +151,7 @@ const Shedule = () => {
                 </div>
                 <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
                 <div className={!showPopupSmall? null : 'contact_container'}>
-                    {isLoading? (
+                    {/* {isLoading? ( */}
                         <BookButton 
                             slideToSmall={slideToSmall}
                             handleClickButton={handleClickButtonSmall}
@@ -163,8 +162,8 @@ const Shedule = () => {
                             handleRulesClick={handleRulesClick}
                             rulesPopUp={rulesPopUp}
                         />
-                    ) : (
-                        <BookButton 
+                    {/* ) : ( */}
+                        {/* <BookButton 
                             slideToSmall={slideToSmall}
                             handleClickButton={handleClickButtonSmall}
                             showPopup={showPopupSmall}
@@ -173,8 +172,8 @@ const Shedule = () => {
                             handleClosePopup={handleClosePopup}
                             handleRulesClick={handleRulesClick}
                             rulesPopUp={rulesPopUp}
-                        />
-                    )}
+                        /> */}
+                    {/* )} */}
                </div>
             </div>
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>

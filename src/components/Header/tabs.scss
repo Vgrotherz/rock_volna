@@ -1,7 +1,7 @@
 // refactored
 
 .container.slide_up {
-  transform: translateY(-71px)
+  transform: translateY(-60px)
 }
 
 .container {
@@ -9,6 +9,7 @@
     transform: translateY(0); /* Default state */
     opacity: 1; /* Fully visible */
     transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transitions */
+    top: -10px;
   }
 
   
@@ -54,7 +55,7 @@
           .hidden-xs{
             text-shadow: 0px 2px 1px #000000;
             color: white;
-            font-size: unset;
+            font-size: x-large;
           }
           .whiteBlock {
             display: block;
@@ -75,7 +76,7 @@
   
         a {
           // font-family: 'Source Sans Pro', sans-serif;
-          font-size: 1.65em;
+          // font-size: 1.65em;
           font-weight: 300;
           color: #333;
           text-decoration: none;
