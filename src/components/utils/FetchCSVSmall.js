@@ -58,7 +58,7 @@ function FetchCSVSmall({isLoading2, setIsLoading2, onCellClickSmall, slideToSmal
 
   return (
     <div className='table_container referenceWidth'>
-      {!isLoading2? (
+      {isLoading2? (
                       <LoaderGears />
                     ) : (null)
                     }
