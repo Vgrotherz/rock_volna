@@ -6,6 +6,10 @@
     height: 45rem;
 }
 
+.hall2_name{
+    margin-top: 1.5rem;
+}
+
 .pic_text {
     color: #fff;
     font-size: xx-large;
@@ -56,6 +60,9 @@
     animation: gallery_move 5s infinite; // 93 строка
     .pic_text{
         position: absolute;
+        opacity: 0;
+        height: 8rem;
+        width: 8rem;
     }
 }
 

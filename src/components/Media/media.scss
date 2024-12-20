@@ -1,7 +1,9 @@
 .media_container {
     .videos_vk{
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         margin: 20px 0px;
+        justify-content: center;
+        align-items: center;
     }
 }

@@ -1,79 +1,76 @@
 import React, { useEffect, useState } from "react";
 import Loader2 from '../utils/loader2';
-import "./media.scss";
+import './media.scss';
+
+const videos = [
+    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+];
 
 const Media = () => {
-    const [loading, setLoading] = useState(true);
-  
+    const [loaded, setLoaded] = useState({}); // Храним статус по индексу
+
+    const loadVKScript = () => {
+        return new Promise((resolve, reject) => {
+            const scriptId = "vk_api_script";
+            if (document.getElementById(scriptId)) {
+                resolve(); // Скрипт уже загружен
+            } else {
+                const script = document.createElement("script");
+                script.id = scriptId;
+                script.src = "https://vk.com/js/api/videoplayer.js";
+                script.async = true;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error("Failed to load VK API"));
+                document.body.appendChild(script);
+            }
+        });
+    };
+
     useEffect(() => {
-      // Добавляем VK API скрипт
-      const scriptSrc = "https://vk.com/js/api/videoplayer.js";
-      if (!document.querySelector(`script[src="${scriptSrc}"]`)) {
-        const script = document.createElement("script");
-        script.src = scriptSrc;
-        script.async = true;
-        document.head.appendChild(script);
-      }
-  
-      // Проверяем, доступен ли VK API
-      const waitForVK = setInterval(() => {
-        if (window.VK && window.VK.VideoPlayer) {
-          clearInterval(waitForVK);
-          initializePlayer();
-        }
-      }, 100);
-  
-      const initializePlayer = () => {
-        console.log("VK.VideoPlayer доступен! Инициализация плеера...");
-  
-        const iframe = document.getElementById("vk_iframe");
-        if (iframe) {
-          const player = new window.VK.VideoPlayer(iframe);
-  
-          console.log("Плеер создан:", player);
-  
-          // Подписываемся на событие инициализации
-          player.on("inited", () => {
-            console.log("Плеер инициализирован!");
-            setLoading(false);
-          });
-  
-          // Обрабатываем ошибку
-          player.on("error", (error) => {
-            console.error("Ошибка инициализации плеера:", error);
-            setLoading(false);
-          });
-  
-          // Включаем таймер на случай, если `inited` не сработает
-          setTimeout(() => {
-            console.warn("Плеер не инициализировался за 5 секунд");
-            setLoading(false);
-          }, 5000);
-        }
-      };
-  
-      return () => clearInterval(waitForVK);
+        loadVKScript().then(() => {
+            console.log("VK API script loaded");
+        });
     }, []);
-  
+
+    const handleVideoInit = (index, iframe) => {
+        const tryInitPlayer = () => {
+            if (window.VK && window.VK.VideoPlayer) {
+                const player = new window.VK.VideoPlayer(iframe);
+                player.on("inited", () => {
+                    setLoaded((prev) => ({ ...prev, [index]: true }));
+                });
+            } else {
+                setTimeout(tryInitPlayer, 200);
+            }
+        };
+        tryInitPlayer();
+    };
+
     return (
-      <div>
-        {loading ? (
-          <div>Загрузка плеера...</div>
-        ) : (
-          <iframe
-            id="vk_iframe"
-            src="https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1"
-            width="640"
-            height="360"
-            frameBorder="0"
-            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-            allowFullScreen
-            title="VK Video"
-          ></iframe>
-        )}
-      </div>
+        <div className="media_container">
+            <div className="video_container">
+                {videos.map((videoUrl, index) => (
+                    <div className="videos_vk" key={index}>
+                        {!loaded[index] && <Loader2 />}
+                        <iframe
+                            src={videoUrl}
+                            width="426"
+                            height="240"
+                            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                            frameBorder="0"
+                            allowFullScreen
+                            title={`video${index + 1}`}
+                            onLoad={(e) => handleVideoInit(index, e.target)}
+                            className={loaded[index] ? "video-loaded" : "video-hidden"}
+                        ></iframe>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
-  };
-  
-  export default Media;
-  
+};
+
+export default Media;
