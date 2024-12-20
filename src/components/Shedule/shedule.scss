@@ -78,3 +78,14 @@
 // .black_list_rules_container {
 //     width: 100%;
 // }
+@media only screen and (max-width:424px){
+    .time_date{
+        font-size: 12px;
+    }
+    .hall_block {
+        .blurBackName{
+            font-size: 15px;
+        }
+    } 
+    
+}

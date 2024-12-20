@@ -10,12 +10,6 @@ const Studio = () => {
 
     return(
         <div className="studios_block">
-            <Link 
-                    to="/shedule" 
-                    state={{ scrollToSmall: true }} 
-                    className="pic_text"
-                    >
-                    Зал 1</Link>
             <div className="small_hall">
                 <SmallGallery />
                 <Link 
@@ -23,18 +17,11 @@ const Studio = () => {
                     state={{ scrollToSmall: true }} 
                     className="pic_text"
                     >
-                    1</Link>
+                    Правый зал</Link>
             </div>
             <div state={{ scrollToSmall: true }}  className="studio_btn">
                 <SheduleBtn scrollTarget="small" />
             </div>
-            <Link 
-                    to="/shedule" 
-                    state={{ scrollToBig: true }} 
-                    className="pic_text hall2_name"
-                    >
-                    Зал 2
-                </Link>
             <div className="big_hall">  
                 <BigGallery />
                 <Link 
@@ -42,7 +29,7 @@ const Studio = () => {
                     state={{ scrollToBig: true }} 
                     className="pic_text"
                     >
-                    2
+                    Студия
                 </Link>
             </div>
             <div to='/big_hall' className="studio_btn">
