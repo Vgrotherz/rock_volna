@@ -107,7 +107,12 @@ const Shedule = () => {
             navigate(location.pathname, { replace: true });
         }
         const today = new Date();
-        const formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+        // Массив с днями недели в нужном формате
+        const daysOfWeek = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+        // Получаем текущий день недели
+        const dayOfWeek = daysOfWeek[today.getDay()];
+        const formattedDate = `${dayOfWeek}, ${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
         setCurrentDate(formattedDate);
         if (showPopupSmall || showPopupBig || cancelPopUp) {
             document.body.classList.add("no-scroll");
@@ -146,8 +151,8 @@ const Shedule = () => {
                     </div>
                 </div>
                 <div className="time_date">
-                    <p>Актуальное расписание на -{'\u00A0'}
-                        {currentDate? (<>{currentDate}</>) : (null) }</p>
+                    <p>Актуальное расписание на -
+                        {currentDate? (<> {currentDate} </>) : (null) }</p>
                 </div>
                 <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
                 <div className={!showPopupSmall? null : 'contact_container'}>

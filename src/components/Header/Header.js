@@ -25,7 +25,7 @@ const Header = ({ activeTab, setActiveTab }) => {
     const tabs = [
         { path: "/", icon: "fa-solid fa-microphone", label: "Реп. база" },
         { path: "/services", icon: "fa-solid fa-people-arrows", label: "Аренда" },
-        { path: "/video", icon: "fa-solid fa-video", label: "Медиа" },
+        { path: "/media", icon: "fa-solid fa-video", label: "Медиа" },
         { path: "/about", icon: "fa-solid fa-users", label: "Мы" }
     ];
     
