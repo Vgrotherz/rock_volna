@@ -1,5 +1,6 @@
 import React from "react"; 
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import { BigGallery } from "./Gallery/Gallery";
 import { SmallGallery } from "./Gallery/Gallery";
 import SheduleBtn from "../utils/SheduleBtn";

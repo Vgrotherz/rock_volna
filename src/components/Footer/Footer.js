@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
+
 import BackBtn from '../utils/BackBtn';
 import ConnectMessageButton from './ConnectMessageButton';
 
 import './footer.scss';
 
 const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
-    // const [ connectMessage , setConnectMessage ] = useState(false);
+
 
     // опен вк
     const vkClick = (e) => {

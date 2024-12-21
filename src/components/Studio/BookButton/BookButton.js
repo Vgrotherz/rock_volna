@@ -5,14 +5,17 @@ import Rules from "../Rules/Rules";
 
 import './bookButton.scss';
 
-const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTimeBig, slideToSmall, selectedHallSmall, selectedHallBig, handleClosePopup, handleRulesClick, rulesPopUp}) => {
+const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTimeBig, slideToSmall, selectedHallSmall, selectedHallBig, handleClosePopup, handleRulesClick, rulesPopUp, mobileSlideUp}) => {
 
-    const handleSlideAndClickSmall = (e) => {
+    const handleSlideAndClick = (e) => {
       if (slideToSmall) {
         slideToSmall(e); // `e` для обработки события
       }
         if (handleClickButton) {
           handleClickButton();
+      }
+      if (mobileSlideUp) {
+        mobileSlideUp();
       }
     }
     
@@ -20,7 +23,7 @@ const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTi
         <>
             <div className="flex_center">
                 { !showPopup? (
-                  <button className='button-30' onClick={handleSlideAndClickSmall}>Записаться на репетицию</button>
+                  <button className='button-30' onClick={handleSlideAndClick}>Записаться на репетицию</button>
                 ) : (
                   <>
                     {!rulesPopUp? (

@@ -81,6 +81,12 @@ const Shedule = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    const mobileSlideUp = () => {
+        if (disableScroll) return;
+        // e.preventDefault();
+        window.scrollTo({ top: 600, behavior: 'smooth' });
+    }
+
     const handleCellClickSmall = (time) => {
         setSelectedTimeSmall(time); // Update selected time
         setSelectedHallSmall('1') // авто зал 1 
@@ -155,8 +161,10 @@ const Shedule = () => {
                         {currentDate? (<> {currentDate} </>) : (null) }</p>
                 </div>
                 <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
+                {showPopupSmall? (
+                        <button className='button-30' >Записаться на репетицию</button>
+                        ) : (null)}
                 <div className={!showPopupSmall? null : 'contact_container'}>
-                    {/* {isLoading? ( */}
                         <BookButton 
                             slideToSmall={slideToSmall}
                             handleClickButton={handleClickButtonSmall}
@@ -167,18 +175,6 @@ const Shedule = () => {
                             handleRulesClick={handleRulesClick}
                             rulesPopUp={rulesPopUp}
                         />
-                    {/* ) : ( */}
-                        {/* <BookButton 
-                            slideToSmall={slideToSmall}
-                            handleClickButton={handleClickButtonSmall}
-                            showPopup={showPopupSmall}
-                            selectedTimeSmall={selectedTimeSmall}
-                            selectedHallSmall={selectedHallSmall}
-                            handleClosePopup={handleClosePopup}
-                            handleRulesClick={handleRulesClick}
-                            rulesPopUp={rulesPopUp}
-                        /> */}
-                    {/* )} */}
                </div>
             </div>
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
@@ -193,9 +189,12 @@ const Shedule = () => {
                     <p>Актуальное расписание на - {currentDate}</p>
                 </div>
                 <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
+                {showPopupBig? (
+                        <button className='button-30' >Записаться на репетицию</button>
+                        ) : (null)}
                 <div className={!showPopupBig? null : 'contact_container' }>
-                    {/* {isLoading2? ( */}
                         <BookButton 
+                            mobileSlideUp={mobileSlideUp}
                             handleClickButton={handleClickButtonBig}
                             showPopup={showPopupBig}
                             selectedTimeBig={selectedTimeBig}
@@ -204,25 +203,23 @@ const Shedule = () => {
                             handleRulesClick={handleRulesClick}
                             rulesPopUp={rulesPopUp}
                         />
-                    {/* ) : ( */}
-                        {/* <BookButton 
-                            handleClickButton={handleClickButtonBig}
-                            showPopup={showPopupBig}
-                            selectedTimeBig={selectedTimeBig}
-                            selectedHallBig={selectedHallBig}
-                            handleClosePopup={handleClosePopup}
-                            handleRulesClick={handleRulesClick}
-                            rulesPopUp={rulesPopUp}
-                        /> */}
-                    {/* )} */}
                </div>
             </div>
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
+                    {cancelPopUp? (
+                        <div className="cancel_btn_div">
+                            <button class="comic-button" onClick={handleCancelPopUp}>
+                                <span>Отменить</span>
+                                <span>запись</span>
+                            </button>
+                        </div>
+                        ) : (null) }
                 <div className={!cancelPopUp? null : 'contact_container cancel_cont black_list_rules_container' }>
                     {isLoading && isLoading2? (
                         null
                     ) : (
                         <CancelButton
+                            mobileSlideUp={mobileSlideUp}
                             handleCancelPopUp={handleCancelPopUp}
                             cancelPopUp={cancelPopUp}
                             handleClosePopup={handleClosePopup}
