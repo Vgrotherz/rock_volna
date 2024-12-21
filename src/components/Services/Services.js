@@ -1,6 +1,7 @@
 import React from "react";
 
 import soundEngineer from '../../media/uslugi/hands.jpg';
+import jblSet from '../../media/uslugi/accousticSet.jpg';
 import mixer from '../../media/uslugi/x32rack.jpg';
 import stageBox from '../../media/uslugi/s16.jpg';
 import pearl from '../../media/uslugi/pearl.jpg';
@@ -16,7 +17,6 @@ const Services = () => {
         const phoneNumber = '+79082216377'
         window.location.href = `tel:${phoneNumber}`;
     };
-
 
     return(
         <>
@@ -39,7 +39,22 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    
+                    <div className="pricing-option">
+                        <i className="material-icons">art_track</i>
+                        <h1>Комплект JBL VRX900</h1>
+                        <img src={jblSet} alt="JBL VRX900" />
+                        <hr />
+                        <p>Комплект аппаратуры для мероприятий JBL VRX900 и описание</p>
+                        <hr />
+                        <div className="price">
+                            <div className="front">
+                                <span className="price">30000<b>руб.</b></span>
+                            </div>
+                            <div className="back">
+                                <p class="button" onClick={handleCall} >Заказать</p>
+                            </div>
+                        </div>
+                    </div>
                     <div className="pricing-option">
                         <i className="material-icons">perm_identity</i>
                         <h1>Микшерный пульт BEHRINGER X32 RACK.</h1>
@@ -106,10 +121,10 @@ const Services = () => {
                     </div>
                     <div className="pricing-option">
                         <i className="material-icons">art_track</i>
-                        <h1>Басовый стэк AMPEG SVT5PRO + AMPEG 4x10</h1>
+                        <h1>Басовый стэк AMPEG SVT7PRO + AMPEG 4x10</h1>
                         <img src={ampeg} alt="AMPEG SVT5PRO + AMPEG 4x10" />
                         <hr />
-                        <p>Басовый стэк AMPEG SVT5PRO + AMPEG 4x10 мощностью 600Вт и описание</p>
+                        <p>Басовый стэк AMPEG SVT7PRO + AMPEG 4x10 мощностью 600Вт и описание</p>
                         <hr />
                         <div className="price">
                             <div className="front">
