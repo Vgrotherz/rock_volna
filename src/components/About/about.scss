@@ -1,11 +1,37 @@
-#map {
-  height: 100%;
-  width: 100%;
-}
-
-// Дополнительные стили для контейнера карты
-.google-map-container {
-  height: 100vh; // Занимает всю высоту экрана
-  width: 100vw; // Занимает всю ширину экрана
-  position: relative; // Можно добавить позиционирование, если нужно
+.about_container{
+  .text_about{
+    background: rgb(220, 227, 234);
+    color: black;
+    display: flex;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: small;
+    height: 5rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .yandex_map{
+    position:relative;
+    overflow:hidden;
+    .first_link {
+      color:#eee;
+      font-size:12px;
+      position:absolute;
+      top:0px;
+    }
+    
+    .second_link {
+      color:#eee;
+      font-size:12px;
+      position:absolute;
+      top:14px;
+    }
+    iframe{
+      width: 375px;
+      height: 336px;
+      // frameborder: 1; 
+      position:relative;
+    }
+  }
 }

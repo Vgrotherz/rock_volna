@@ -150,14 +150,14 @@ const Shedule = () => {
             {(showPopupSmall || showPopupBig || cancelPopUp ) && <div className="overlay"></div>}
             <div className={isLoading? 'hall_block small_hall_container' : "hall_block active"} >
                 <div className="blurBackName">
-                    <h3>Расписание Малого зала (№1)</h3>
+                    <h3>Расписание Правого Зала</h3>
                     <div className="small_price">
                         <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>     
                         <FetchPriceSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
                     </div>
                 </div>
                 <div className="time_date">
-                    <p>Актуальное расписание на -
+                    <p>Актуальное расписание на
                         {currentDate? (<> {currentDate} </>) : (null) }</p>
                 </div>
                 <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
@@ -179,14 +179,14 @@ const Shedule = () => {
             </div>
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
                 <div className="blurBackName">
-                    <h3 onClick={slideToBig}>Расписание Большого зала (№2)</h3>
+                    <h3 onClick={slideToBig}>Расписание Студии</h3>
                     <div className="small_price">
                         <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
                         <FetchPriceBig isLoading={isLoading} setIsLoading={setIsLoading}/>
                     </div>
                 </div>
                 <div className="time_date">
-                    <p>Актуальное расписание на - {currentDate}</p>
+                    <p>Актуальное расписание на {currentDate}</p>
                 </div>
                 <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
                 {showPopupBig? (
