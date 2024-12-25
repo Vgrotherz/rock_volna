@@ -19,10 +19,11 @@ const Studio = () => {
                     className="pic_text"
                     >
                     Правый зал</Link>
+                <div state={{ scrollToSmall: true }}  className="studio_btn">
+                    <SheduleBtn scrollTarget="small" />
+                </div>
             </div>
-            <div state={{ scrollToSmall: true }}  className="studio_btn">
-                <SheduleBtn scrollTarget="small" />
-            </div>
+            
             <div className="big_hall">  
                 <BigGallery />
                 <Link 
@@ -32,10 +33,11 @@ const Studio = () => {
                     >
                     Студия
                 </Link>
+                <div to='/big_hall' className="studio_btn">
+                    <SheduleBtn scrollTarget="big" />
+                </div>
             </div>
-            <div to='/big_hall' className="studio_btn">
-                <SheduleBtn scrollTarget="big" />
-            </div>
+            
             
         </div>
     )

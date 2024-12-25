@@ -4,7 +4,7 @@
 }
 
 .default_style{
-    top: 22rem;
+    top: 18rem;
 }
 
 .schedule_style{
@@ -16,9 +16,27 @@
 }
 
 .services_style{
-    top: 212rem;
+    top: 289rem;
 }
 
 .about_style{
     top: 10rem;
+}
+
+@media only screen and (min-width:1024px) {
+    .default_style{
+        top: 12rem;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    .default_style{
+        top: 47rem;
+    }
+}
+
+@media only screen and (min-width:400px) and (max-width:767px) {
+    .default_style{
+        top: 24rem;
+    }
 }

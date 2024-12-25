@@ -14,18 +14,16 @@
         align-items: center;
         margin: 6px 0;
         .fa-vk, .fa-telegram, .fa-phone, .fa-envelope {
+            cursor: pointer;
             margin: 0.5rem;
-            font-size: 2.5rem;
             text-shadow: 1px 1px 12px black;
             &.fa-vk{
                 color: rgb(0 119 255);
             }
             &.fa-telegram {
                 color: #29a0dc;
-                font-size: 2.4rem;
             }
             &.fa-phone{
-                font-size: 2.3rem;
                 color: #04af04;
             }
             &.fa-envelope{
@@ -35,3 +33,46 @@
     
     }
 }
+
+@media only screen and (min-width:768px) {
+    .footer{
+        h3{
+            font-size: x-large;
+        }
+        .footer_icons{
+            .fa-vk{
+                font-size: 3.5rem;
+            }
+            .fa-phone{
+                font-size: 3.1rem;
+            }
+            .fa-envelope {
+                font-size: 3.5rem;
+            }
+            .fa-telegram {
+                font-size: 3.1rem;
+            }
+            
+        }
+    }
+}
+
+@media only screen and (max-width:765px) {
+    .footer_icons{
+    
+            .fa-vk{
+                font-size: 2.5rem;
+            }
+            .fa-telegram {
+                font-size: 2.4rem;
+            }
+            .fa-phone{
+                font-size: 2.3rem;
+            }
+            .fa-envelope{
+                font-size: 2.5rem;
+            }
+        }
+    
+}
+    

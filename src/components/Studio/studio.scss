@@ -1,3 +1,6 @@
+
+
+// 768 и меньше
 .studios {
     display: flex;
     /* flex-direction: column; */
@@ -52,16 +55,22 @@
 }
 
 .small_hall, .big_hall {
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
-    animation: gallery_move 5s infinite; // 93 строка
+    flex-direction: column;
+    // animation: gallery_move 5s infinite; // 93 строка
     .pic_text{
         position: absolute;
-        margin-bottom: 34%;
+        padding-bottom: 65%;
     }
+}
+
+.image-gallery {
+    border: 1px solid black;
+    animation: gallery_move 5s infinite;
 }
 
 .studio_btn {
@@ -116,8 +125,63 @@
     }
 }
 
+@media only screen and (min-width: 1440px) {
+    .studios_block {
+        flex-direction: inherit;
+        .small_hall, .big_hall {
+            margin: 1rem 4rem;
+            .pic_text{
+                padding-bottom: 25%;
+            }
+        }
+    }   
+}
+
+@media only screen and (min-width:1024px) {
+    .studios_block {
+        flex-direction: inherit;
+        .small_hall, .big_hall {
+            margin: 1rem 2rem;
+            .pic_text{
+                font-size: 2.5rem;
+                padding-bottom: 27%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px ) {
+    .small_hall, .big_hall {
+        .pic_text{
+            font-size: xxx-large;
+            padding-bottom: 55%;
+        }
+    }
+    .contact_container {
+        height: inherit;
+    }
+    
+}
+
+@media only screen and (min-width:600px) {
+    .small_hall, .big_hall {
+        .pic_text{
+            padding-bottom: 57%;
+        }
+    }
+}
+
 @media only screen and (max-width:580px) {
     .table_container {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width:374px) {
+    .tabs .nav-tabs .tab.active .hidden-xs {
+        font-size: large;
+    }
+    .tabs .nav-tabs .tab .hidden-xs {
+        font-size: small;
     }
 }

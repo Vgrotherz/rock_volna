@@ -21,15 +21,19 @@ const Services = () => {
     return(
         <>
             <div className="services_block"> 
-                
                 <div className="pricing-table">
                     <div className="pricing-option sound_engineer">
                         <i className="material-icons">equalizer</i>
-                        <h1>Звукорежиссер на ваши мероприятия.</h1>
-                        <img src={soundEngineer} alt="sound engineer" />
-                        <hr />
-                        <p>Подробное описание услуги</p>
-                        <hr />
+                        
+                        <div className="desktop_services">
+                            <h1>Звукорежиссер на ваши мероприятия.</h1>
+                            <img src={soundEngineer} alt="sound engineer" />
+                            <hr />
+                            <p>Ищете качественный звук на своем мероприятии? 
+                                <br></br>
+                            Мы предлагаем услуги профессионального звукорежиссера, который обеспечит безупречное звучание и техническую поддержку для вашего события.</p>
+                            <hr />
+                        </div>
                         <div className="price">
                             <div className="front">
                                 <span className="price">500 <b>р/час</b></span>
@@ -41,11 +45,15 @@ const Services = () => {
                     </div>
                     <div className="pricing-option">
                         <i className="material-icons">art_track</i>
-                        <h1>Комплект JBL VRX900</h1>
-                        <img src={jblSet} alt="JBL VRX900" />
-                        <hr />
-                        <p>Комплект аппаратуры для мероприятий JBL VRX900 и описание</p>
-                        <hr />
+                        <div className="desktop_services">
+                            <h1>Комплект JBL VRX900</h1>
+                            <img src={jblSet} alt="JBL VRX900" />
+                            <hr />
+                            <p>Для вашего мероприятия мы предлагаем комплект профессиональной звуковой аппаратуры JBL VRX900 – идеальное решение для создания мощного, качественного и сбалансированного звучания. 
+                                <br></br>
+                            Эта система обеспечивает кристально чистый звук и подходит для мероприятий любого масштаба.</p>
+                            <hr />
+                        </div>
                         <div className="price">
                             <div className="front">
                                 <span className="price">30000<b>руб.</b></span>
@@ -57,11 +65,18 @@ const Services = () => {
                     </div>
                     <div className="pricing-option">
                         <i className="material-icons">perm_identity</i>
-                        <h1>Микшерный пульт BEHRINGER X32 RACK.</h1>
-                        <img src={mixer} alt="behringer x32" />
-                        <hr />
-                        <p>Идет в Комплекте с планшетом и роутером. И остальное описание</p>
-                        <hr />
+                        <div className="desktop_services">
+                            <h1>Микшерный пульт BEHRINGER X32 RACK.</h1>
+                            <div>
+                                <img src={mixer} alt="behringer x32" />
+                            </div>
+                        
+                            <hr />
+                            <p>Идет в Комплекте с планшетом и роутером. 
+                                <br></br>
+                            Для вашего мероприятия предлагаем профессиональный цифровой микшерный пульт BEHRINGER X32 RACK, который обеспечивает максимальную гибкость управления звуком и подходит для самых разных форматов событий.</p>
+                            <hr />
+                        </div>
                         <div className="price">
                             <div className="front">
                                 <span className="price">5000<b>руб.</b></span>
@@ -73,11 +88,13 @@ const Services = () => {
                     </div>
                     <div className="pricing-option">
                         <i className="material-icons">art_track</i>
-                        <h1>Стейдж бокс Behringer S16</h1>
-                        <img src={stageBox} alt="behringer s16" />
-                        <hr />
-                        <p>описание.</p>
-                        <hr />
+                        <div className="desktop_services">
+                            <h1>Стейдж бокс Behringer S16</h1>
+                            <img src={stageBox} alt="behringer s16" />
+                            <hr />
+                            <p>Behringer S16 — это идеальный выбор для профессиональных мероприятий, где важно обеспечить надежную и качественную связь между сценой и звуковой системой.</p>
+                            <hr />
+                        </div>
                         <div className="price">
                             <div className="front">
                                 <span className="price">3000<b>руб.</b></span>
@@ -89,11 +106,15 @@ const Services = () => {
                     </div>
                     <div className="pricing-option">
                         <i className="material-icons">art_track</i>
-                        <h1>Барабанная установка PEARL REFERENCE.</h1>
-                        <img src={pearl} alt="PEARL REFERENCE" />
-                        <hr />
-                        <p>Барабанная установка премиум класса PEARL REFERENCE. Любое количество стоек, без тарелок.</p>
-                        <hr />
+                        <div className="desktop_services">
+                            <h1>Барабанная установка PEARL REFERENCE.</h1>
+                            <img src={pearl} alt="PEARL REFERENCE" />
+                            <hr />
+                            <p>Эта установка премиум-класса идеально подходит для самых требовательных барабанщиков и обеспечивает мощное, сбалансированное и богатое звучание, которое раскрывается на любых площадках — от небольших залов до крупных сцен. 
+                                <br></br>
+                            Любое количество стоек, без тарелок.</p>
+                            <hr />
+                        </div>
                         <div className="price">
                             <div className="front">
                                 <span class="price">8000<b>руб.</b></span>
@@ -105,11 +126,15 @@ const Services = () => {
                     </div>
                     <div className="pricing-option">
                         <i className="material-icons">art_track</i>
-                        <h1>Комбоусилитель FENDER TWIN REVERB</h1>
-                        <img src={fender} alt="FENDER TWIN REVERB" />
-                        <hr />
-                        <p>Гитарный комбоусилитель FENDER TWIN REVERB (2шт. В наличи)</p>
-                        <hr />
+                        <div className="desktop_services">
+                            <h1>Комбоусилитель FENDER TWIN REVERB</h1>
+                            <img src={fender} alt="FENDER TWIN REVERB" />
+                            <hr />
+                            <p> Fender Twin Reverb — выбор профессиональных музыкантов уже более 60 лет. Этот усилитель обладает мощным, насыщенным и кристально чистым звуком, идеально подходящим для самых разных музыкальных жанров, от джаза и блюза до рока и поп-музыки. 
+                                <br></br>
+                            В наличии 2 усилителя, которые готовы обеспечить ваше выступление на самом высоком уровне.</p>
+                            <hr />
+                        </div>
                         <div className="price">
                             <div className="front">
                                 <span className="price">5000<b>руб./шт</b></span>
@@ -121,11 +146,15 @@ const Services = () => {
                     </div>
                     <div className="pricing-option">
                         <i className="material-icons">art_track</i>
-                        <h1>Басовый стэк AMPEG SVT7PRO + AMPEG 4x10</h1>
-                        <img src={ampeg} alt="AMPEG SVT5PRO + AMPEG 4x10" />
-                        <hr />
-                        <p>Басовый стэк AMPEG SVT7PRO + AMPEG 4x10 мощностью 600Вт и описание</p>
-                        <hr />
+                        <div className="desktop_services">
+                            <h1>Басовый стэк AMPEG SVT7PRO + AMPEG 4x10</h1>
+                            <img src={ampeg} alt="AMPEG SVT5PRO + AMPEG 4x10" />
+                            <hr />
+                            <p>Для вашего мероприятия мы предлагаем профессиональный басовый стэк AMPEG SVT-7PRO с кабинетом AMPEG 4x10 мощностью 600Вт, который способен обеспечить мощное, насыщенное и глубокое звучание, идеально подходящее для любых музыкальных жанров. 
+                                <br></br>
+                            Это легендарное оборудование, которое заслуженно считается стандартом в мире бас-гитарного звука</p>
+                            <hr />
+                        </div>
                         <div className="price">
                             <div className="front">
                                 <span className="price">4000<b>руб.</b></span>

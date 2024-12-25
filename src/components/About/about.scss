@@ -9,6 +9,9 @@
     height: 5rem;
     flex-direction: column;
     justify-content: center;
+    h2{
+      margin-bottom: 6px;
+    }
   }
   
   .yandex_map{
@@ -28,10 +31,17 @@
       top:14px;
     }
     iframe{
-      width: 375px;
       height: 336px;
       // frameborder: 1; 
       position:relative;
     }
+  }
+}
+
+.yandex_map{
+  width: 531px; // Значение по умолчанию
+
+  @media (min-width: 320px) and (max-width: 768px) {
+    width: 100%; // Или любое другое значение, например, calc(100vw - 20px)
   }
 }
