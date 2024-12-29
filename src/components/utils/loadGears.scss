@@ -151,3 +151,11 @@ $rotateSpeed: 1.5s;
     -webkit-transform: rotate(210deg);
   }
 }
+
+@media only screen and (min-width:1024px) {
+    #wrapper{
+      max-width: 878px;
+      margin: 186px auto;
+  }
+
+}

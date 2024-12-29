@@ -22,34 +22,38 @@
 }
 
 .hall_block{
-    .blurBackName{
-        color: black;
+    .table_header{
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgb(220 227 234);
-        height: 4rem;
-        backdrop-filter: hue-rotate(127deg);
-        flex-direction: column;
-        h3{
+        .blurBackName{
             color: black;
-        }
-        .loading{
-            margin-top: 5px;
-        }
-        .small_price{
+            width: 100%;
             display: flex;
-        }
-        .lds-ellipsis{
-            height: 0;
-            div{
-                top: 0;
-                width: 10px;
-                height: 10px;
+            justify-content: center;
+            align-items: center;
+            background: rgb(220 227 234);
+            height: 4rem;
+            backdrop-filter: hue-rotate(127deg);
+            flex-direction: column;
+            h3{
+                color: black;
+            }
+            .loading{
+                margin-top: 5px;
+            }
+            .small_price{
+                display: flex;
+            }
+            .lds-ellipsis{
+                height: 0;
+                div{
+                    top: 0;
+                    width: 10px;
+                    height: 10px;
+                }
             }
         }
     }
+    
     .contact_container{
         z-index: 100;
         color: black;
@@ -96,5 +100,21 @@
             font-size: 15px;
         }
     } 
+    
+}
+
+@media only screen and (min-width:1024px) {
+    .shedule_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    // .hall_block.active {
+    //     display: inline-grid;
+    //     flex-direction: column;
+    //     align-content: space-between;
+    // }
+    .cancel_cont {
+        top: 9rem;
+    }
     
 }
