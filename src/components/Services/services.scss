@@ -1,11 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,300italic,400italic,600,700,600italic,700italic);
 
-.head_price{
-    h1{
-        font-size: large;
-    }
-}
-
 
 .services_block {
     color: black;
@@ -44,7 +38,7 @@
     }
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:601px) and (max-width:1023px) {
     .pricing-table .pricing-option h1 {
         font-size: larger;
     }
@@ -53,8 +47,15 @@
     }
 }
 
+@media only screen and (min-width: 1024px) {
+    .pricing-table .pricing-option h1 {
+        font-size: xx-large;
+    }
 
-
+    .pricing-table .pricing-option p {
+        font-size: large;
+    }
+}
 
 
 // pricing
@@ -72,9 +73,6 @@ $main-color: #F85E6A;
         flex-wrap: wrap;
     width: 100%;
     margin-right: -14px;
-    // .sound_engineer{
-    //     background-image: url('../../media/uslugi/hands.jpg');
-    // }
     .pricing-option {
         width: 28%;
         background:white;
@@ -86,25 +84,26 @@ $main-color: #F85E6A;
         img{
             width: 100%;
         }
-        &:hover {
-            cursor: pointer;
-            box-shadow: 0px 2px 30px rgba(0,0,0,0.3);
-            transform: scale(1.04);
-            i, h1, span, b {
-                color: $main-color;
-            }
-            .front {
-                opacity: 0;
-                visibility: hidden;
-            }
-            .back {
-                opacity: 1 !important;
-                visibility: visible !important;
-                .button {
-                    transform: translateY(0px) !important;
-                }
-            }
-        }
+        // если убрать комментирование с 90-108 строки то- при наведении будет расширение блока и кнопка заказать
+        // &:hover {
+        //     cursor: pointer;
+        //     box-shadow: 0px 2px 30px rgba(0,0,0,0.3);
+        //     transform: scale(1.04);
+        //     i, h1, span, b {
+        //         color: $main-color;
+        //     }
+        //     .front {
+        //         opacity: 0;
+        //         visibility: hidden;
+        //     }
+        //     .back {
+        //         opacity: 1 !important;
+        //         visibility: visible !important;
+        //         .button {
+        //             transform: translateY(0px) !important;
+        //         }
+        //     }
+        // }
         hr {
             border:none;
             border-bottom: 1px solid #F0F0F0;

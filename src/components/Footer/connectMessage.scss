@@ -40,3 +40,15 @@
         top: 24rem;
     }
 }
+
+@media only screen and (min-width:320px) and (max-width:374px){
+    .services_style{
+        top: 297rem;
+    }
+}
+
+@media only screen and (min-width:375px) and (max-width:768px){
+    .services_style{
+        top: 286rem;
+    }
+}

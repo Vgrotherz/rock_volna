@@ -22,7 +22,7 @@ const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
 
     // опен звонок
     const handleCall = () => {
-        const phoneNumber = '+79082216377'
+        const phoneNumber = '+73912012884'
         window.location.href = `tel:${phoneNumber}`;
     };
 

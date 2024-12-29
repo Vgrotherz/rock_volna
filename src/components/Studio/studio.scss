@@ -46,10 +46,13 @@
         justify-content: center;
     }
     &.active{
-        display: grid;
+        // display: grid;
+        // justify-items: center;
+        // align-items: center;
+        display: flex;
         justify-items: center;
-        // justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
     
 }
@@ -86,6 +89,7 @@
 .table_container {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .csv_td {
@@ -156,11 +160,35 @@
             font-size: xxx-large;
             padding-bottom: 55%;
         }
-    }
+    }  
+}
+
+@media only screen and (min-width:768px ) and (max-width: 899px) {
     .contact_container {
-        height: inherit;
+        height: 68%;
+        width: 47%;
     }
     
+}
+
+@media only screen and (min-width:900px) and (max-width:1200px) {
+    .contact_container{
+        height: 62%;
+        width: 38%;
+    }
+}
+
+@media only screen and (min-width:900px) and (max-width:1200px) {
+    .contact_container{
+        height: 62%;
+        width: 29%;
+    }
+}
+@media only screen and (min-width:1200px) {
+    .contact_container{
+        height: 62%;
+        width: 24%;
+    }
 }
 
 @media only screen and (min-width:600px) {
@@ -176,6 +204,22 @@
         width: 100%;
     }
 }
+
+@media only screen and (min-width:521px) and (max-width:767px)  {
+    .contact_container {
+        padding: 0;
+        height: 59%;
+        width: 46%;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .contact_container {
+        padding: 4.5rem 1.5rem;
+    }
+}
+
+
 
 @media only screen and (max-width:374px) {
     .tabs .nav-tabs .tab.active .hidden-xs {

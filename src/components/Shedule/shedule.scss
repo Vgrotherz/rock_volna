@@ -78,6 +78,15 @@
 // .black_list_rules_container {
 //     width: 100%;
 // }
+
+
+@media only screen and (max-width:373px) {
+    .small_price {
+        p{
+            font-size: small;
+        }
+    }
+}
 @media only screen and (max-width:424px){
     .time_date{
         font-size: 12px;

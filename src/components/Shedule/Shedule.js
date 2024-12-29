@@ -147,88 +147,92 @@ const Shedule = () => {
 
     return(
         <>
-            {(showPopupSmall || showPopupBig || cancelPopUp ) && <div className="overlay"></div>}
-            <div className={isLoading? 'hall_block small_hall_container' : "hall_block active"} >
-                <div className="blurBackName">
-                    <h3>Расписание Правого Зала</h3>
-                    <div className="small_price">
-                        <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>     
-                        <FetchPriceSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
-                    </div>
-                </div>
-                <div className="time_date">
-                    <p>Актуальное расписание на
-                        {currentDate? (<> {currentDate} </>) : (null) }</p>
-                </div>
-                <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
-                {showPopupSmall? (
-                        <button className='button-30' >Записаться на репетицию</button>
-                        ) : (null)}
-                <div className={!showPopupSmall? null : 'contact_container'}>
-                        <BookButton 
-                            slideToSmall={slideToSmall}
-                            handleClickButton={handleClickButtonSmall}
-                            showPopup={showPopupSmall}
-                            selectedTimeSmall={selectedTimeSmall}
-                            selectedHallSmall={selectedHallSmall}
-                            handleClosePopup={handleClosePopup}
-                            handleRulesClick={handleRulesClick}
-                            rulesPopUp={rulesPopUp}
-                        />
-               </div>
-            </div>
-            <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
-                <div className="blurBackName">
-                    <h3 onClick={slideToBig}>Расписание Студии</h3>
-                    <div className="small_price">
-                        <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
-                        <FetchPriceBig isLoading={isLoading} setIsLoading={setIsLoading}/>
-                    </div>
-                </div>
-                <div className="time_date">
-                    <p>Актуальное расписание на {currentDate}</p>
-                </div>
-                <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
-                {showPopupBig? (
-                        <button className='button-30' >Записаться на репетицию</button>
-                        ) : (null)}
-                <div className={!showPopupBig? null : 'contact_container' }>
-                        <BookButton 
-                            mobileSlideUp={mobileSlideUp}
-                            handleClickButton={handleClickButtonBig}
-                            showPopup={showPopupBig}
-                            selectedTimeBig={selectedTimeBig}
-                            selectedHallBig={selectedHallBig}
-                            handleClosePopup={handleClosePopup}
-                            handleRulesClick={handleRulesClick}
-                            rulesPopUp={rulesPopUp}
-                        />
-               </div>
-            </div>
-            <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
-                    {cancelPopUp? (
-                        <div className="cancel_btn_div">
-                            <button class="comic-button" onClick={handleCancelPopUp}>
-                                <span>Отменить</span>
-                                <span>запись</span>
-                            </button>
+            <div className="shedule_container">
+                {(showPopupSmall || showPopupBig || cancelPopUp ) && <div className="overlay"></div>}
+                <div className={isLoading? 'hall_block small_hall_container' : "hall_block active"} >
+                    <div className="blurBackName">
+                        <h3>Расписание Правого Зала</h3>
+                        <div className="small_price">
+                            <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>     
+                            <FetchPriceSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
                         </div>
-                        ) : (null) }
-                <div className={!cancelPopUp? null : 'contact_container cancel_cont black_list_rules_container' }>
-                    {isLoading && isLoading2? (
-                        null
-                    ) : (
-                        <CancelButton
-                            mobileSlideUp={mobileSlideUp}
-                            handleCancelPopUp={handleCancelPopUp}
-                            cancelPopUp={cancelPopUp}
-                            handleClosePopup={handleClosePopup}
-                            handleClickButton={handleCancelPopUp}
-                            handleBlackRulesClick={handleBlackRulesClick}
-                            blackListRules={blackListRules}
-                        />
-                    )}
-               </div>
+                    </div>
+                    <div className="time_date">
+                        <p>Актуальное расписание на
+                            {currentDate? (<> {currentDate} </>) : (null) }</p>
+                    </div>
+                    <FetchCSVSmall isLoading2={isLoading2} setIsLoading2={setIsLoading2} onCellClickSmall={handleCellClickSmall} slideToSmall={slideToSmall}/>
+                    {showPopupSmall? (
+                            <button className='button-30' >Записаться на репетицию</button>
+                            ) : (null)}
+                    <div className={!showPopupSmall? null : 'contact_container'}>
+                            <BookButton 
+                                slideToSmall={slideToSmall}
+                                handleClickButton={handleClickButtonSmall}
+                                showPopup={showPopupSmall}
+                                selectedTimeSmall={selectedTimeSmall}
+                                selectedHallSmall={selectedHallSmall}
+                                handleClosePopup={handleClosePopup}
+                                handleRulesClick={handleRulesClick}
+                                rulesPopUp={rulesPopUp}
+                            />
+                </div>
+                </div>
+                <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
+                    <div className="blurBackName">
+                        <h3 onClick={slideToBig}>Расписание Студии</h3>
+                        <div className="small_price">
+                            <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
+                            <FetchPriceBig isLoading={isLoading} setIsLoading={setIsLoading}/>
+                        </div>
+                    </div>
+                    <div className="time_date">
+                        <p>Актуальное расписание на {currentDate}</p>
+                    </div>
+                    <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
+                    {showPopupBig? (
+                            <button className='button-30' >Записаться на репетицию</button>
+                            ) : (null)}
+                    <div className={!showPopupBig? null : 'contact_container' }>
+                            <BookButton 
+                                mobileSlideUp={mobileSlideUp}
+                                handleClickButton={handleClickButtonBig}
+                                showPopup={showPopupBig}
+                                selectedTimeBig={selectedTimeBig}
+                                selectedHallBig={selectedHallBig}
+                                handleClosePopup={handleClosePopup}
+                                handleRulesClick={handleRulesClick}
+                                rulesPopUp={rulesPopUp}
+                            />
+                </div>
+                </div>
+                
+            </div>
+            {/* вынос для десктоп версии */}
+            <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
+                        {cancelPopUp? (
+                            <div className="cancel_btn_div">
+                                <button class="comic-button" onClick={handleCancelPopUp}>
+                                    <span>Отменить</span>
+                                    <span>запись</span>
+                                </button>
+                            </div>
+                            ) : (null) }
+                    <div className={!cancelPopUp? null : 'contact_container cancel_cont black_list_rules_container' }>
+                        {isLoading && isLoading2? (
+                            null
+                        ) : (
+                            <CancelButton
+                                mobileSlideUp={mobileSlideUp}
+                                handleCancelPopUp={handleCancelPopUp}
+                                cancelPopUp={cancelPopUp}
+                                handleClosePopup={handleClosePopup}
+                                handleClickButton={handleCancelPopUp}
+                                handleBlackRulesClick={handleBlackRulesClick}
+                                blackListRules={blackListRules}
+                            />
+                        )}
+                </div>
             </div>
         </>
     )
