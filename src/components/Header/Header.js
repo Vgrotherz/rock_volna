@@ -23,10 +23,10 @@ const Header = ({ activeTab, setActiveTab }) => {
     }
 
     const tabs = [
-        { path: "/", icon: "fa-solid fa-microphone", label: "Реп. база" },
+        { path: "/", icon: "fa-solid fa-microphone-lines", label: "Реп. база" },
         { path: "/services", icon: "fa-solid fa-people-arrows", label: "Аренда" },
-        { path: "/media", icon: "fa-solid fa-video", label: "Медиа" },
-        { path: "/about", icon: "fa-solid fa-users", label: "Мы" }
+        { path: "/media", icon: "fa-solid fa-photo-film", label: "Медиа" },
+        { path: "/about", icon: "fa-solid fa-people-group", label: "Мы" }
     ];
     
     return (
