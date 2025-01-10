@@ -9,6 +9,26 @@ const videos = [
     "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
 ];
 
+const videosWidth = () => {
+    if(window.innerWidth <= 767) {
+        return 426;
+    } else if (window.innerWidth >= 767 && window.innerWidth <= 1023) {
+        return 640;
+    } else {
+        return 640;
+    }
+}
+
+const videosHeight = () => {
+    if(window.innerWidth <= 767) {
+        return 240;
+    } else if (window.innerWidth >= 767 && window.innerWidth <= 1023) {
+        return 360;
+    } else {
+        return 360;
+    }
+}
+
 const Media = () => {
     const [loaded, setLoaded] = useState({}); // Храним статус по индексу
 
@@ -54,11 +74,15 @@ const Media = () => {
             <div className="video_container">
                 {videos.map((videoUrl, index) => (
                     <div className="videos_vk" key={index}>
-                        {!loaded[index] && <Loader2 />}
+                        {!loaded[index] && 
+                        <div className="loader_vids">
+                            <Loader2 />
+                        </div>
+                        }
                         <iframe
                             src={videoUrl}
-                            width="426"
-                            height="240"
+                            width={videosWidth()}
+                            height={videosHeight()}
                             allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
                             frameBorder="0"
                             allowFullScreen

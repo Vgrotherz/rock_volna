@@ -1,5 +1,7 @@
 import ImageGallery from 'react-image-gallery'
-import './gallery.scss'
+import './gallery.scss';
+
+import Loader3 from '../../utils/loader3';
 
 const photoGallBig = [
   { original: require('../../../media/big/1.jpg') },
@@ -27,7 +29,7 @@ const galleryProps = {
     // autoPlay: true,
     showBullets: true,
     showPlayButton: false,
-    showFullscreenButton: false
+    showFullscreenButton: false,
 }
 
 
