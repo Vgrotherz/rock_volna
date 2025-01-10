@@ -66,7 +66,7 @@ function FetchCSVSmall({isLoading2, setIsLoading2, onCellClickSmall, slideToSmal
       <table className='table_block'>
         <tbody className='tbody_font' onClick={slideToSmall}>
           {/* Строка с часами */}
-          <tr>
+          <tr className='first_tr'>
             <td className={`csv_td td_one ${isLoading2? 'td_one_loading' : ''}`}></td>
             <td className="csv_td">12-14</td>
             <td className="csv_td">14-16</td>

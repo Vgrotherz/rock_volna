@@ -43,8 +43,8 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
     data.append('message', formData.message);
     data.append('source', 'component1'); // Здесь добавляем параметр source, например для компонента 1 (в гугл скрипте принятие от 3х)
     
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbxQcEBIrYsOgAffX4M7Z0o4z3HTTbDxPdKmlJ6UuwA6XEWab-Ze5IISGKX_jP3ECOYF/exec";
-
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbwV7HKymGXP1kT3KfyHuAIwk1wfx2U1Ovk3m46bxV917lCfJ_v7KgeZ4nTMRKOq-d-D/exec";
+ 
     try {
       setLoader(true);
       const response = await fetch(Sheet_Url, {

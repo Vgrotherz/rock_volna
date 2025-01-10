@@ -64,27 +64,44 @@ const Shedule = () => {
     const slideToBig = (e) => {
         if (disableScroll) return;
         e.preventDefault();
-        window.scrollTo({ top: 600, behavior: 'smooth' });
+        if(window.innerWidth <= 1024){
+            window.scrollTo({ top: 600, behavior: 'smooth' });
+        }
+        
     }
 
     const slideToBigLink = () => {
-        window.scrollTo({ top: 600, behavior: "auto" });
+        // if(window.innerWidth <= 1024){
+            window.scrollTo({ top: 600, behavior: "auto" });
+        // }
+        
       };
 
     const slideToSmallLink = () => {
-        window.scrollTo({ top: 0, behavior: "auto" });
+        if(window.innerWidth <= 1024){
+            window.scrollTo({ top: 0, behavior: "auto" });
+        }
+        
     }
 
     const slideToSmall = (e) => {
         if (disableScroll) return;
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // if(window.innerWidth <= 1024){
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // }
+        
     }
 
     const mobileSlideUp = () => {
         if (disableScroll) return;
         // e.preventDefault();
-        window.scrollTo({ top: 600, behavior: 'smooth' });
+        if(window.innerWidth <= 1023) {
+            window.scrollTo({ top: 600, behavior: 'smooth' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
     }
 
     const handleCellClickSmall = (time) => {
@@ -120,6 +137,8 @@ const Shedule = () => {
         const dayOfWeek = daysOfWeek[today.getDay()];
         const formattedDate = `${dayOfWeek}, ${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
         setCurrentDate(formattedDate);
+
+        //при выскакивающем попапе скролл блокируется
         if (showPopupSmall || showPopupBig || cancelPopUp) {
             document.body.classList.add("no-scroll");
         } else {
@@ -182,8 +201,8 @@ const Shedule = () => {
                 </div>
                 <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
                     <div className="table_header">
-                        <div className="blurBackName">
-                            <h3 onClick={slideToBig}>Расписание Студии</h3>
+                        <div className="blurBackName" onClick={slideToBig}>
+                            <h3 >Расписание Студии</h3>
                             <div className="small_price">
                                 <p>стоимость 2х часовой репетиции -{'\u00A0'}</p>
                                 <FetchPriceBig isLoading={isLoading} setIsLoading={setIsLoading}/>

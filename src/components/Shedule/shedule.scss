@@ -105,8 +105,9 @@
 
 @media only screen and (min-width:1024px) {
     .shedule_container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        align-items: stretch; // Удлиняет дочерние элементы до одинаковой высоты
+        // flex-wrap: wrap; 
     }
     // .hall_block.active {
     //     display: inline-grid;
@@ -115,6 +116,10 @@
     // }
     .cancel_cont {
         top: 9rem;
+    }
+
+    .first_tr{
+        // line-height: 56px;
     }
     
 }

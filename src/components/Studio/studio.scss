@@ -152,6 +152,26 @@
             }
         }
     }
+
+    .csv_td {
+        font-size: calc(1vw + 0.5vh + 0.1vmin);
+        height: 4rem;
+        width: 2.5rem;
+    }
+
+    .table_container {
+        display: flex;
+        width: 100%;
+        flex: 1;
+        align-items: unset;
+    }
+    .hall_block.active {
+        flex: 1;
+    }
+    .hall_block {
+        flex: 1;
+        overflow: unset;
+    }
 }
 
 @media only screen and (min-width:768px ) {
@@ -178,23 +198,20 @@
     }
 }
 
-@media only screen and (min-width:900px) and (max-width:1200px) {
+@media only screen and (min-width:900px) and (max-width:1022px) {
     .contact_container{
         height: 62%;
         width: 29%;
     }
 }
-@media only screen and (min-width:1200px) {
+@media only screen and (min-width:1023px) {
     .contact_container{
-        height: 62%;
-        width: 24%;
-    }
-    .csv_td {
-        font-size: larger;
+        height: 71%;
+        width: 33%;
     }
     .table_container{
-        height: 489px;
-        align-items: stretch;
+        // height: 489px;
+        // align-items: stretch;
     }
 }
 
@@ -203,6 +220,12 @@
         .pic_text{
             padding-bottom: 57%;
         }
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .csv_td {
+        font-size: larger;
     }
 }
 
