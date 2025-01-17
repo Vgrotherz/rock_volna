@@ -154,8 +154,10 @@ $rotateSpeed: 1.5s;
 
 @media only screen and (min-width:1024px) {
     #wrapper{
-      max-width: 878px;
-      margin: 186px auto;
+      top: 50%;
+      width: unset;
+      max-width: unset;
+      display: block;
   }
 
 }

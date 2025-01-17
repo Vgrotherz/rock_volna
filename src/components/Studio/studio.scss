@@ -163,7 +163,8 @@
         display: flex;
         width: 100%;
         flex: 1;
-        align-items: unset;
+        justify-content: center;
+        align-items: stretch;
     }
     .hall_block.active {
         flex: 1;
@@ -206,8 +207,12 @@
 }
 @media only screen and (min-width:1023px) {
     .contact_container{
-        height: 71%;
-        width: 33%;
+        position: absolute;
+        left: 50%; 
+        top: 50%;
+        transform: translate(-50%, -50%); /* Смещение на половину ширины/высоты */
+        height: 71vh;
+        width: 33vw;
     }
     .table_container{
         // height: 489px;

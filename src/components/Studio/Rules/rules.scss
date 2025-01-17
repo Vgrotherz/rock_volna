@@ -1,3 +1,30 @@
 .rules_container {
     z-index: 30;
+    .text_rules{
+        font-size: small;
+        max-height: 30rem;
+        overflow-y: auto;
+        h3{
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #717a81;
+        }
+        h4{
+            margin-bottom: 10px;
+        }
+        li{
+            margin-bottom: 10px;
+        }
+        ul{
+            margin-top: 5px;
+        }
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .rules_container{
+        .text_rules{
+            padding: 15px;
+        }
+    }
 }

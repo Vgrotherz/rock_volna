@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { CSSTransition } from "react-transition-group";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import FetchCSVBig from "../utils/FetchCSVBig";
@@ -24,6 +25,7 @@ const Shedule = () => {
     const [ rulesPopUp, setRulesPopUp ] = useState(false);
     const [ blackListRules, setBlaclListRules ] = useState(false);
     const [ currentDate, setCurrentDate ] = useState("");
+    
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -164,6 +166,11 @@ const Shedule = () => {
         setBlaclListRules(!blackListRules);
       }
 
+
+    const bookButtonStyleSmall = !showPopupSmall? null : (!rulesPopUp ? 'contact_container' : 'contact_container contact_container_rules');
+    
+    const bookButtonStyleBig = !showPopupBig? null : (!rulesPopUp ? 'contact_container' : 'contact_container contact_container_rules');
+
     return(
         <>
             <div className="shedule_container">
@@ -186,7 +193,7 @@ const Shedule = () => {
                     {showPopupSmall? (
                             <button className='button-30' >Записаться на репетицию</button>
                             ) : (null)}
-                    <div className={!showPopupSmall? null : 'contact_container'}>
+                    <div className={bookButtonStyleSmall}>
                             <BookButton 
                                 slideToSmall={slideToSmall}
                                 handleClickButton={handleClickButtonSmall}
@@ -216,7 +223,7 @@ const Shedule = () => {
                     {showPopupBig? (
                             <button className='button-30' >Записаться на репетицию</button>
                             ) : (null)}
-                    <div className={!showPopupBig? null : 'contact_container' }>
+                    <div className={bookButtonStyleBig}>
                             <BookButton 
                                 mobileSlideUp={mobileSlideUp}
                                 handleClickButton={handleClickButtonBig}

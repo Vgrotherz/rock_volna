@@ -58,6 +58,9 @@
         z-index: 100;
         color: black;
     }
+    .contact_container_rules{
+        background: aliceblue;
+    }
 }
 
 .cancel_cont {
@@ -109,13 +112,11 @@
         align-items: stretch; // Удлиняет дочерние элементы до одинаковой высоты
         // flex-wrap: wrap; 
     }
-    // .hall_block.active {
-    //     display: inline-grid;
-    //     flex-direction: column;
-    //     align-content: space-between;
+    // .td_one{
+    //     height: 1rem;
     // }
     .cancel_cont {
-        top: 9rem;
+        top: 30rem;
     }
 
     .first_tr{
@@ -123,3 +124,30 @@
     }
     
 }
+
+
+//стили для плавного открытия попапов
+/* Плавное открытие/закрытие попапа */
+/* bookButton.scss */
+.popup-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  .popup-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .popup-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .popup-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  

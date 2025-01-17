@@ -36,7 +36,7 @@ const BookButton = ({handleClickButton, showPopup, selectedTimeSmall, selectedTi
                     {!rulesPopUp? (
                       <Contact handleClickButton={handleClickButton} selectedTimeSmall={selectedTimeSmall} selectedTimeBig={selectedTimeBig} selectedHallSmall={selectedHallSmall} selectedHallBig={selectedHallBig} handleRulesClick={handleRulesClick}/>
                     ) : (
-                      <Rules handleRulesClick={handleRulesClick}/>
+                      <Rules handleRulesClick={handleRulesClick} />
                     )} 
                   </>
                   
