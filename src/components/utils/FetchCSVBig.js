@@ -7,7 +7,7 @@ import LoaderGears from './LoaderGears';
 
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
 
-function FetchCSVBig({isLoading, setIsLoading, onCellClickBig}) {
+function FetchCSVBig({isLoading, setIsLoading, onCellClickBig, slideToBig}) {
   const [csvData, setCsvData] = useState([]);
   // const [ isLoading, setIsLoading] = useState(false);
 
@@ -67,7 +67,7 @@ function FetchCSVBig({isLoading, setIsLoading, onCellClickBig}) {
                     ) : (null)
                     }
       {/* Статическая таблица с фиксированной структурой */}
-      <table className='table_block'>
+      <table className='table_block' onClick={slideToBig}>
         <tbody className='tbody_font' >
           {/* Строка с часами */}
           <tr className='first_tr'>

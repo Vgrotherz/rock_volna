@@ -219,7 +219,7 @@ const Shedule = () => {
                             <p>Актуальное расписание на {currentDate}</p>
                         </div>
                     </div>
-                    <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig}/>
+                    <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig} slideToBig={slideToBig}/>
                     {showPopupBig? (
                             <button className='button-30' >Записаться на репетицию</button>
                             ) : (null)}

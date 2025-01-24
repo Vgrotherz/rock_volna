@@ -45,7 +45,7 @@ function ConnectMessage({ handleClickButton, handleLetterClick }) {
             connectPhone: '',
             connectMessage: '',
           });
-          alert('ваше сообщение принято, ожидайте обратной связи от администратора')
+          alert('ваше сообщение принято, ожидайте звонка от администратора')
           handleLetterClick();
           setFormData(false);
       } else {
