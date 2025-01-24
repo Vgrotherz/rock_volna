@@ -67,7 +67,9 @@ function FetchCSVBig({isLoading, setIsLoading, onCellClickBig, slideToBig}) {
                     ) : (null)
                     }
       {/* Статическая таблица с фиксированной структурой */}
-      <table className='table_block' onClick={slideToBig}>
+      <table className='table_block' 
+      onClick={slideToBig}
+      >
         <tbody className='tbody_font' >
           {/* Строка с часами */}
           <tr className='first_tr'>

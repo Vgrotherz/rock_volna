@@ -66,8 +66,10 @@ const Shedule = () => {
     const slideToBig = (e) => {
         if (disableScroll) return;
         e.preventDefault();
-        if(window.innerWidth <= 1024){
+        if(window.innerWidth <= 1023){
             window.scrollTo({ top: 600, behavior: 'smooth' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
         }
         
     }
@@ -219,7 +221,9 @@ const Shedule = () => {
                             <p>Актуальное расписание на {currentDate}</p>
                         </div>
                     </div>
-                    <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig} slideToBig={slideToBig}/>
+                    <FetchCSVBig isLoading={isLoading} setIsLoading={setIsLoading} onCellClickBig={handleCellClickBig} 
+                    slideToBig={slideToBig}
+                    />
                     {showPopupBig? (
                             <button className='button-30' >Записаться на репетицию</button>
                             ) : (null)}
