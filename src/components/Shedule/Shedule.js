@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import FetchCSVBig from "../utils/FetchCSVBig";
@@ -15,7 +14,7 @@ const Shedule = () => {
     const [ isLoading, setIsLoading] = useState(false);
     const [ isLoading2, setIsLoading2 ] = useState(false);
     const [ showPopupSmall, setShowPopupSmall ] = useState(false); 
-    const [ showPopupBig, setShowPopupBig ] = useState(false); 
+    const [ showPopupBig, setShowPopupBig ] = useState(false);  
     const [ disableScroll, setDisableScroll ] = useState(false);
     const [ selectedTimeSmall, setSelectedTimeSmall ] = useState("");
     const [ selectedTimeBig, setSelectedTimeBig ] = useState("");

@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     h3{
         margin-top: 1rem;
         text-shadow: 1px 1px 0px black, -1px -1px 0px black
@@ -31,6 +31,28 @@
             }
         }
     
+    }
+    .verz_click{
+        cursor: pointer;
+        padding: 1rem;
+        font-size: x-small;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .footer{
+        .footer_icons{
+            .fa-brands:hover, .fa-solid:hover {
+                position: relative;
+                bottom: 6px;
+                transition: 150ms ease-in-out;
+            }
+            .fa-brands, .fa-solid{
+                position: relative;
+                bottom: 0;
+            }
+           
+        }
     }
 }
 
@@ -75,4 +97,5 @@
         }
     
 }
+
     

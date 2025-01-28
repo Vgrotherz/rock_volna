@@ -4,9 +4,9 @@ import './media.scss';
 
 const videos = [
     "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
-    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
-    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
-    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+    // "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+    // "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+    // "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
 ];
 
 const videosWidth = () => {

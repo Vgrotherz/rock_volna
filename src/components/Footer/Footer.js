@@ -30,6 +30,11 @@ const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
         setConnectMessage(!connectMessage)
     }
 
+    const handleVerzClick = (e) => {
+        e.preventDefault();
+        window.open("https://t.me/verzgrotherz", "_blank")
+    }
+
     useEffect(() => {
         if (connectMessage) {
             document.body.classList.add('no-scroll'); // Добавляем класс для блокировки
@@ -58,6 +63,9 @@ const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
                     <i className="fa-solid fa-envelope" onClick={handleLetterClick}></i>
                 </div>
                 <BackBtn setActiveTab={setActiveTab} />
+                <div className='verz_click' onClick={handleVerzClick}>
+                    <p>Made by I.Varavin</p>
+                </div>
             </div>
             
         </>
