@@ -22,7 +22,7 @@ const CancelButton = ({ cancelPopUp, handleCancelPopUp, handleClosePopup, handle
             <div className="cancel_container">
                     {!cancelPopUp? (
                         <div className="cancel_btn_div">
-                            <button class="comic-button" onClick={handleSlideAndClick}>
+                            <button className="comic-button" onClick={handleSlideAndClick}>
                                 <span>Отменить</span>
                                 <span>запись</span>
                             </button>

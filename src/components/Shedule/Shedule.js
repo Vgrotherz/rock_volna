@@ -168,9 +168,11 @@ const Shedule = () => {
       }
 
 
-    const bookButtonStyleSmall = !showPopupSmall? null : (!rulesPopUp ? 'contact_container' : 'contact_container contact_container_rules');
+    const bookButtonStyleSmall = !showPopupSmall? null : (!rulesPopUp ? 'contact_container special_top' : 'contact_container contact_container_rules special_top');
     
     const bookButtonStyleBig = !showPopupBig? null : (!rulesPopUp ? 'contact_container' : 'contact_container contact_container_rules');
+
+
 
     return(
         <>
@@ -245,7 +247,7 @@ const Shedule = () => {
             <div className={isLoading?  'hall_block big_hall_container' : "hall_block active"}>
                         {cancelPopUp? (
                             <div className="cancel_btn_div">
-                                <button class="comic-button" onClick={handleCancelPopUp}>
+                                <button className="comic-button" onClick={handleCancelPopUp}>
                                     <span>Отменить</span>
                                     <span>запись</span>
                                 </button>
