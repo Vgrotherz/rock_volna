@@ -25,10 +25,10 @@ function ConnectMessage({ handleClickButton, handleLetterClick }) {
     data.append('connectMessage', formData.connectMessage);
     data.append('source', 'component2'); // Здесь добавляем параметр source, например для компонента 2
     
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbxyzFI5X2bC7bkE4ivfR_WomhqwRZkqNfvD-EEEIpV4INSsvc9jC9jIFRM4OII85K4f/exec";
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbytUKbO6dkDp2-cU7GpArzIx22cLE0vh_vq0TEaoI1BsuOV3sv264QIj-Ba6dqdxziP/exec";
 
         // новый на tochkavolna@gmail.com
-    // https://script.google.com/macros/s/AKfycbxyzFI5X2bC7bkE4ivfR_WomhqwRZkqNfvD-EEEIpV4INSsvc9jC9jIFRM4OII85K4f/exec
+    // https://script.google.com/macros/s/AKfycbytUKbO6dkDp2-cU7GpArzIx22cLE0vh_vq0TEaoI1BsuOV3sv264QIj-Ba6dqdxziP/exec
 
     // старый
     // "https://script.google.com/macros/s/AKfycbwV7HKymGXP1kT3KfyHuAIwk1wfx2U1Ovk3m46bxV917lCfJ_v7KgeZ4nTMRKOq-d-D/exec";
@@ -103,19 +103,6 @@ function ConnectMessage({ handleClickButton, handleLetterClick }) {
               onChange={handleChange}
             />
           </div>
-          {/* <div className='terms_check cancel_check'>
-            <input
-              type="checkbox"
-              id="agreedCancelTerms"
-              name="terms"
-               
-              required
-            />
-            <label for="agreedCancelTerms" className='agreedCancelterms'>Я подтверждаю, что в случае, если отмена была позднее чем за сутки, то я обязусь оплатить ранее зянятое мною время в полном объёме. 
-              <br></br>
-              В противном случае группа попадает в <span onClick={handleBlackRulesClick}>чёрный список</span> 
-            </label>
-          </div> */}
           <button className='button-30' type="submit">Отправить</button>
         </form>
       </header>
