@@ -1,5 +1,6 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements,Route } from 'react-router-dom'
+import { Analytics } from "@vercel/analytics/react";
 
 import './App.css';
 import './reset.css';
@@ -26,6 +27,7 @@ const router = createBrowserRouter(createRoutesFromElements(
 function App() {
     return(
         <>
+            <Analytics />
             <RouterProvider router={router} />
         </>
     )
