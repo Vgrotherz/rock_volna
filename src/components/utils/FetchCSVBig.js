@@ -5,7 +5,14 @@ import { parse } from 'papaparse'; // или другая библиотека �
 
 import LoaderGears from './LoaderGears';
 
-const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
+const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJa1IQU-ZxYL5sYxLk3kDjKLXMmlodOIQ6BAkIZfpYXimwvTvCjhmdOj80WLJrL5B2ayJ8hslIc3Bt/pub?output=csv';
+
+
+// старая
+// 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
+// новая
+// https://docs.google.com/spreadsheets/d/e/2PACX-1vTJa1IQU-ZxYL5sYxLk3kDjKLXMmlodOIQ6BAkIZfpYXimwvTvCjhmdOj80WLJrL5B2ayJ8hslIc3Bt/pub?output=csv;
+
 
 function FetchCSVBig({isLoading, setIsLoading, onCellClickBig, slideToBig}) {
   const [csvData, setCsvData] = useState([]);

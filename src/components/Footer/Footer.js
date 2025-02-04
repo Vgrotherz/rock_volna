@@ -28,6 +28,9 @@ const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
 
     const handleLetterClick = () => {
         setConnectMessage(!connectMessage)
+        if(window.innerWidth >= 1023) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } 
     }
 
     const handleVerzClick = (e) => {

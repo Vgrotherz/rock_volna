@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'papaparse'; // библиотека для парсинга CSV
 
-const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
+const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJa1IQU-ZxYL5sYxLk3kDjKLXMmlodOIQ6BAkIZfpYXimwvTvCjhmdOj80WLJrL5B2ayJ8hslIc3Bt/pub?output=csv';
+
+// старая
+// 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQlHKG9Txbs1wOZzrfweQOMp9ZVV7b1hMiDzc1VfILcvSOaeRDpmSUNQf3_bfwEuuHuP-cq16tpdH82/pub?output=csv';
+// новая
+// https://docs.google.com/spreadsheets/d/e/2PACX-1vTJa1IQU-ZxYL5sYxLk3kDjKLXMmlodOIQ6BAkIZfpYXimwvTvCjhmdOj80WLJrL5B2ayJ8hslIc3Bt/pub?output=csv;
 
 function FetchPriceSmall({ isLoading2, setIsLoading2 }) {
   const [cellData, setCellData] = useState(null); // храним конкретное значение (C1)

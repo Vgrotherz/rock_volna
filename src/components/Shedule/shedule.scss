@@ -2,12 +2,7 @@
     cursor: pointer;
     background-color: #f0f8ff; /* Highlight color */
   }
-.csv_td.clickable:hover {
-    cursor: pointer;
-    background-color: #6292bd; /* Highlight color */
-    transition: all 150ms ease-in-out;
-  }
-  
+
 
 .tbody_font {
     background: aliceblue;
@@ -124,9 +119,12 @@
         top: 30rem;
     }
 
-    .first_tr{
-        // line-height: 56px;
-    }
+    .csv_td.clickable:hover {
+        cursor: pointer;
+        background-color: #6292bd; /* Highlight color */
+        transition: all 150ms ease-in-out;
+      }
+      
     
 }
 
