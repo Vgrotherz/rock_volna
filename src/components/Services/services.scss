@@ -57,6 +57,16 @@
     }
 }
 
+@media only screen and (max-width:374px) {
+    .pricing-table {
+        .pricing-option{
+            h1{
+                font-size: x-large;
+            }
+        } 
+    }
+}
+
 
 // pricing
 
