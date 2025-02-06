@@ -1,6 +1,7 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements,Route } from 'react-router-dom'
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 import './App.css';
 import './reset.css';
@@ -28,6 +29,7 @@ function App() {
     return(
         <>
             <Analytics />
+            <SpeedInsights />
             <RouterProvider router={router} />
         </>
     )
