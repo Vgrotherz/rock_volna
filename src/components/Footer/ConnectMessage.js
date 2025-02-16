@@ -25,10 +25,10 @@ function ConnectMessage({ handleClickButton, handleLetterClick }) {
     data.append('connectMessage', formData.connectMessage);
     data.append('source', 'component2'); // Здесь добавляем параметр source, например для компонента 2
     
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbyj2AnxL2GA-Bua__T3UxGeo3MM8Pnp-iB6IJXyiIbdRYL9y46rB4sxrkO4xMYcqg4j/exec";
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbyrDDHjiUzIR_G_xeIe6kyZpYlV2FztKXwqh5aZ-MA1FEif64QPznBXN2TyPfhKhWHq/exec";
 
         // новый на tochkavolna@gmail.com
-    // https://script.google.com/macros/s/AKfycbyj2AnxL2GA-Bua__T3UxGeo3MM8Pnp-iB6IJXyiIbdRYL9y46rB4sxrkO4xMYcqg4j/exec
+    // https://script.google.com/macros/s/AKfycbyrDDHjiUzIR_G_xeIe6kyZpYlV2FztKXwqh5aZ-MA1FEif64QPznBXN2TyPfhKhWHq/exec
 
     // старый
     // "https://script.google.com/macros/s/AKfycbwV7HKymGXP1kT3KfyHuAIwk1wfx2U1Ovk3m46bxV917lCfJ_v7KgeZ4nTMRKOq-d-D/exec";
