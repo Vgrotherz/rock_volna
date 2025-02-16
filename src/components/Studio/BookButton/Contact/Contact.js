@@ -43,10 +43,10 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
     data.append('message', formData.message);
     data.append('source', 'component1'); // Здесь добавляем параметр source, например для компонента 1 (в гугл скрипте принятие от 3х)
     
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbytUKbO6dkDp2-cU7GpArzIx22cLE0vh_vq0TEaoI1BsuOV3sv264QIj-Ba6dqdxziP/exec";
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbyj2AnxL2GA-Bua__T3UxGeo3MM8Pnp-iB6IJXyiIbdRYL9y46rB4sxrkO4xMYcqg4j/exec";
 
      // новый на tochkavolna@gmail.com
-    // https://script.google.com/macros/s/AKfycbytUKbO6dkDp2-cU7GpArzIx22cLE0vh_vq0TEaoI1BsuOV3sv264QIj-Ba6dqdxziP/exec
+    // https://script.google.com/macros/s/AKfycbyj2AnxL2GA-Bua__T3UxGeo3MM8Pnp-iB6IJXyiIbdRYL9y46rB4sxrkO4xMYcqg4j/exec
 
     // старый
     // "https://script.google.com/macros/s/AKfycbwV7HKymGXP1kT3KfyHuAIwk1wfx2U1Ovk3m46bxV917lCfJ_v7KgeZ4nTMRKOq-d-D/exec";
