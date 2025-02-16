@@ -54,7 +54,7 @@ function Cancel({ handleClickButton, handleBlackRulesClick }) {
             cancelTime: '',
             cancelMessage: '',
           });
-          alert('Заявка на отмену принята, ожидайте обратной связи от администратора')
+          alert('Заявка на отмену принята, ожидайте обратной связи. Администратор свяжется с Вами в течении часа. Все заявки обрабатываются в течение рабочего дня.')
           handleClickButton();
           setFormData(false);
       } else {

@@ -51,7 +51,7 @@ function ConnectMessage({ handleClickButton, handleLetterClick }) {
             connectPhone: '',
             connectMessage: '',
           });
-          alert('ваше сообщение принято, ожидайте звонка от администратора')
+          alert('ваше сообщение принято, ожидайте звонка. Администратор свяжется с Вами в течении часа. Все заявки обрабатываются в течение рабочего дня.')
           handleLetterClick();
           setFormData(false);
       } else {

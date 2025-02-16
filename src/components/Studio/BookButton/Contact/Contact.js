@@ -72,7 +72,7 @@ function Contact({ handleClickButton, selectedTimeSmall, selectedTimeBig, select
             time: '',
             message: '',
           });
-          alert('Запись принята, ожидайте обратной связи от администратора')
+          alert('Принята заявка на бронирование. Администратор свяжется с Вами в течении часа для подтверждения бронирования. Все заявки обрабатываются в течение рабочего дня.')
           handleClickButton();
           setFormData(false);
       } else {

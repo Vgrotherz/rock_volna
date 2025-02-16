@@ -3,13 +3,8 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-color: black; 
-    /* background-image: url('./media/photo_2024-12-13_17-41-27.jpg');  */
-    
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* background-image: url('./media/Wallpaper.jpeg'); */
-    /* background-size: 120% 160%; */
-    /* background-repeat: no-repeat; */
     color: azure;
 }
 

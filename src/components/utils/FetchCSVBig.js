@@ -16,8 +16,6 @@ const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJa1IQU-ZxYL5sY
 
 function FetchCSVBig({isLoading, setIsLoading, onCellClickBig, slideToBig}) {
   const [csvData, setCsvData] = useState([]);
-  // const [ isLoading, setIsLoading] = useState(false);
-
 
   useEffect(() => {
 

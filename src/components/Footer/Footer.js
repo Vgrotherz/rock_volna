@@ -24,6 +24,9 @@ const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
     const handleCall = () => {
         const phoneNumber = '+73912012884'
         window.location.href = `tel:${phoneNumber}`;
+        if(window.innerWidth >=1023) {
+            alert('+73912012884');
+        }
     };
 
     const handleLetterClick = () => {
@@ -59,6 +62,10 @@ const Footer = ({ setActiveTab, connectMessage , setConnectMessage }) => {
                     <ConnectMessageButton handleLetterClick={handleLetterClick}/>
                 )}
                 <h3>Реп точка Волна</h3>
+                <div className='work_time'>
+                    <p>Часы работы - С 12:00 до 22:00</p>
+                    <p>Сб - выходной.</p>
+                </div>
                 <div className='footer_icons'>
                     <i className="fa-brands fa-vk" onClick={vkClick}></i>
                     <i className="fa-brands fa-telegram" onClick={handleTelegramClick}></i>
