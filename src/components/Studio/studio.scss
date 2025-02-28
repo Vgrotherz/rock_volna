@@ -49,7 +49,7 @@
         // display: grid;
         // justify-items: center;
         // align-items: center;
-        display: flex;
+        // display: flex;
         justify-items: center;
         align-items: center;
         flex-direction: column;
@@ -132,6 +132,12 @@
         height: 20rem;
         margin: 2rem;
     }
+    .hall_block {
+        &.active{
+            display: grid;
+        }
+        
+    }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -156,6 +162,13 @@
                 padding-bottom: 27%;
             }
         }
+    }
+
+    .hall_block {
+        &.active{
+            display: flex;
+        }
+        
     }
 
     .csv_td {
