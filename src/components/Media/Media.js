@@ -10,7 +10,7 @@ const videos = [
 
 const videosWidth = () => {
     if(window.innerWidth <= 767) {
-        return 426;
+        return 400;
     } else if (window.innerWidth >= 767 && window.innerWidth <= 1023) {
         return 640;
     } else {
