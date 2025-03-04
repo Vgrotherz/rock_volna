@@ -8,28 +8,10 @@ const videos = [
     // "тут вставляем ссылку на видео в формате https://vk.com/video_ext.php?oid=-номер&id=номер&js_api=1",
 ];
 
-const videosWidth = () => {
-    if(window.innerWidth <= 767) {
-        return 400;
-    } else if (window.innerWidth >= 767 && window.innerWidth <= 1023) {
-        return 640;
-    } else {
-        return 640;
-    }
-}
-
-const videosHeight = () => {
-    if(window.innerWidth <= 767) {
-        return 240;
-    } else if (window.innerWidth >= 767 && window.innerWidth <= 1023) {
-        return 360;
-    } else {
-        return 360;
-    }
-}
 
 const Media = () => {
     const [loaded, setLoaded] = useState({}); // Храним статус по индексу
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const loadVKScript = () => {
         return new Promise((resolve, reject) => {
@@ -52,7 +34,38 @@ const Media = () => {
         loadVKScript().then(() => {
             console.log("VK API script loaded");
         });
+
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+
     }, []);
+
+    const videosWidth = () => {
+        if(window.innerWidth <= 767) {
+            return "100%";
+        } else if (window.innerWidth >= 767 && window.innerWidth <= 1023) {
+            return "100%";
+        } else {
+            return 640;
+        }
+    }
+    
+    const videosHeight = () => {
+        if(window.innerWidth <= 767) {
+            return 240;
+        } else if (window.innerWidth >= 767 && window.innerWidth <= 1023) {
+            return 360;
+        } else {
+            return 360;
+        }
+    }
 
     const handleVideoInit = (index, iframe) => {
         const tryInitPlayer = () => {
