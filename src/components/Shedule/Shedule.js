@@ -100,7 +100,7 @@ const Shedule = () => {
         if (disableScroll) return;
         // e.preventDefault();
         if(window.innerWidth <= 1023) {
-            window.scrollTo({ top: 600, behavior: 'smooth' });
+            window.scrollTo({ top: 700, behavior: 'smooth' });
         } else {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
