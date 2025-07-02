@@ -27,10 +27,10 @@ function Cancel({ handleClickButton, handleBlackRulesClick }) {
     data.append('cancelMessage', formData.cancelMessage);
     data.append('source', 'component3'); // Здесь добавляем параметр source, например для компонента 3
     
-    const Sheet_Url = "https://script.google.com/macros/s/AKfycbyrDDHjiUzIR_G_xeIe6kyZpYlV2FztKXwqh5aZ-MA1FEif64QPznBXN2TyPfhKhWHq/exec";
+    const Sheet_Url = "https://script.google.com/macros/s/AKfycbzpB0K6xLb7zy9Y8FTeQr1yYJ2akEwQgHvDljzH06vhefiAoOB2BYmTE_BLVKTz0RM/exec";
 
     // новый на tochkavolna@gmail.com
-    // https://script.google.com/macros/s/AKfycbyrDDHjiUzIR_G_xeIe6kyZpYlV2FztKXwqh5aZ-MA1FEif64QPznBXN2TyPfhKhWHq/exec
+    // https://script.google.com/macros/s/AKfycbzpB0K6xLb7zy9Y8FTeQr1yYJ2akEwQgHvDljzH06vhefiAoOB2BYmTE_BLVKTz0RM/exec
 
     // старый
     // "https://script.google.com/macros/s/AKfycbwV7HKymGXP1kT3KfyHuAIwk1wfx2U1Ovk3m46bxV917lCfJ_v7KgeZ4nTMRKOq-d-D/exec";
