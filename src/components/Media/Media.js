@@ -86,11 +86,11 @@ const Media = () => {
             <div className="video_container">
                 {videos.map((videoUrl, index) => (
                     <div className="videos_vk" key={index}>
-                        {!loaded[index] && 
+                        {/* {!loaded[index] && 
                         <div className="loader_vids">
                             <Loader2 />
                         </div>
-                        }
+                        } */}
                         <iframe
                             src={videoUrl}
                             width={videosWidth()}
