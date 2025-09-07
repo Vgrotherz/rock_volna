@@ -21,7 +21,7 @@ const Media = () => {
             } else {
                 const script = document.createElement("script");
                 script.id = scriptId;
-                script.src = "https://vk.com/js/api/videoplayer.js";
+                script.src = "https://vk.ru/js/api/videoplayer.js";
                 script.async = true;
                 script.onload = () => resolve();
                 script.onerror = () => reject(new Error("Failed to load VK API"));
