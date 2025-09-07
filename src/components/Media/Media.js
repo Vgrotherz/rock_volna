@@ -3,8 +3,8 @@ import Loader2 from '../utils/loader2';
 import './media.scss';
 
 const videos = [
-    "https://vk.com/video_ext.php?oid=-16692293&id=456239199&js_api=1",
-    "https://vk.com/video_ext.php?oid=-16692293&id=456239208&js_api=1",
+    "https://vk.ru/video_ext.php?oid=-16692293&id=456239199&js_api=1",
+    "https://vk.ru/video_ext.php?oid=-16692293&id=456239208&js_api=1",
     // "https://vk.com/video_ext.php?oid=-16692293&id=456239211&js_api=1",
     // "тут вставляем ссылку на видео в формате https://vk.com/video_ext.php?oid=-номер&id=номер&js_api=1",
 ];
@@ -86,11 +86,11 @@ const Media = () => {
             <div className="video_container">
                 {videos.map((videoUrl, index) => (
                     <div className="videos_vk" key={index}>
-                        {/* {!loaded[index] && 
+                        {!loaded[index] && 
                         <div className="loader_vids">
                             <Loader2 />
                         </div>
-                        } */}
+                        }
                         <iframe
                             src={videoUrl}
                             width={videosWidth()}
