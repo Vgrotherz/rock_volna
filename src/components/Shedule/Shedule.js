@@ -147,7 +147,7 @@ const Shedule = () => {
         } else {
             document.body.classList.remove("no-scroll");
         }
-    }, [showPopupSmall, showPopupBig, cancelPopUp, location.state, navigate ]);
+    }, [showPopupSmall, showPopupBig, cancelPopUp, location.state, location.pathname, navigate ]);
 
     const handleClosePopup = () => {
         setDisableScroll(false);
