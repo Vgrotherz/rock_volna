@@ -135,6 +135,8 @@
     .hall_block {
         &.active{
             display: grid;
+            justify-items: center;
+            align-items: center;
         }
         
     }
